@@ -22,13 +22,13 @@ const ButtonLink = ({
   }`
   const styleCurrentPageMin = `${
     selectedPage === lowerCasePage && !isAboveMediumScreen
-      ? 'before:absolute before:bottom-[calc(50%-4px)] before:left-36 before:h-[8px] before:w-[8px] before:bg-primary-500 before:rounded-full'
+      ? 'before:absolute before:bottom-[calc(50%-7px)] before:left-36 before:h-[8px] before:w-[8px] before:bg-primary-500 before:rounded-full'
       : ''
   }`
   return (
     <AnchorLink
       className={`${styleCurrentPageMin} ${styleCurrentPageMed}
-        ${!isAboveMediumScreen && 'hover:text-primary-500'}
+        ${!isAboveMediumScreen && 'hover:text-primary-500 text-[1.5rem]'}
        relative whitespace-nowrap text-base tracking-tight transition duration-500 hover:text-secondary-500`}
       href={`#${lowerCasePage}`}
       onClick={() => setSelectedPage(lowerCasePage)}
