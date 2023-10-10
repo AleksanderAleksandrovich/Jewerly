@@ -6,6 +6,7 @@ import Heart from '@/assets/icons/Избранное.svg'
 import Basket from '@/assets/icons/Корзина.svg'
 import Exite from '@/assets/icons/Выход.svg'
 import { SelectedPage } from '@/types/home'
+import useMediaQuery from '@/hooks/useMediaQuery'
 
 type Prop = {
   selectedPage: SelectedPage
@@ -13,56 +14,61 @@ type Prop = {
 }
 
 const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
+  const isAboveMediumScreen = useMediaQuery('(min-width: 1300px)')
   return (
-    <nav className="sticky  border-primary-500 bg-green-850 bg-noise z-30 flex top-0 h-[120px] items-center gap-16 px-14 pb-7 pt-16">
+    <nav className="sticky  top-0 z-30 flex h-[120px] items-center gap-8 border-primary-500 bg-green-850 bg-noise px-14 pb-7 pt-16 xl:gap-16">
       {/* left side */}
       <div className="w-1/4">
         <ButtonCatalog />
       </div>
       {/* center side */}
-      <div className="flex w-1/2 justify-center gap-5">
-        <div className="flex justify-between gap-3">
-          <ButtonLink
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
-            page="Главная"
-          />
-          <ButtonLink
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
-            page="Бриллиант"
-          />
-          <ButtonLink
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
-            page="Новинки"
-          />
+      <div className="2xl:gap-10 flex w-1/2 items-center justify-center gap-3">
+        {isAboveMediumScreen && (
+          <div className="2xl:gap-4 flex justify-between gap-2">
+            <ButtonLink
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+              page="Главная"
+            />
+            <ButtonLink
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+              page="Бриллиант"
+            />
+            <ButtonLink
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+              page="Новинки"
+            />
+          </div>
+        )}
+        <div className="mx-4 ">
+          <img className="min-w-[2.625rem] " src={Brilliant} alt="brilliant" />
         </div>
-        <div className="mx-4">
-          <img src={Brilliant} alt="brilliant" />
-        </div>
-        <div className="flex justify-between gap-3">
-          <ButtonLink
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
-            page="Категории"
-          />
-          <ButtonLink
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
-            page="Заказ в подарок"
-          />
-          <ButtonLink
-            selectedPage={selectedPage}
-            setSelectedPage={setSelectedPage}
-            page="Уход"
-          />
-        </div>
+        {isAboveMediumScreen && (
+          <div className="flex items-center justify-between gap-3">
+            <ButtonLink
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+              page="Категории"
+            />
+            <ButtonLink
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+              page="Заказ в подарок"
+            />
+            <ButtonLink
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+              page="Уход"
+            />
+          </div>
+        )}
       </div>
       {/* right side */}
-      <div className="flex w-1/4 items-center justify-end gap-5 ">
+      <div className="flex w-1/4 items-center justify-end gap-[1.4rem] xl:gap-[1.2rem]">
         <InputSearch />
-        <div>
+        <div className="min-h-[1.3rem] min-w-[1.3rem]">
           <img src={Heart} alt="heart" />
         </div>
         <div>
@@ -70,12 +76,14 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
             <img src={Basket} alt="basket" />
           </div>
         </div>
-        <div className="flex gap-4">
-          <div>Войти</div>
-          <div>
-            <img src={Exite} alt="exite" />
+        {isAboveMediumScreen && (
+          <div className="flex items-center gap-4">
+            <div>Войти</div>
+            <div className="min-h-[1.1rem] min-w-[1.1rem]">
+              <img src={Exite} alt="exite" />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   )

@@ -30,7 +30,8 @@ export default {
       xs: "480px",
       sm: "768px",
       md: "1060px",
-      xl: "1300px"
+      xl: "1300px",
+      '2xl': "1500px"
     },
   },
   plugins: [],
