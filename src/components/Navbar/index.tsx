@@ -18,24 +18,31 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
   return (
     <nav className="sticky  top-0 z-30 flex h-[120px] items-center gap-8 border-primary-500 bg-green-850 bg-noise px-14 pb-7 pt-16 xl:gap-16">
       {/* left side */}
-      <div className="w-1/4">
-        <ButtonCatalog />
+      <div className="relative w-1/4">
+        <ButtonCatalog
+          isAboveMediumScreen={isAboveMediumScreen}
+          selectedPage={selectedPage}
+          setSelectedPage={setSelectedPage}
+        />
       </div>
       {/* center side */}
       <div className="2xl:gap-10 flex w-1/2 items-center justify-center gap-3">
         {isAboveMediumScreen && (
           <div className="2xl:gap-4 flex justify-between gap-2">
             <ButtonLink
+              isAboveMediumScreen={isAboveMediumScreen}
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
               page="Главная"
             />
             <ButtonLink
+              isAboveMediumScreen={isAboveMediumScreen}
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
               page="Бриллиант"
             />
             <ButtonLink
+              isAboveMediumScreen={isAboveMediumScreen}
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
               page="Новинки"
@@ -48,16 +55,19 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
         {isAboveMediumScreen && (
           <div className="flex items-center justify-between gap-3">
             <ButtonLink
+              isAboveMediumScreen={isAboveMediumScreen}
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
               page="Категории"
             />
             <ButtonLink
+              isAboveMediumScreen={isAboveMediumScreen}
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
               page="Заказ в подарок"
             />
             <ButtonLink
+              isAboveMediumScreen={isAboveMediumScreen}
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
               page="Уход"
