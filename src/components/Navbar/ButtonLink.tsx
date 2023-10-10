@@ -13,7 +13,7 @@ const ButtonLink = ({ page, selectedPage, setSelectedPage }: Prop) => {
     <AnchorLink
       className={`${
         selectedPage === lowerCasePage
-          ? 'before:absolute before:bottom-1 before:left-[30%] before:h-[1px] before:w-[27px] before:bg-white'
+          ? 'before:absolute before:bottom-1 before:left-[30%] before:h-[1px] before:w-7 before:bg-white'
           : ''
       } relative text-base tracking-tight`}
       href={`#${lowerCasePage}`}

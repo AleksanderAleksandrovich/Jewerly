@@ -1,27 +1,27 @@
 @font-face {
-  font-family: "Geometria";
-  src: url("./assets/fonts/geometria_light.otf") format("opentype"); /* Путь к файлу WOFF2 */
+  font-family: 'Geometria';
+  src: url('./assets/fonts/geometria_light.otf') format('opentype'); /* Путь к файлу WOFF2 */
 
   font-style: normal;
   font-weight: 300;
 }
 @font-face {
-  font-family: "GeometriaItalic";
-  src: url("./assets/fonts/geometria_lightitalic.otf") format("opentype"); /* Путь к файлу WOFF2 */
+  font-family: 'GeometriaItalic';
+  src: url('./assets/fonts/geometria_lightitalic.otf') format('opentype'); /* Путь к файлу WOFF2 */
 
   font-style: italic;
   font-weight: 300;
 }
 @font-face {
-  font-family: "Perpetua";
-  src: url("./assets/fonts/PerpetuaTitlingMTLight.ttf") format("truetype"); /* Путь к файлу WOFF2 */
+  font-family: 'Perpetua';
+  src: url('./assets/fonts/PerpetuaTitlingMTLight.ttf') format('truetype'); /* Путь к файлу WOFF2 */
 
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: "Bergamasco";
-  src: url("./assets/fonts/ofont.ru_Bergamasco.ttf") format("truetype"); /* Путь к файлу WOFF2 */
+  font-family: 'Bergamasco';
+  src: url('./assets/fonts/ofont.ru_Bergamasco.ttf') format('truetype'); /* Путь к файлу WOFF2 */
 
   font-weight: 400;
   font-style: normal;
@@ -31,20 +31,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   background-color: #0c1617;
-  background-image: url("./assets/bg/noise.svg"), url("./assets/bg/БЛИК.svg");
+  background-image: url('./assets/bg/noise.svg'), url('./assets/bg/БЛИК.svg');
   background-repeat: repeat, no-repeat;
-  background-size: 1000px 1000px, 100% 100%;
+  background-size:
+    1000px 1000px,
+    100% 100%;
 }
-#root {
- 
-}
-.home {
- 
-  font-family: "Geometria";
-  @apply text-primary-500;
-  margin: 1.5rem;
-  border: 1px solid #dfad9a;
-}
+

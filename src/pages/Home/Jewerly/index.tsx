@@ -7,7 +7,7 @@ const Jewerly = () => {
     <>
       <section
         id="главная"
-        className="mx-14 border-b-[1px]  border-t-[1px] border-primary-500 mt-[120px]"
+        className="mx-14 border-b-[1px]  border-t-[1px] border-primary-500 "
       >
         <div className="flex">
           <div className=" relative w-1/4">
@@ -16,7 +16,7 @@ const Jewerly = () => {
           </div>
           <div className="w-3/4 ">
             {/* text */}
-            <div className="mt-20 flex flex-col">
+            <div className="mt-28 flex flex-col">
               <h1 className="-ml-56 font-bergamasco text-9xl text-white">
                 Ювелирные
               </h1>
@@ -33,8 +33,8 @@ const Jewerly = () => {
             <div className="xl:-mt-10 mt-4 flex ">
               <div className="relative  mb-24 w-2/3">
                 <div
-                  className="before:absolute  before:-top-10 before:right-24 before:z-[-1] before:h-[450px] before:w-[450px] before:bg-blic1 before:bg-cover after:absolute  after:-bottom-32 after:-left-32 after:z-[-1] 
-              after:h-[400px] after:w-[400px] after:bg-blic2 after:bg-cover"
+                  className="before:absolute  before:-top-10 before:right-24 before:z-[-1] before:h-[25rem] before:w-[28.1rem] before:bg-blic1 before:bg-cover after:absolute  after:-bottom-32 after:-left-32 after:z-[-1] 
+              after:h-[25rem] after:w-[25rem] after:bg-blic2 after:bg-cover"
                 >
                   <img className="mx-auto" src={PhotoFirstScreen} alt="photo" />
                 </div>
@@ -50,7 +50,7 @@ const Jewerly = () => {
       <div className='my-4'>
         <img className="mx-auto" src={Brilliant} alt="brilliant" />
       </div>
-      <div className='h-[1px] bg-primary-500 w-[70%] mx-auto'></div>
+      <div className='h-[1px] bg-primary-500 w-[70%] mx-auto'/>
     </>
   )
 }
