@@ -4,9 +4,10 @@ import Button from './Button'
 type Props = {
   page: string
   img: string
+  className?: string
 }
 
-const ButtonPage = ({ page, img }: Props) => {
+const ButtonPage = ({ page, img, className }: Props) => {
   const Icon = (
     <div className="h-[1.6rem] w-[1.6rem]">
       <img
@@ -18,7 +19,9 @@ const ButtonPage = ({ page, img }: Props) => {
   )
   return (
     <Button
-      buttonProps={{ className: 'flex items-center justify-start gap-5' }}
+      buttonProps={{
+        className: `${className} flex items-center justify-start gap-5`,
+      }}
       iconLeft={Icon}
     >
       <div className="whitespace-nowrap text-[1.5rem] tracking-tight transition duration-500 hover:text-primary-500 ">

@@ -2,6 +2,7 @@ import Brilliant from '@/assets/icons/БрилиантNavbar.svg'
 import PhotoFirstScreen from '@/assets/photo/Фото первого экрана.png'
 import Ring from '@/assets/photo/Ellipse 330.png'
 import Catalog from '@/assets/photo/Фоно на кнопке.png'
+import Button from '@/components/Buttons/Button'
 const Jewerly = () => {
   return (
     <>
@@ -18,10 +19,10 @@ const Jewerly = () => {
             {/* text */}
             <div className="-ml-[16.5rem] mt-28 flex flex-col">
               <h1 className="font-bergamasco text-9xl text-white">Ювелирные</h1>
-              <h1 className="-mt-8 mr-60 text-right font-bergamasco text-9xl text-white">
+              <h1 className="-mt-8 mr-[17rem] text-right font-bergamasco text-9xl text-white">
                 украшения
               </h1>
-              <div className="-mt-2 ml-auto mr-64">
+              <div className="-mt-2 ml-auto mr-[17rem]">
                 <h2 className="text-4xl">Ваш путь к сиянию</h2>
                 <h2 className="text-4xl">и элегантности</h2>
               </div>
@@ -37,12 +38,20 @@ const Jewerly = () => {
                   <img className="mx-auto" src={PhotoFirstScreen} alt="photo" />
                 </div>
               </div>
-              <div className="mt-12  w-1/3  ">
-                <div className="flex  h-full flex-col  ">
-                  <img className="mx-auto" src={Catalog} alt="" />
+              <Button buttonProps={{ className: 'mt-12 w-1/3 ' }}>
+                <div className=" flex h-full flex-col">
+                  <div className="relative">
+                    <img className="mx-auto" src={Catalog} alt="catalog" />
+                    <div
+                      className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 transform whitespace-nowrap  text-[1.5rem] text-white 
+                    before:absolute before:left-1/2 before:top-full before:h-[1px] before:w-[10rem] before:-translate-x-1/2 before:-translate-y-1/2 before:transform before:bg-white"
+                    >
+                      ПЕРЕЙТИ В КАТАЛОГ
+                    </div>
+                  </div>
                   <div className="mx-auto w-[1px] flex-1 bg-primary-500"></div>
                 </div>
-              </div>
+              </Button>
             </div>
           </div>
         </div>
