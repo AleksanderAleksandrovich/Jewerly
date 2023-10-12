@@ -4,7 +4,7 @@ import { SelectedPage } from '@/types/home'
 import BurgerCatalog from '@/assets/icons/BurgerCatalog.svg'
 import PartButtonLink from './PartButtonLink'
 import Catalog from './Catalog'
-import ButtonBurgerCatalog from './ButtonBurgerCatalog'
+import ButtonBurgerCatalog from '../Buttons/ButtonBurgerCatalog'
 
 type Props = {
   selectedPage: SelectedPage
@@ -19,48 +19,54 @@ const ButtonCatalog = ({
 }: Props) => {
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false)
   const [isCatalogOpen, setIsCatalogOpen] = useState<boolean>(false)
+
+  function ContentCatalog() {
+    if (isCatalogOpen) return <Catalog />
+    return (
+      <PartButtonLink
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
+    )
+  }
+  function ContentBurger() {
+    if (isAboveMediumScreen) return <Catalog />
+    return (
+      <div>
+        <ButtonBurgerCatalog
+          page="Каталог"
+          img={BurgerCatalog}
+          onClick={() => setIsCatalogOpen(!isCatalogOpen)}
+        />
+        <div className="h-[1px] bg-primary-500" />
+        <ContentCatalog />
+      </div>
+    )
+  }
+  function BurgerOpen() {
+    if (!isBurgerOpen) return
+    return (
+      <div className="absolute left-0 top-[3.72rem] flex w-[25rem] flex-col bg-secondary-400 px-14 py-8 text-green-850 ">
+        <ContentBurger />
+      </div>
+    )
+  }
   return (
     <>
       <button
-        className=" h-9 rounded-full border-[1px] border-primary-500 bg-transparent px-4"
+        className="flex h-9 items-center rounded-full border-[1px] border-primary-500 bg-transparent px-4 py-2"
         onClick={() => setIsBurgerOpen(!isBurgerOpen)}
       >
         {isAboveMediumScreen ? (
           <div className="flex items-center justify-between gap-4">
             <img src={Burger} alt="burger" />
-            <div className="text-base tracking-tight">Каталог</div>
+            <span className="text-base tracking-tight">Каталог</span>
           </div>
         ) : (
           <img className="min-w-[1.4rem]" src={Burger} alt="burger" />
         )}
       </button>
-      {/* bg-secondary-400 */}
-
-      {isBurgerOpen && (
-        <div className="absolute left-0 top-[3.72rem] flex w-[25rem] flex-col bg-secondary-400 px-14 py-8 text-green-850 ">
-          {isAboveMediumScreen ? (
-            <Catalog />
-          ) : (
-            <div>
-              <ButtonBurgerCatalog
-                page="Каталог"
-                img={BurgerCatalog}
-                onClick={() => setIsCatalogOpen(!isCatalogOpen)}
-              />
-              <div className="h-[1px] bg-primary-500" />
-              {isCatalogOpen ? (
-                <Catalog />
-              ) : (
-                <PartButtonLink
-                  isAboveMediumScreen={isAboveMediumScreen}
-                  selectedPage={selectedPage}
-                  setSelectedPage={setSelectedPage}
-                />
-              )}
-            </div>
-          )}
-        </div>
-      )}
+      {isBurgerOpen && <BurgerOpen />}
     </>
   )
 }

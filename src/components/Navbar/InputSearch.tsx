@@ -10,9 +10,9 @@ const InputSearch = () => {
   return (
     <>
       {isAboveSmallScreen ? (
-        <div className="flex h-9 items-center justify-between gap-5 rounded-full border-[1px] border-primary-500 bg-transparent px-4 ">
+        <div className="flex h-9 items-center justify-between gap-3 rounded-full border-[1px] border-primary-500 bg-transparent px-4 py-2 ">
           <input
-            className="h-5 w-12 bg-transparent font-geoItal text-sm  tracking-tight text-primary-500 focus:outline-none"
+            className="h-5 w-20 bg-transparent font-geoItal text-base tracking-tight text-primary-500 focus:outline-none"
             placeholder="Поиск"
           />
           <button className="min-h-[1.1rem] min-w-[1.1rem]">
