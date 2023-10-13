@@ -33,7 +33,7 @@ const SearchSmallScreen = ({ isOpenSearch, setIsOpenSearch }: Props) => (
   </div>
 )
 const SearchOpenForSmallScreen = () => (
-  <div className="absolute -bottom-[2.6rem] left-[3.5rem] flex h-[2.55rem] w-[30rem] items-center justify-between rounded-full bg-secondary-400 px-6 py-5 
+  <div className="absolute -bottom-[2.6rem] left-[7rem] flex h-[2.55rem] w-[30rem] items-center justify-between rounded-full bg-secondary-400 px-6 py-5 
   sm:-bottom-[6.1rem] sm:-left-52 sm:h-[4.1rem]  sm:w-[20rem]">
     <input
       placeholder="Поиск"
