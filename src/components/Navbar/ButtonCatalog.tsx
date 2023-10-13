@@ -69,7 +69,7 @@ function ContentMenu({ selectedPage, setSelectedPage }: Props) {
 
 function MenuCatalog({ selectedPage, setSelectedPage }: Props) {
   return (
-    <div className="absolute left-0 top-[3.72rem] flex w-[25rem] flex-col bg-secondary-400 px-14 py-8 text-green-850 ">
+    <div className="absolute -left-[3.5rem] sm:left-0 top-[3.72rem] flex w-[22rem] sm:w-[25rem] flex-col bg-secondary-400 px-14 py-8 text-green-850 ">
       <ContentMenu
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}

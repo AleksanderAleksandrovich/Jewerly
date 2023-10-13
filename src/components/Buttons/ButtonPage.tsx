@@ -24,7 +24,7 @@ const ButtonPage = ({ page, img, className }: Props) => {
       }}
       iconLeft={Icon}
     >
-      <div className="whitespace-nowrap text-[1.5rem] tracking-tight transition duration-500 hover:text-primary-500 ">
+      <div className="whitespace-nowrap text-[1.25rem] sm:text-[1.5rem] tracking-tight transition duration-500 hover:text-primary-500 ">
         {page}
       </div>
     </Button>

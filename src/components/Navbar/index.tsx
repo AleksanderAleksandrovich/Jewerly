@@ -66,7 +66,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
   const isAboveMediumScreen = useMediaQuery('(min-width: 1300px)')
 
   return (
-    <nav className="sticky top-0 z-30 flex h-[120px] items-center gap-8 bg-green-850 bg-noise px-14 pb-7 pt-16 xl:gap-[3rem]">
+    <nav className="sticky top-0 z-30 px-28 flex h-[120px] items-center gap-8 bg-green-850 bg-noise sm:px-14 pb-7 pt-16  xl:gap-[3rem]">
       {/* left side */}
       <div className="relative w-1/4">
         <ButtonCatalog
@@ -83,7 +83,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
           />
         )}
         <div>
-          <img className="min-w-[2.625rem]" src={Brilliant} alt="brilliant" />
+          <img className="min-h-[2rem]" src={Brilliant} alt="brilliant" />
         </div>
         {isAboveMediumScreen && (
           <PartButtonsLinkRight

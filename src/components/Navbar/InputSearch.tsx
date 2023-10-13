@@ -20,8 +20,21 @@ const SearchFullScreen = () => (
     </button>
   </div>
 )
+const SearchSmallScreen = ({ isOpenSearch, setIsOpenSearch }: Props) => (
+  <div className="flex items-center sm:relative">
+    <button onClick={() => setIsOpenSearch(!isOpenSearch)}>
+      <img
+        className="min-h-[1.4rem] min-w-[1.4rem]"
+        src={Search}
+        alt="search"
+      />
+    </button>
+    {isOpenSearch && <SearchOpenForSmallScreen />}
+  </div>
+)
 const SearchOpenForSmallScreen = () => (
-  <div className="absolute -bottom-[6.3rem] -left-52 flex w-[20rem] items-center justify-between rounded-full bg-secondary-400 px-6  py-5">
+  <div className="absolute -bottom-[2.6rem] left-[3.5rem] flex h-[2.55rem] w-[30rem] items-center justify-between rounded-full bg-secondary-400 px-6 py-5 
+  sm:-bottom-[6.1rem] sm:-left-52 sm:h-[4.1rem]  sm:w-[20rem]">
     <input
       placeholder="Поиск"
       className="w-[14rem] bg-secondary-400 font-geoItal text-[1.25rem] tracking-tight text-primary-500 placeholder:text-primary-500 focus:outline-none"
@@ -33,18 +46,6 @@ const SearchOpenForSmallScreen = () => (
   </div>
 )
 
-const SearchSmallScreen = ({ isOpenSearch, setIsOpenSearch }: Props) => (
-  <div className="relative flex items-center">
-    <button onClick={() => setIsOpenSearch(!isOpenSearch)}>
-      <img
-        className="min-h-[1.4rem] min-w-[1.4rem]"
-        src={Search}
-        alt="search"
-      />
-    </button>
-    {isOpenSearch && <SearchOpenForSmallScreen />}
-  </div>
-)
 const InputSearch = () => {
   const isAboveSmallScreen = useMediaQuery('(min-width: 1060px)')
   const [isOpenSearch, setIsOpenSearch] = useState<boolean>(false)

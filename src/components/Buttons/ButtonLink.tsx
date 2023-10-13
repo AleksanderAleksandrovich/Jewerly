@@ -46,7 +46,7 @@ export const ButtonLinkWithDot = ({
   return (
     <Button buttonProps={{ className: 'flex justify-start items-center' }}>
       <AnchorLink
-        className={`${styleCurrentPage} relative whitespace-nowrap text-[1.5rem]  tracking-tighter `}
+        className={`${styleCurrentPage} relative whitespace-nowrap text-[1.25rem] tracking-tighter  sm:text-[1.5rem] `}
         href={`#${lowerCasePage}`}
         onClick={() => setSelectedPage(lowerCasePage)}
       >

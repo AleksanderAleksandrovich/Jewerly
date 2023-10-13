@@ -21,21 +21,28 @@ const ButtonBurgerCatalog = ({ page, img, onClick, imgRight }: Props) => {
   )
   const IconRight = (
     <div className=" w-4">
-      <img className={`${isOpen&& 'transform rotate-180'} transition duration-500 min-w-4`} src={imgRight} alt={`imgR-${imgRight}`} />
+      <img
+        className={`${
+          isOpen && 'rotate-180 transform'
+        } min-w-4 transition duration-500`}
+        src={imgRight}
+        alt={`imgR-${imgRight}`}
+      />
     </div>
   )
   return (
     <Button
       buttonProps={{
-        onClick: ()=>{onClick()
+        onClick: () => {
+          onClick()
           setIsOpen(!isOpen)
         },
-        className: 'flex items-center justify-start gap-5',
+        className: 'flex items-center justify-start gap-5 ',
       }}
       iconLeft={Icon}
       iconRight={IconRight}
     >
-      <span className=" whitespace-nowrap text-[1.5rem]  tracking-tight mr-28">
+      <span className="mr-20 whitespace-nowrap text-[1.25rem] tracking-tight  sm:mr-28 sm:text-[1.5rem]">
         {page}
       </span>
     </Button>
