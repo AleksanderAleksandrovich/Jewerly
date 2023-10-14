@@ -12,7 +12,7 @@ import Contact from '@/assets/icons/Контакты.svg'
 import PersonLogin from '@/assets/icons/Person.svg'
 import Arow from '@/assets/icons/ArowCatalogButton.svg'
 import Cross from '@/assets/icons/Cross.svg'
-
+import { motion } from 'framer-motion'
 type Props = {
   selectedPage: SelectedPage
   setSelectedPage: (val: SelectedPage) => void
@@ -69,7 +69,7 @@ function ContentMenu({ selectedPage, setSelectedPage }: Props) {
 
 function MenuCatalog({ selectedPage, setSelectedPage }: Props) {
   return (
-    <div className="absolute -left-[3.5rem] sm:left-0 top-[3.72rem] flex w-[22rem] sm:w-[25rem] flex-col bg-secondary-400 px-14 py-8 text-green-850 ">
+    <div className="absolute -left-[3.5rem] top-[3.5rem] flex w-[22rem] flex-col bg-secondary-400 px-14 py-8 text-green-850 sm:left-0 sm:w-[25rem] ">
       <ContentMenu
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
@@ -83,7 +83,7 @@ const CatalogButtonFullScreen = ({
 }: {
   isBurgerOpen: boolean
 }) => {
-  const content = isBurgerOpen ?Cross: Burger  
+  const content = isBurgerOpen ? Cross : Burger
   return (
     <div className="flex items-center justify-between gap-4">
       <img className="min-w-[1.4rem]" src={content} alt={content} />
@@ -97,22 +97,40 @@ const CatalogButtonSmallScreen = ({
 }: {
   isBurgerOpen: boolean
 }) => {
-  const content = isBurgerOpen ?  Cross: Burger 
+  const content = isBurgerOpen ? Cross : Burger
   return <img className="min-w-[1.4rem]" src={content} alt="burger" />
 }
 
 const ButtonCatalog = ({ selectedPage, setSelectedPage }: Props) => {
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false)
-
+  const [isFirstClickButtonCatalog, setIsFirstClickButtonCatalog] =
+    useState<boolean>(false)
   const isAboveMediumScreen = useMediaQuery('(min-width: 1300px)')
+  const isAboveMobileScreen = useMediaQuery('(min-width: 768px)')
 
+  const show = {
+    opacity: 1,
+    y: '-2rem',
+  }
+  const duration = isAboveMobileScreen ? 0.5 : 0
+  const hide = isFirstClickButtonCatalog
+    ? {
+        opacity: 0,
+        y: '2rem',
+      }
+    : {
+        display: 'none',
+      }
   return (
     <>
       <Button
         buttonProps={{
           className:
             'flex h-9 items-center rounded-full border-[1px] border-primary-500 bg-transparent px-4 py-2',
-          onClick: () => setIsBurgerOpen(!isBurgerOpen),
+          onClick: () => {
+            setIsBurgerOpen(!isBurgerOpen)
+            setIsFirstClickButtonCatalog(true)
+          },
         }}
       >
         {isAboveMediumScreen ? (
@@ -121,12 +139,17 @@ const ButtonCatalog = ({ selectedPage, setSelectedPage }: Props) => {
           <CatalogButtonSmallScreen isBurgerOpen={isBurgerOpen} />
         )}
       </Button>
-      {isBurgerOpen && (
+
+      <motion.div
+        initial={hide}
+        animate={isBurgerOpen ? show : hide}
+        transition={{ duration: duration }}
+      >
         <MenuCatalog
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}
         />
-      )}
+      </motion.div>
     </>
   )
 }
