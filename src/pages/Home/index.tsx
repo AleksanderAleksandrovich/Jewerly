@@ -11,7 +11,7 @@ function Home() {
   return (
     <>
       <Navbar setSelectedPage={setSelectedPage} selectedPage={selectedPage} />
-      <Jewerly/>
+      <Jewerly setSelectedPage={setSelectedPage}/>
       <div id='бриллиант' className="h-[2000px]"></div>
     </>
   );

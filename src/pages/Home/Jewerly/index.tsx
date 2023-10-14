@@ -4,13 +4,29 @@ import Ring from '@/assets/photo/Ellipse 330.png'
 import Catalog from '@/assets/photo/Фоно на кнопке.png'
 import Button from '@/components/Buttons/Button'
 import useMediaQuery from '@/hooks/useMediaQuery'
+import { motion } from 'framer-motion'
+import { SelectedPage } from '@/types/home'
+type Prop = {
+  setSelectedPage: (val: SelectedPage) => void
+}
 
-const FullScreenJeverly = () => {
+const FullScreenJeverly = ({ setSelectedPage }: Prop) => {
   return (
-    <div className="flex">
+    <motion.div
+      className="flex"
+      onViewportEnter={() => setSelectedPage(SelectedPage.Главная)}
+    >
       <div className=" relative w-[28.5%]">
         <div className="absolute left-1/2 top-0 z-[-1] h-full w-[1px] bg-primary-500"></div>
-        <img
+        <motion.img
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 1.2 }}
+          variants={{
+            hidden: { y: -50 },
+            visible: { y: 0 },
+          }}
           className="mx-auto sm:mt-[43rem] sm:max-h-[12rem] xl:mt-[35rem] xl:max-h-full"
           src={Ring}
           alt="ring"
@@ -19,23 +35,54 @@ const FullScreenJeverly = () => {
       <div className="w-[71.5%] ">
         {/* text */}
         <div className="mt-28 flex flex-col sm:-ml-[14rem] xl:-ml-[16.5rem]">
-          <h1 className="font-bergamasco text-white sm:text-[6.87rem] xl:text-9xl">
+          <motion.h1
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 1.2 }}
+            variants={{
+              hidden: { y: -80 },
+              visible: { y: 0 },
+            }}
+            className="font-bergamasco text-white sm:text-[6.87rem] xl:text-9xl"
+          >
             Ювелирные
-          </h1>
-          <h1 className="text-right font-bergamasco text-white sm:-mt-[5rem] sm:mr-[4rem] sm:text-[6.87rem] xl:-mt-8 xl:mr-[17rem] xl:text-9xl">
+          </motion.h1>
+          <motion.h1
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 1.2 }}
+            variants={{
+              hidden: { y: 80 },
+              visible: { y: 0 },
+            }}
+            className="text-right font-bergamasco text-white sm:-mt-[5rem] sm:mr-[4rem] sm:text-[6.87rem] xl:-mt-8 xl:mr-[17rem] xl:text-9xl"
+          >
             украшения
-          </h1>
-          <div className="ml-auto sm:-mt-8 sm:mr-[5rem] xl:-mt-2 xl:mr-[17rem]">
+          </motion.h1>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 1, duration: 1.2 }}
+            variants={{
+              hidden: { opacity:0,x: 80 },
+              visible: { opacity:1,x: 0 },
+            }}
+            className="ml-auto sm:-mt-8 sm:mr-[5rem] xl:-mt-2 xl:mr-[17rem]"
+          >
             <h2 className="sm:text-[2rem] xl:text-4xl">Ваш путь к сиянию</h2>
             <h2 className="sm:text-[2rem] xl:text-4xl">и элегантности</h2>
-          </div>
+          </motion.div>
         </div>
 
         {/*  image center and right */}
         <div className="flex sm:mt-4 xl:-mt-6 ">
-          <div className="relative  mb-24 w-2/3 ">
+          <div className="relative mb-24 w-2/3 ">
             <div
-              className="before:absolute before:z-[-1] before:h-[25rem] before:w-[28.1rem] before:bg-blic1 before:bg-cover after:absolute after:-bottom-32 after:-left-32 after:z-[-1] after:h-[25rem]  after:w-[25rem] after:bg-blic2 after:bg-cover 
+              className="before:absolute before:z-[-1] before:h-[25rem] before:w-[28.1rem] before:bg-blic1 before:bg-cover
+              after:absolute after:-bottom-32 after:-left-32 after:z-[-1] after:h-[25rem] after:w-[25rem] after:bg-blic2 after:bg-cover 
       before:sm:-right-[8rem] before:sm:-top-[8.5rem] before:xl:-right-[1rem] before:xl:-top-[6.5rem]"
             >
               <img
@@ -45,8 +92,8 @@ const FullScreenJeverly = () => {
               />
             </div>
           </div>
-          <Button buttonProps={{ className: 'sm:mt-8 xl:mt-16 w-1/3 ' }}>
-            <div className=" flex h-full flex-col">
+          <Button buttonProps={{ className: 'sm:mt-8 xl:mt-16 w-1/3' }}>
+            <div className="flex h-full flex-col">
               <div className="relative">
                 <img
                   className="mx-auto sm:max-h-[18.75rem] xl:max-h-full"
@@ -65,12 +112,15 @@ const FullScreenJeverly = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
-const MobileScreenJeverly = () => {
+const MobileScreenJeverly = ({ setSelectedPage }: Prop) => {
   return (
-    <div className="mx-auto flex flex-col mt-28">
+    <motion.div
+      className="mx-auto mt-28 flex flex-col"
+      onViewportEnter={() => setSelectedPage(SelectedPage.Главная)}
+    >
       <h1 className="ml-14 font-bergamasco text-[4rem] text-white">
         Ювелирные
       </h1>
@@ -111,10 +161,10 @@ const MobileScreenJeverly = () => {
       <div className="mx-auto mb-[3rem] mt-[2.4rem]">
         <img className="max-h-[6.37rem]" src={Ring} alt="ring" />
       </div>
-    </div>
+    </motion.div>
   )
 }
-const Jewerly = () => {
+const Jewerly = ({ setSelectedPage }: Prop) => {
   const isAboveFullScreen = useMediaQuery('(min-width: 768px)')
   return (
     <>
@@ -122,12 +172,16 @@ const Jewerly = () => {
         id="главная"
         className="mx-14 border-t-[1px] border-primary-500 "
       >
-        {isAboveFullScreen ? <FullScreenJeverly /> : <MobileScreenJeverly />}
+        {isAboveFullScreen ? (
+          <FullScreenJeverly setSelectedPage={setSelectedPage} />
+        ) : (
+          <MobileScreenJeverly setSelectedPage={setSelectedPage} />
+        )}
         <div className="mx-auto h-[1px] w-[80%] bg-primary-500 sm:w-[100%]" />
         <div className="my-4">
           <img className="mx-auto" src={Brilliant} alt="brilliant" />
         </div>
-        <div className="mx-auto h-[1px] w-[70%] sm:w-[70%] bg-primary-500" />
+        <div className="mx-auto h-[1px] w-[70%] bg-primary-500 sm:w-[70%]" />
       </section>
     </>
   )
