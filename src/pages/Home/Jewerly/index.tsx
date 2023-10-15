@@ -149,7 +149,7 @@ const MobileScreenJeverly = ({ setSelectedPage }: Prop) => {
       </Button>
       <div className="mx-auto h-[4.65rem] w-[1px] bg-primary-500"></div>
       <div
-        className=" relative ml-[1.7rem] before:absolute before:-right-[8rem] before:-top-[8.5rem] before:z-[-1] before:h-[25rem] before:w-[28.1rem] before:bg-blic1 before:bg-cover after:absolute after:-bottom-32 after:-left-32  after:z-[-1] after:h-[25rem] after:w-[25rem] 
+        className=" relative ml-[1.7rem] before:absolute before:-right-[5rem] before:-top-[8.5rem] before:z-[-1] before:h-[25rem] before:w-[28.1rem] before:bg-blic1 before:bg-cover after:absolute after:-bottom-32 after:-left-32  after:z-[-1] after:h-[25rem] after:w-[25rem] 
        after:bg-blic2 after:bg-cover"
       >
         <img
@@ -170,7 +170,7 @@ const Jewerly = ({ setSelectedPage }: Prop) => {
     <>
       <section
         id="главная"
-        className="mx-14 border-t-[1px] border-primary-500 "
+        className="mx-14 border-t-[1px] border-primary-500 mt-[1px]"
       >
         {isAboveFullScreen ? (
           <FullScreenJeverly setSelectedPage={setSelectedPage} />

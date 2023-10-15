@@ -66,7 +66,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
   const isAboveMediumScreen = useMediaQuery('(min-width: 1300px)')
 
   return (
-    <nav className="sticky top-0 z-30 flex h-[120px] items-center gap-8 bg-green-850 bg-noise px-28 pb-7 pt-16 sm:px-14  xl:gap-[3rem]">
+    <nav className="bg-noise-green bg- sticky top-0 z-30 flex h-[120px] items-center gap-8 px-28 pb-7 pt-16 sm:px-14 xl:gap-[3rem]">
       {/* left side */}
       <div className="relative w-1/4">
         <ButtonCatalog

@@ -1,7 +1,7 @@
-import Navbar from "@/components/Navbar";
-import Jewerly from "./Jewerly";
-import { useState } from "react";
-import { SelectedPage } from "@/types/home";
+import Navbar from '@/components/Navbar'
+import Jewerly from './Jewerly'
+import { useState } from 'react'
+import { SelectedPage } from '@/types/home'
 
 function Home() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -11,9 +11,9 @@ function Home() {
   return (
     <>
       <Navbar setSelectedPage={setSelectedPage} selectedPage={selectedPage} />
-      <Jewerly setSelectedPage={setSelectedPage}/>
-      <div id='бриллиант' className="h-[2000px]"></div>
+      <Jewerly setSelectedPage={setSelectedPage} />
+      <div id="бриллиант" className="h-[2000px]"></div>
     </>
-  );
+  )
 }
-export default Home;
+export default Home

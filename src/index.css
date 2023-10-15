@@ -39,4 +39,9 @@ body {
     1000px 1000px,
     100% 100%;
 }
-
+.bg-noise-green {
+  background-color: #0c1617;
+  background-image: url('./assets/bg/noise.svg');
+  background-repeat: repeat;
+  background-size: 1000px 1000px;
+}
