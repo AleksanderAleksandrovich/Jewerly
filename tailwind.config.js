@@ -17,6 +17,7 @@ export default {
       },
       fontFamily: {
         geo: ['Geometria', 'sans-serif'],
+        geoMed: ['GeometriaMedium', 'sans-serif'],
         geoItal: ['GeometriaItalic', 'sans-serif'],
         bergamasco: ['Bergamasco', 'sans-serif'],
       },

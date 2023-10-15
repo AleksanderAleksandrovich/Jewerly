@@ -13,6 +13,13 @@
   font-weight: 300;
 }
 @font-face {
+  font-family: 'GeometriaMedium';
+  src: url('./assets/fonts/geometria_medium.otf') format('opentype'); /* Путь к файлу WOFF2 */
+
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
   font-family: 'Perpetua';
   src: url('./assets/fonts/PerpetuaTitlingMTLight.ttf') format('truetype'); /* Путь к файлу WOFF2 */
 
