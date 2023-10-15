@@ -1,4 +1,3 @@
-import Brilliant from '@/assets/icons/БрилиантNavbar.svg'
 import PhotoFirstScreen from '@/assets/photo/Фото первого экрана.png'
 import Ring from '@/assets/photo/Ellipse 330.png'
 import Catalog from '@/assets/photo/Фоно на кнопке.png'
@@ -6,6 +5,7 @@ import Button from '@/components/Buttons/Button'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import { motion } from 'framer-motion'
 import { SelectedPage } from '@/types/home'
+import BrlliantWithLines from '@/components/BrilliantWithLines'
 type Prop = {
   setSelectedPage: (val: SelectedPage) => void
 }
@@ -67,8 +67,8 @@ const FullScreenJeverly = ({ setSelectedPage }: Prop) => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 1, duration: 1.2 }}
             variants={{
-              hidden: { opacity:0,x: 80 },
-              visible: { opacity:1,x: 0 },
+              hidden: { opacity: 0, x: 80 },
+              visible: { opacity: 1, x: 0 },
             }}
             className="ml-auto sm:-mt-8 sm:mr-[5rem] xl:-mt-2 xl:mr-[17rem]"
           >
@@ -81,9 +81,9 @@ const FullScreenJeverly = ({ setSelectedPage }: Prop) => {
         <div className="flex sm:mt-4 xl:-mt-6 ">
           <div className="relative mb-24 w-2/3 ">
             <div
-              className="before:absolute before:z-[-1] before:h-[25rem] before:w-[28.1rem] before:bg-blic1 before:bg-cover
+              className="before:absolute before:z-[-1] before:h-[45rem] before:w-[45rem] before:bg-blic1 before:bg-cover
               after:absolute after:-bottom-32 after:-left-32 after:z-[-1] after:h-[25rem] after:w-[25rem] after:bg-blic2 after:bg-cover 
-      before:sm:-right-[8rem] before:sm:-top-[8.5rem] before:xl:-right-[1rem] before:xl:-top-[6.5rem]"
+      before:sm:-right-[8rem] before:sm:-top-[8.5rem] before:xl:-right-[5rem] before:xl:-top-[10rem]"
             >
               <img
                 className="mx-auto max-h-[47rem]"
@@ -149,7 +149,7 @@ const MobileScreenJeverly = ({ setSelectedPage }: Prop) => {
       </Button>
       <div className="mx-auto h-[4.65rem] w-[1px] bg-primary-500"></div>
       <div
-        className=" relative ml-[1.7rem] before:absolute before:-right-[5rem] before:-top-[8.5rem] before:z-[-1] before:h-[25rem] before:w-[28.1rem] before:bg-blic1 before:bg-cover after:absolute after:-bottom-32 after:-left-32  after:z-[-1] after:h-[25rem] after:w-[25rem] 
+        className=" relative ml-[1.7rem] before:absolute before:-right-[3rem] before:-top-[3.5rem] before:z-[-1] before:h-[30rem] before:w-[35rem] before:bg-blic1 before:bg-cover after:absolute after:-bottom-32 after:-left-32  after:z-[-1] after:h-[25rem] after:w-[25rem] 
        after:bg-blic2 after:bg-cover"
       >
         <img
@@ -170,18 +170,14 @@ const Jewerly = ({ setSelectedPage }: Prop) => {
     <>
       <section
         id="главная"
-        className="mx-14 border-t-[1px] border-primary-500 mt-[1px]"
+        className="mx-14 mt-[1px] border-t-[1px] border-primary-500"
       >
         {isAboveFullScreen ? (
           <FullScreenJeverly setSelectedPage={setSelectedPage} />
         ) : (
           <MobileScreenJeverly setSelectedPage={setSelectedPage} />
         )}
-        <div className="mx-auto h-[1px] w-[80%] bg-primary-500 sm:w-[100%]" />
-        <div className="my-4">
-          <img className="mx-auto" src={Brilliant} alt="brilliant" />
-        </div>
-        <div className="mx-auto h-[1px] w-[70%] bg-primary-500 sm:w-[70%]" />
+        <BrlliantWithLines />
       </section>
     </>
   )

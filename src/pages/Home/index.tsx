@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar'
 import Jewerly from './Jewerly'
 import { useState } from 'react'
 import { SelectedPage } from '@/types/home'
+import Brilliant from './Brilliant'
 
 function Home() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -12,7 +13,7 @@ function Home() {
     <>
       <Navbar setSelectedPage={setSelectedPage} selectedPage={selectedPage} />
       <Jewerly setSelectedPage={setSelectedPage} />
-      <div id="бриллиант" className="h-[2000px]"></div>
+      <Brilliant setSelectedPage={setSelectedPage} />
     </>
   )
 }
