@@ -2,32 +2,26 @@ import { SelectedPage } from '@/types/home'
 import { motion } from 'framer-motion'
 import ItemsStore from '@/db/db.json'
 import ShopingCard from '@/components/ShopingCard'
-import Button from '@/components/Buttons/Button'
-import Arrow from '@/assets/icons/Стрелочка на некоторых кнопках.svg'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import Star from '@/assets/icons/Зирочка.svg'
+import { ButtonPageWithArrow } from '@/components/Buttons/ButtonPageWithArrow'
 type Props = {
   setSelectedPage: (val: SelectedPage) => void
 }
 const NewsModileScreen = () => (
   <>
     <h2 className="mx-auto font-bergamasco text-[3rem]">Новое поступление</h2>
-    <div className='mx-auto mt-6'>
+    <div className="mx-auto mt-6">
       {ItemsStore.map((item) => (
         <ShopingCard key={item.id} {...item} />
       ))}
     </div>
     <div className="flex justify-end">
-      <Button
-        iconRight={<img src={Arrow} alt="" />}
-        buttonProps={{
-          className:
-            'w-[14.8rem] py-2 flex tracking-tight whitespace-nowrap text-[1.5rem] justify-betwine items-center gap-[1.5rem] text-white border-b-[1px] border-white',
-        }}
-      >
+      <ButtonPageWithArrow style="w-[14.8rem]   text-[1.5rem]    ">
         СМОТРЕТЬ ВСЕ
-      </Button>
+      </ButtonPageWithArrow>
     </div>
+    <img className="absolute -bottom-[5rem] left-0" src={Star} alt="star" />
   </>
 )
 const NewsMediumScreen = () => {
@@ -44,15 +38,15 @@ const NewsMediumScreen = () => {
           <tr>
             <td className="border-r-[1px] border-primary-500 pt-8">
               {firstTwoEl.map((item) => (
-                <div className="mb-8 flex justify-start">
-                  <ShopingCard key={item.id} {...item} />
+                <div key={item.id} className="mb-8 flex justify-start">
+                  <ShopingCard {...item} />
                 </div>
               ))}
             </td>
             <td className="border-l-[1px] border-primary-500 pt-8">
               {secondTwoEl.map((item) => (
-                <div className="mb-8 flex justify-end">
-                  <ShopingCard key={item.id} {...item} />
+                <div key={item.id} className="mb-8 flex justify-end">
+                  <ShopingCard {...item} />
                 </div>
               ))}
             </td>
@@ -60,15 +54,9 @@ const NewsMediumScreen = () => {
         </tbody>
       </table>
       <div className="flex justify-end">
-        <Button
-          iconRight={<img src={Arrow} alt="arrow" />}
-          buttonProps={{
-            className:
-              'w-[17.2rem] py-2 flex tracking-tight whitespace-nowrap text-[2rem] justify-betwine items-center gap-[1.5rem] text-white border-b-[1px] border-white',
-          }}
-        >
+        <ButtonPageWithArrow style="w-[17.2rem]  text-[2rem] ">
           СМОТРЕТЬ ВСЕ
-        </Button>
+        </ButtonPageWithArrow>
       </div>
       <img
         className="absolute bottom-2 right-[calc(50%-23px)]"
@@ -88,14 +76,16 @@ const NewsFullScreen = () => (
           {ItemsStore.map((item, index) => (
             <td
               key={item.id}
-              className={`px-auto py-[3.3rem] ${
+              className={`px-auto py-[3.3rem] 
+              ${
                 index === 0
                   ? 'pl-[5.6rem]'
                   : 'border-l-[1px] border-primary-500'
-              } ${index === ItemsStore.length - 1 ? 'pr-[5.6rem]' : ''}`}
+              } 
+              ${index === ItemsStore.length - 1 ? 'pr-[5.6rem]' : ''}`}
             >
               <div className="flex justify-center">
-                <ShopingCard key={item.id} {...item} />
+                <ShopingCard {...item} />
               </div>
             </td>
           ))}
@@ -103,15 +93,9 @@ const NewsFullScreen = () => (
       </tbody>
     </table>
     <div className="flex justify-end">
-      <Button
-        iconRight={<img src={Arrow} alt="" />}
-        buttonProps={{
-          className:
-            'w-[17.2rem] py-2 flex tracking-tight whitespace-nowrap text-[2rem] justify-betwine items-center gap-[1.5rem] text-white border-b-[1px] border-white',
-        }}
-      >
+      <ButtonPageWithArrow style="w-[17.2rem]  text-[2rem]">
         СМОТРЕТЬ ВСЕ
-      </Button>
+      </ButtonPageWithArrow>
     </div>
   </>
 )

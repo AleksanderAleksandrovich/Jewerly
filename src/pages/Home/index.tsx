@@ -15,7 +15,7 @@ function Home() {
       <Jewerly setSelectedPage={setSelectedPage} />
       <Brilliant setSelectedPage={setSelectedPage} />
       <News setSelectedPage={setSelectedPage} />
-      <div className='mb-16'></div>
+      <div className='h-[1000px]'></div>
     </>
   )
 }
