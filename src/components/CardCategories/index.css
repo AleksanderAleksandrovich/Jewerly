@@ -1,0 +1,41 @@
+
+.container {
+  position: relative;
+  width: 500px; /* Укажите здесь ширину и высоту вашей картинки */
+  height: 500px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 10%; /* Отступ сверху */
+  left: 10%; /* Отступ слева */
+  width: 80%; /* Ширина эффекта */
+  height: 80%; /* Высота эффекта */
+  background-color: rgba(0, 0, 0, 0.3); /* Светлый темный цвет фона */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+  backdrop-filter: blur(2px);
+  border: 1px solid gray /* Размытие заднего фона */
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white; /* Цвет текста на светлом темном фоне */
+  font-size: 24px; /* Размер текста */
+}

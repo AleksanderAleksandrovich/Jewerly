@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { SelectedPage } from '@/types/home'
 import Brilliant from './Brilliant'
 import News from './News'
+import Categories from './Categories'
 function Home() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.Главная
@@ -15,7 +16,8 @@ function Home() {
       <Jewerly setSelectedPage={setSelectedPage} />
       <Brilliant setSelectedPage={setSelectedPage} />
       <News setSelectedPage={setSelectedPage} />
-      <div className='h-[1000px]'></div>
+      <Categories setSelectedPage={setSelectedPage} />
+      <div className="h-[1000px]"></div>
     </>
   )
 }
