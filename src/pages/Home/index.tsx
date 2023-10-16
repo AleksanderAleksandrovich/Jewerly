@@ -3,8 +3,7 @@ import Jewerly from './Jewerly'
 import { useState } from 'react'
 import { SelectedPage } from '@/types/home'
 import Brilliant from './Brilliant'
-import ItemsStore from '@/db/db.json'
-import ShopingCard from '@/components/ShopingCard'
+import News from './News'
 function Home() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.Главная
@@ -15,11 +14,8 @@ function Home() {
       <Navbar setSelectedPage={setSelectedPage} selectedPage={selectedPage} />
       <Jewerly setSelectedPage={setSelectedPage} />
       <Brilliant setSelectedPage={setSelectedPage} />
-      <div className="mx-14 flex items-center justify-between gap-3 flex-wrap">
-        {ItemsStore.map((item) => (
-          <ShopingCard key={item.id} {...item} />
-        ))}
-      </div>
+      <News setSelectedPage={setSelectedPage} />
+      <div className='mb-16'></div>
     </>
   )
 }

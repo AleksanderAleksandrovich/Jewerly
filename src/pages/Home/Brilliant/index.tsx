@@ -9,7 +9,7 @@ type Props = {
 const BrilliantMobile = () => (
   <>
     <h2 className="mb-[2rem] text-center font-bergamasco text-[3rem] leading-tight">
-      Бриллиант идиален для выдающихся украшений
+      Бриллиант идеален для выдающихся украшений
     </h2>
     <div>
       <div className="ml-auto flex w-[75%] flex-col">
@@ -51,7 +51,7 @@ const BrilliantMedium = () => (
       }}
       className="mb-[2rem] text-center font-bergamasco text-[6.875rem] leading-[7rem]"
     >
-      Бриллиант идиален для выдающихся украшений
+      Бриллиант идеален для выдающихся украшений
     </motion.h2>
     <div className="mt-6 flex items-center">
       <div className="before:bg-blicForBril relative w-4/6 before:absolute before:-bottom-[8rem] before:right-[18rem] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-cover">
@@ -103,7 +103,7 @@ const BrilliantFullScreen = () => (
       }}
       className="mb-[2rem] px-32 text-center font-bergamasco text-[8rem] leading-[7rem]"
     >
-      Бриллиант идиален для выдающихся украшений
+      Бриллиант идеален для выдающихся украшений
     </motion.h2>
     <div className="mt-[7.5rem] flex justify-between gap-[1.6rem]">
       <motion.div
