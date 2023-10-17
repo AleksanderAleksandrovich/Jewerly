@@ -17,7 +17,7 @@ const NewsModileScreen = () => (
       ))}
     </div>
     <div className="flex justify-end">
-      <ButtonPageWithArrow style="w-[14.8rem]   text-[1.5rem]    ">
+      <ButtonPageWithArrow style="w-[14.8rem] text-[1.5rem]">
         СМОТРЕТЬ ВСЕ
       </ButtonPageWithArrow>
     </div>
@@ -70,7 +70,7 @@ const NewsMediumScreen = () => {
 const NewsFullScreen = () => (
   <>
     <h2 className="font-bergamasco text-[8rem]">Новое поступление</h2>
-    <table className="before:bg-StarsWithLine relative w-full table-auto border-collapse before:absolute before:-top-[10.6rem] before:right-[5rem] before:z-10 before:h-[10.625rem] before:w-[6.5rem]">
+    <table className="relative w-full table-auto border-collapse before:absolute before:-top-[10.6rem] before:right-[5rem] before:z-10 before:h-[10.625rem] before:w-[6.5rem] before:bg-StarsWithLine">
       <tbody className="border-y-[1px] border-primary-500">
         <tr>
           {ItemsStore.map((item, index) => (
@@ -99,23 +99,21 @@ const NewsFullScreen = () => (
     </div>
   </>
 )
-
-const News = ({ setSelectedPage }: Props) => {
+const NewsContent = () => {
   const isAboveFullScreen = useMediaQuery('(min-width: 1300px)')
   const isAboveMediumScreen = useMediaQuery('(min-width: 768px)')
+  if (isAboveFullScreen) return <NewsFullScreen />
+  if (isAboveMediumScreen) return <NewsMediumScreen />
+  return <NewsModileScreen />
+}
+const News = ({ setSelectedPage }: Props) => {
   return (
     <section id="новинки" className="mx-24 pt-28 sm:mx-14 sm:pt-24">
       <motion.div
         className="relative mx-auto flex flex-col"
         onViewportEnter={() => setSelectedPage(SelectedPage.Новинки)}
       >
-        {isAboveFullScreen ? (
-          <NewsFullScreen />
-        ) : isAboveMediumScreen ? (
-          <NewsMediumScreen />
-        ) : (
-          <NewsModileScreen />
-        )}
+        <NewsContent />
       </motion.div>
     </section>
   )

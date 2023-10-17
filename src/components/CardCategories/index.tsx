@@ -1,21 +1,55 @@
-import React from 'react'
-import Ring from '@/assets/photo/Картинка кольца Категории.png'
 import './index.css'
+import ButtonFileCategoties from './buttonFileCategoties'
+import useMediaQuery from '@/hooks/useMediaQuery'
 type Props = {
-  style?: string|null
+  text: string
+  img: string
 }
-
-const CardCategories = ({ style = null }: Props) => {
-  return (
-    <div className="container">
-  <div className="image-container">
-    <img src={Ring} alt="Your Image" className="image" />
-    <div className="overlay">
-      <div className="text">Для свадьбы</div>
+const CardMobileScreen = ({ img, text }: Props) => (
+  <div className="container">
+    <div className="image-container">
+      <img src={img} alt="Your Image" className="image" />
+      <div className="overlay">
+        <div className="text">{text}</div>
+        <ButtonFileCategoties />
+      </div>
     </div>
   </div>
-</div>
-  )
+)
+const CardMediumScreen = ({ img, text }: Props) => (
+  <div className="container_med">
+    <div className="image-container">
+      <img src={img} alt="Your Image" className="image" />
+      <div className="overlay">
+        <div className="text_med">{text}</div>
+        <ButtonFileCategoties />
+      </div>
+    </div>
+  </div>
+)
+const CardFullScreen = ({ img, text }: Props) => (
+  <div className="container_full">
+    <div className="image-container_full">
+      <img src={img} alt="Your Image" className="image" />
+      <div className="overlay_full">
+        <div className="text_full">{text}</div>
+        <ButtonFileCategoties />
+      </div>
+    </div>
+  </div>
+)
+const CardCategories = ({ text, img }: Props) => {
+  const isAboveFullScreen = useMediaQuery('(min-width: 1300px)')
+  const isAboveMediumScreen = useMediaQuery('(min-width: 768px)')
+
+  if (isAboveFullScreen) {
+    return <CardFullScreen img={img} text={text} />
+  }
+  if (isAboveMediumScreen && !isAboveFullScreen) {
+    return <CardMediumScreen img={img} text={text} />
+  }
+
+  return <CardMobileScreen img={img} text={text} />
 }
 
 export default CardCategories
