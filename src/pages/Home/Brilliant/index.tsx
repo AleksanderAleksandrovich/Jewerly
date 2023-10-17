@@ -23,7 +23,7 @@ const BrilliantMobile = () => (
           Чистота: VS1-VS2
         </TextDescription>
       </div>
-      <div className="before:bg-blicForBril relative mb-8 before:absolute before:-bottom-[8rem] before:right-[calc(50%-10.5rem)] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-cover">
+      <div className="relative mb-8 before:absolute before:-bottom-[8rem] before:right-[calc(50%-10.5rem)] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
         <img
           className="mx-auto max-h-[18rem]"
           src={BigBrilliant}
@@ -54,7 +54,7 @@ const BrilliantMedium = () => (
       Бриллиант идеален для выдающихся украшений
     </motion.h2>
     <div className="mt-6 flex items-center">
-      <div className="before:bg-blicForBril relative w-4/6 before:absolute before:-bottom-[8rem] before:right-[18rem] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-cover">
+      <div className="relative w-4/6 before:absolute before:-bottom-[8rem] before:right-[18rem] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
         <img className="max-h-[25rem] " src={BigBrilliant} alt="bigBrilliant" />
       </div>
       <motion.div
@@ -127,7 +127,7 @@ const BrilliantFullScreen = () => (
           Чистота: VS1-VS2
         </TextDescription>
       </motion.div>
-      <div className="before:bg-blicForBril relative mb-8 w-1/3 before:absolute before:-bottom-[8rem] before:right-[calc(50%-10.5rem)] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-cover">
+      <div className="relative mb-8 w-1/3 before:absolute before:-bottom-[8rem] before:right-[calc(50%-10.5rem)] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
         <img
           className="mx-auto max-h-[25rem]"
           src={BigBrilliant}
@@ -158,22 +158,21 @@ const BrilliantFullScreen = () => (
     </div>
   </>
 )
-const Brilliant = ({ setSelectedPage }: Props) => {
+const BrilliantContent = () => {
   const isAboveFullScreen = useMediaQuery('(min-width: 1300px)')
   const isMediumScreen = useMediaQuery('(min-width: 768px)')
+  if (isAboveFullScreen) return <BrilliantFullScreen />
+  if (isMediumScreen) return <BrilliantMedium />
+  return <BrilliantMobile />
+}
+const Brilliant = ({ setSelectedPage }: Props) => {
   return (
     <section id="бриллиант" className="mx-24 pt-28 sm:mx-14 sm:pt-32">
       <motion.div
         className="mx-auto flex flex-col"
         onViewportEnter={() => setSelectedPage(SelectedPage.Бриллиант)}
       >
-        {isAboveFullScreen ? (
-          <BrilliantFullScreen />
-        ) : isMediumScreen ? (
-          <BrilliantMedium />
-        ) : (
-          <BrilliantMobile />
-        )}
+        <BrilliantContent />
       </motion.div>
     </section>
   )

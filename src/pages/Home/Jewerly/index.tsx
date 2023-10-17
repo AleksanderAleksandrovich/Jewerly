@@ -164,19 +164,20 @@ const MobileScreenJeverly = ({ setSelectedPage }: Prop) => {
     </motion.div>
   )
 }
-const Jewerly = ({ setSelectedPage }: Prop) => {
+const JewerlyContent = ({ setSelectedPage }: Prop) => {
   const isAboveFullScreen = useMediaQuery('(min-width: 768px)')
+  if (isAboveFullScreen)
+    return <FullScreenJeverly setSelectedPage={setSelectedPage} />
+  return <MobileScreenJeverly setSelectedPage={setSelectedPage} />
+}
+const Jewerly = ({ setSelectedPage }: Prop) => {
   return (
     <>
       <section
         id="главная"
         className="mx-14 mt-[1px] border-t-[1px] border-primary-500"
       >
-        {isAboveFullScreen ? (
-          <FullScreenJeverly setSelectedPage={setSelectedPage} />
-        ) : (
-          <MobileScreenJeverly setSelectedPage={setSelectedPage} />
-        )}
+        <JewerlyContent setSelectedPage={setSelectedPage} />
         <BrlliantWithLines />
       </section>
     </>

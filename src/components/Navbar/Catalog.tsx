@@ -1,4 +1,3 @@
-import React from 'react'
 import ButtonPage from '../Buttons/ButtonPage'
 import Braslate from '@/assets/icons/Браслеты.svg'
 import ForHim from '@/assets/icons/Для него.svg'

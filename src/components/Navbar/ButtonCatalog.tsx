@@ -103,24 +103,21 @@ const CatalogButtonSmallScreen = ({
 
 const ButtonCatalog = ({ selectedPage, setSelectedPage }: Props) => {
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false)
-  const [isFirstClickButtonCatalog, setIsFirstClickButtonCatalog] =
-    useState<boolean>(false)
   const isAboveMediumScreen = useMediaQuery('(min-width: 1300px)')
   const isAboveMobileScreen = useMediaQuery('(min-width: 768px)')
 
   const show = {
     opacity: 1,
     y: '-2rem',
+    display: 'block',
   }
   const duration = isAboveMobileScreen ? 0.5 : 0
-  const hide = isFirstClickButtonCatalog
-    ? {
-        opacity: 0,
-        y: '2rem',
-      }
-    : {
-        display: 'none',
-      }
+  const hide = {
+    opacity: 0,
+    y: '2rem',
+    transitionEnd: { display: 'none' },
+  }
+
   return (
     <>
       <Button
@@ -129,7 +126,6 @@ const ButtonCatalog = ({ selectedPage, setSelectedPage }: Props) => {
             'flex h-9 items-center rounded-full border-[1px] border-primary-500 bg-transparent px-4 py-2',
           onClick: () => {
             setIsBurgerOpen(!isBurgerOpen)
-            setIsFirstClickButtonCatalog(true)
           },
         }}
       >

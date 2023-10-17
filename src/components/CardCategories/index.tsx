@@ -1,5 +1,5 @@
 import './index.css'
-import ButtonFileCategoties from './buttonFileCategoties'
+import ButtonCardCategoties from './buttonCardCategoties'
 import useMediaQuery from '@/hooks/useMediaQuery'
 type Props = {
   text: string
@@ -11,7 +11,7 @@ const CardMobileScreen = ({ img, text }: Props) => (
       <img src={img} alt="Your Image" className="image" />
       <div className="overlay">
         <div className="text">{text}</div>
-        <ButtonFileCategoties />
+        <ButtonCardCategoties />
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@ const CardMediumScreen = ({ img, text }: Props) => (
       <img src={img} alt="Your Image" className="image" />
       <div className="overlay">
         <div className="text_med">{text}</div>
-        <ButtonFileCategoties />
+        <ButtonCardCategoties />
       </div>
     </div>
   </div>
@@ -33,7 +33,7 @@ const CardFullScreen = ({ img, text }: Props) => (
       <img src={img} alt="Your Image" className="image" />
       <div className="overlay_full">
         <div className="text_full">{text}</div>
-        <ButtonFileCategoties />
+        <ButtonCardCategoties />
       </div>
     </div>
   </div>
@@ -45,7 +45,7 @@ const CardCategories = ({ text, img }: Props) => {
   if (isAboveFullScreen) {
     return <CardFullScreen img={img} text={text} />
   }
-  if (isAboveMediumScreen && !isAboveFullScreen) {
+  if (isAboveMediumScreen ) {
     return <CardMediumScreen img={img} text={text} />
   }
 

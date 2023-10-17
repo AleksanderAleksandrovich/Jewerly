@@ -255,28 +255,26 @@ const ShopingCard = ({ id, type, color, imgUrl, name, price }: Props) => {
         price={price}
       />
     )
+  if (isAboveMediumScreen)
+    return (
+      <CardForMediumScreen
+        id={id}
+        type={type}
+        color={color}
+        imgUrl={imgUrl}
+        name={name}
+        price={price}
+      />
+    )
   return (
-    <>
-      {isAboveMediumScreen ? (
-        <CardForMediumScreen
-          id={id}
-          type={type}
-          color={color}
-          imgUrl={imgUrl}
-          name={name}
-          price={price}
-        />
-      ) : (
-        <CardForSmallScreen
-          id={id}
-          type={type}
-          color={color}
-          imgUrl={imgUrl}
-          name={name}
-          price={price}
-        />
-      )}
-    </>
+    <CardForSmallScreen
+      id={id}
+      type={type}
+      color={color}
+      imgUrl={imgUrl}
+      name={name}
+      price={price}
+    />
   )
 }
 
