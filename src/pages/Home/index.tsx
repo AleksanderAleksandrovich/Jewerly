@@ -5,6 +5,7 @@ import { SelectedPage } from '@/types/home'
 import Brilliant from './Brilliant'
 import News from './News'
 import Categories from './Categories'
+import Present from './Present'
 function Home() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.Главная
@@ -17,6 +18,7 @@ function Home() {
       <Brilliant setSelectedPage={setSelectedPage} />
       <News setSelectedPage={setSelectedPage} />
       <Categories setSelectedPage={setSelectedPage} />
+      <Present setSelectedPage={setSelectedPage} />
       <div className="h-[1000px]"></div>
     </>
   )
