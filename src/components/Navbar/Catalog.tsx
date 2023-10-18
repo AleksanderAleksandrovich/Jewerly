@@ -1,4 +1,4 @@
-import ButtonPage from '../Buttons/ButtonPage'
+import ButtonPageWithImg from '../Buttons/ButtonPageWithImg'
 import Braslate from '@/assets/icons/Браслеты.svg'
 import ForHim from '@/assets/icons/Для него.svg'
 import Ring from '@/assets/icons/Кольца.svg'
@@ -10,13 +10,13 @@ import Brilliant from '@/assets/icons/Brilliant.svg'
 const Catalog = () => {
   return (
     <div className="flex flex-col gap-2 py-4 pt-6">
-      <ButtonPage page="Новинки" img={Brilliant} />
-      <ButtonPage page="Кулоны и медальоны" img={Pendants} />
-      <ButtonPage page="Кольца" img={Ring} />
-      <ButtonPage page="Серьги" img={Earrings} />
-      <ButtonPage page="Браслеты" img={Braslate} />
-      <ButtonPage page="Для свадьбы" img={ForWedding} />
-      <ButtonPage page="Для него" img={ForHim} />
+      <ButtonPageWithImg page="Новинки" img={Brilliant} />
+      <ButtonPageWithImg page="Кулоны и медальоны" img={Pendants} />
+      <ButtonPageWithImg page="Кольца" img={Ring} />
+      <ButtonPageWithImg page="Серьги" img={Earrings} />
+      <ButtonPageWithImg page="Браслеты" img={Braslate} />
+      <ButtonPageWithImg page="Для свадьбы" img={ForWedding} />
+      <ButtonPageWithImg page="Для него" img={ForHim} />
     </div>
   )
 }

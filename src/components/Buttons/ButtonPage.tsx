@@ -1,32 +1,20 @@
-import React from 'react'
 import Button from './Button'
 
 type Props = {
   page: string
-  img: string
   className?: string
 }
 
-const ButtonPage = ({ page, img, className }: Props) => {
-  const Icon = (
-    <div className="h-[1.6rem] w-[1.6rem]">
-      <img
-        className="min-h-[1.6rem] min-w-[1.6rem]"
-        src={img}
-        alt={`img-${img}`}
-      />
-    </div>
-  )
+const ButtonPage = ({ page, className }: Props) => {
   return (
     <Button
       buttonProps={{
-        className: `${className} flex items-center justify-start gap-5`,
+        className: `${className} mb-[0.5rem] text-start`,
       }}
-      iconLeft={Icon}
     >
-      <div className="whitespace-nowrap text-[1.25rem] sm:text-[1.5rem] tracking-tight transition duration-500 hover:text-primary-500">
+      <span className="whitespace-nowrap text-[2rem] tracking-[-2px] text-primary-500 sm:text-[2.5rem] xl:text-[1.5rem]">
         {page}
-      </div>
+      </span>
     </Button>
   )
 }

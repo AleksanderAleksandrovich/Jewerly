@@ -3,7 +3,7 @@ import Brilliant from '@/assets/icons/БрилиантNavbar.svg'
 const BrlliantWithLines = () => {
   return (
     <>
-      <div className="mx-auto h-[1px] w-[80%] bg-primary-500 sm:w-[100%]" />
+      <div className="mx-auto h-[1px] w-[100%] bg-primary-500 sm:w-[100%]" />
       <div className="my-4">
         <img className="mx-auto" src={Brilliant} alt="brilliant" />
       </div>

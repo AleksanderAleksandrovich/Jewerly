@@ -16,7 +16,7 @@ export const ButtonLinkWithLine = ({
   const lowerCasePage = page.toLowerCase().replace(/ /g, '') as SelectedPage
   const styleCurrentPage = `${
     lowerCasePage === selectedPage
-      ? 'before:absolute before:bottom-0 before:left-[30%] before:h-[1px] before:w-7 before:bg-white text-white'
+      ? 'before:absolute before:bottom-0 before:left-[20%] before:h-[1px] before:w-[60%] before:bg-white text-white'
       : ''
   }`
   return (
