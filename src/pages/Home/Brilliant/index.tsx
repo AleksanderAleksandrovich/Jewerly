@@ -99,8 +99,8 @@ const BrilliantFullScreen = () => (
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 1.2 }}
       variants={{
-        hidden: { y: -50 },
-        visible: { y: 0 },
+        hidden: { opacity: 0, y: -50 },
+        visible: { opacity: 1, y: 0 },
       }}
       className="mb-[2rem] px-32 text-center font-bergamasco text-[8rem] leading-[7rem]"
     >

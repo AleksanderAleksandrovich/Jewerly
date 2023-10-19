@@ -70,7 +70,19 @@ const NewsMediumScreen = () => {
 
 const NewsFullScreen = () => (
   <>
-    <h2 className="font-bergamasco text-[8rem]">Новое поступление</h2>
+    <motion.h2
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 1.2 }}
+      variants={{
+        hidden: { opacity: 0, y: -50 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      className="font-bergamasco text-[8rem]"
+    >
+      Новое поступление
+    </motion.h2>
     <table className="relative w-full table-auto border-collapse before:absolute before:-top-[10.6rem] before:right-[5rem] before:z-10 before:h-[10.625rem] before:w-[6.5rem] before:bg-StarsWithLine">
       <tbody className="border-y-[1px] border-primary-500">
         <tr>

@@ -68,14 +68,35 @@ const CategoriesMediumScreen = () => (
     </div>
   </>
 )
+
 const CategoriesFullScreen = () => (
   <>
-    <h2 className="text-center font-bergamasco text-[8rem]">
+    <motion.h2
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 1.2 }}
+      variants={{
+        hidden: { opacity: 0, y: -50 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      className="text-center font-bergamasco text-[8rem]"
+    >
       Найдите для себя
-    </h2>
-    <h2 className="-mt-[2.5rem] pb-[4rem] text-center font-bergamasco text-[8rem]">
+    </motion.h2>
+    <motion.h2
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 1.2 }}
+      variants={{
+        hidden: { opacity: 0, y: -50 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      className="-mt-[2.5rem] pb-[4rem] text-center font-bergamasco text-[8rem]"
+    >
       идеальное украшение
-    </h2>
+    </motion.h2>
     <div className="mb-[2.5rem] h-[1px] w-full bg-primary-500" />
     <div className="flex flex-col">
       <div className="flex">

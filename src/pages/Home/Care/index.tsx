@@ -10,16 +10,39 @@ import CardAdvice from './CardAdvice'
 import Section from '@/components/Section'
 type Props = { setSelectedPage: (val: SelectedPage) => void }
 
+const container = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.9 } },
+}
+
 const CareFullScreen = () => {
   return (
     <>
-      <div className="flex items-center  gap-[10rem]">
-        <h2 className="font-bergamasco text-[8rem] ">Сохраните блеск</h2>
+      <div className="mr-[8rem] flex items-center justify-between">
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 1.2 }}
+          variants={{
+            hidden: { opacity: 0, y: -50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          className="whitespace-nowrap font-bergamasco text-[8rem]"
+        >
+          Сохраните блеск
+        </motion.h2>
         <img className="h-[7.125rem]" src={Brilliant} alt="brilliant" />
         <img src={Star} alt="star" />
       </div>
       <div className="mb-[5rem] h-[1px] w-full bg-primary-500" />
-      <div className="flex justify-between">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={container}
+        className="flex justify-between"
+      >
         <div className="w-[32%]">
           <CardAdvice
             number="01"
@@ -41,7 +64,7 @@ const CareFullScreen = () => {
             img={Advice3}
           />
         </div>
-      </div>
+      </motion.div>
     </>
   )
 }

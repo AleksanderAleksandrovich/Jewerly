@@ -1,12 +1,15 @@
 import useMediaQuery from '@/hooks/useMediaQuery'
-import React from 'react'
+import {motion} from 'framer-motion'
 
 type Props = {
   number: string
   img: string
   description: string
 }
-
+const childVariant = {
+  hidden: { opacity: 0, x:100 },
+  visible: { opacity: 1, x:0 },
+}
 const CardAdviceMedium = ({ description, img, number }: Props) => {
   return (
     <>
@@ -28,17 +31,17 @@ const CardAdviceMedium = ({ description, img, number }: Props) => {
 }
 const CardAdviceFull = ({ description, img, number }: Props) => {
   return (
-    <div className="flex flex-col">
+    <motion.div variants={childVariant} transition={{duration:0.9}} className="flex flex-col">
       <img className="mx-auto mb-[2rem] h-[27.5rem]" src={img} alt={`${img}`} />
-      <div className="flex justify-between items-center">
-        <div className="w-[30%] text-[8rem] font-bergamasco">
+      <div className="flex items-center justify-between">
+        <div className="w-[30%] font-bergamasco text-[8rem]">
           <span>{number}</span>
         </div>
         <div className="w-[65%] text-[1.8rem] leading-[2.5rem]">
-          <span className='tracking-[-5%] '>{description}</span>
+          <span className="tracking-[-5%] ">{description}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

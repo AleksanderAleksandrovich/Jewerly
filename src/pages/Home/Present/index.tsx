@@ -75,9 +75,19 @@ const PresentMediumScreen = () => (
 const PresentFullScreen = () => (
   <>
     <div className="mb-[1.7rem] h-[1px] w-full bg-primary-500" />
-    <h2 className="mb-[5.65rem] text-center font-bergamasco text-[8rem] leading-[8rem]">
+    <motion.h2
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 1.2 }}
+      variants={{
+        hidden: { opacity: 0, y: -50 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      className="mb-[5.65rem] text-center font-bergamasco text-[8rem] leading-[8rem]"
+    >
       Сделайте подарок особенным с нашими украшениями
-    </h2>
+    </motion.h2>
     <div className="mx-auto flex gap-[17.5rem]">
       <div className="">
         <img className="max-h-[52.8rem]" src={PresentPhoto} alt="present" />
