@@ -9,6 +9,7 @@ import pendants from '@/assets/photo/Каталог кулоны.png'
 import earrings from '@/assets/photo/Каталог серьги.png'
 import { ButtonPageWithArrow } from '@/components/Buttons/ButtonPageWithArrow'
 import useMediaQuery from '@/hooks/useMediaQuery'
+import Section from '@/components/Section'
 
 type Props = {
   setSelectedPage: (val: SelectedPage) => void
@@ -107,14 +108,14 @@ const CategoriesContent = () => {
 }
 const Categories = ({ setSelectedPage }: Props) => {
   return (
-    <section id="категории" className="mx-24 pt-28 sm:mx-14 sm:pt-24">
+    <Section id={SelectedPage.Категории}>
       <motion.div
         className="mx-auto flex flex-col"
         onViewportEnter={() => setSelectedPage(SelectedPage.Категории)}
       >
         <CategoriesContent />
       </motion.div>
-    </section>
+    </Section>
   )
 }
 

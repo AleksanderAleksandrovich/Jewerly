@@ -6,17 +6,15 @@ import useMediaQuery from '@/hooks/useMediaQuery'
 import { motion } from 'framer-motion'
 import { SelectedPage } from '@/types/home'
 import BrlliantWithLines from '@/components/BrilliantWithLines'
+import Section from '@/components/Section'
 type Prop = {
   setSelectedPage: (val: SelectedPage) => void
 }
 
-const FullScreenJeverly = ({ setSelectedPage }: Prop) => {
+const FullScreenJeverly = () => {
   return (
-    <motion.div
-      className="flex"
-      onViewportEnter={() => setSelectedPage(SelectedPage.Главная)}
-    >
-      <div className=" relative w-[28.5%]">
+    <>
+      <div className="relative w-[28.5%]">
         <div className="absolute left-1/2 top-0 z-[-1] h-full w-[1px] bg-primary-500"></div>
         <motion.img
           initial="hidden"
@@ -112,24 +110,21 @@ const FullScreenJeverly = ({ setSelectedPage }: Prop) => {
           </Button>
         </div>
       </div>
-    </motion.div>
+    </>
   )
 }
-const MobileScreenJeverly = ({ setSelectedPage }: Prop) => {
+const MobileScreenJeverly = () => {
   return (
-    <motion.div
-      className="mx-auto mt-28 flex flex-col"
-      onViewportEnter={() => setSelectedPage(SelectedPage.Главная)}
-    >
-      <h1 className="ml-14 font-bergamasco text-[4rem] text-white">
+    <>
+      <h1 className="mt-28 font-bergamasco text-[4rem] text-white">
         Ювелирные
       </h1>
-      <h1 className="-mt-10 mr-14 text-right font-bergamasco text-[4rem] text-white">
+      <h1 className="-mt-10 text-right font-bergamasco text-[4rem] text-white">
         украшения
       </h1>
-      <div className="-mt-5 ml-auto mr-14">
-        <h2 className="text-[1.5rem] ">Ваш путь к сиянию</h2>
-        <h2 className="text-[1.5rem] ">и элегантности</h2>
+      <div className="-mt-5 ml-auto mr-0">
+        <h2 className="text-[1.5rem]">Ваш путь к сиянию</h2>
+        <h2 className="text-[1.5rem]">и элегантности</h2>
       </div>
 
       <Button buttonProps={{ className: 'relative mt-[2rem]' }}>
@@ -161,25 +156,26 @@ const MobileScreenJeverly = ({ setSelectedPage }: Prop) => {
       <div className="mx-auto mb-[3rem] mt-[2.4rem]">
         <img className="max-h-[6.37rem]" src={Ring} alt="ring" />
       </div>
-    </motion.div>
+    </>
   )
 }
-const JewerlyContent = ({ setSelectedPage }: Prop) => {
+const JewerlyContent = () => {
   const isAboveFullScreen = useMediaQuery('(min-width: 768px)')
-  if (isAboveFullScreen)
-    return <FullScreenJeverly setSelectedPage={setSelectedPage} />
-  return <MobileScreenJeverly setSelectedPage={setSelectedPage} />
+  if (isAboveFullScreen) return <FullScreenJeverly />
+  return <MobileScreenJeverly />
 }
 const Jewerly = ({ setSelectedPage }: Prop) => {
   return (
     <>
-      <section
-        id="главная"
-        className="mx-14 mt-[1px] border-t-[1px] border-primary-500"
-      >
-        <JewerlyContent setSelectedPage={setSelectedPage} />
+      <Section id={SelectedPage.Главная} className={'pt-0 sm:pt-0'}>
+        <motion.div
+          className="flex flex-col sm:flex-row"
+          onViewportEnter={() => setSelectedPage(SelectedPage.Главная)}
+        >
+          <JewerlyContent />
+        </motion.div>
         <BrlliantWithLines />
-      </section>
+      </Section>
     </>
   )
 }

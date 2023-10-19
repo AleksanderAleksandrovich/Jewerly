@@ -3,6 +3,7 @@ import { SelectedPage } from '@/types/home'
 import { motion } from 'framer-motion'
 import BigBrilliant from '@/assets/photo/БриллиантБольшой.png'
 import useMediaQuery from '@/hooks/useMediaQuery'
+import Section from '@/components/Section'
 type Props = {
   setSelectedPage: (val: SelectedPage) => void
 }
@@ -167,14 +168,14 @@ const BrilliantContent = () => {
 }
 const Brilliant = ({ setSelectedPage }: Props) => {
   return (
-    <section id="бриллиант" className="mx-24 pt-28 sm:mx-14 sm:pt-32">
+    <Section id={SelectedPage.Бриллиант}>
       <motion.div
         className="mx-auto flex flex-col"
         onViewportEnter={() => setSelectedPage(SelectedPage.Бриллиант)}
       >
         <BrilliantContent />
       </motion.div>
-    </section>
+    </Section>
   )
 }
 

@@ -5,6 +5,7 @@ import ShopingCard from '@/components/ShopingCard'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import Star from '@/assets/icons/Зирочка.svg'
 import { ButtonPageWithArrow } from '@/components/Buttons/ButtonPageWithArrow'
+import Section from '@/components/Section'
 type Props = {
   setSelectedPage: (val: SelectedPage) => void
 }
@@ -108,14 +109,14 @@ const NewsContent = () => {
 }
 const News = ({ setSelectedPage }: Props) => {
   return (
-    <section id="новинки" className="mx-24 pt-28 sm:mx-14 sm:pt-24">
+    <Section id={SelectedPage.Новинки}>
       <motion.div
         className="relative mx-auto flex flex-col"
         onViewportEnter={() => setSelectedPage(SelectedPage.Новинки)}
       >
         <NewsContent />
       </motion.div>
-    </section>
+    </Section>
   )
 }
 

@@ -7,6 +7,7 @@ import Advice2 from '@/assets/photo/2 тезис.png'
 import Advice3 from '@/assets/photo/3 тезис.png'
 import Star from '@/assets/photo/Звездочка на палочке.png'
 import CardAdvice from './CardAdvice'
+import Section from '@/components/Section'
 type Props = { setSelectedPage: (val: SelectedPage) => void }
 
 const CareFullScreen = () => {
@@ -114,14 +115,14 @@ const CareContent = () => {
 
 const Care = ({ setSelectedPage }: Props) => {
   return (
-    <section id="уход" className="mx-24 pt-28 sm:mx-14 sm:pt-24">
+    <Section id={SelectedPage.Уход}>
       <motion.div
         className="mx-auto mb-12 flex flex-col"
         onViewportEnter={() => setSelectedPage(SelectedPage.Уход)}
       >
         <CareContent />
       </motion.div>
-    </section>
+    </Section>
   )
 }
 

@@ -16,6 +16,7 @@ function Home() {
   return (
     <>
       <Navbar setSelectedPage={setSelectedPage} selectedPage={selectedPage} />
+      <div className='mx-14 w-[calc(100%-7rem)] h-[1px] bg-primary-500'/>
       <Jewerly setSelectedPage={setSelectedPage} />
       <Brilliant setSelectedPage={setSelectedPage} />
       <News setSelectedPage={setSelectedPage} />
