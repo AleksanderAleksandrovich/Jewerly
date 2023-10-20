@@ -4,6 +4,8 @@ import Mines from '@/assets/icons/Минус на карточке товара.
 import { formatCurrency } from '@/utils/formatPrice'
 import Heart from '@/assets/icons/heartForCard.svg'
 import useMediaQuery from '@/hooks/useMediaQuery'
+import { useState } from 'react'
+import { useBasketStore } from '@/store/buying'
 
 type Props = {
   id: number
@@ -13,7 +15,23 @@ type Props = {
   imgUrl: string
   color: string
 }
-const CardForFullScreen = ({ id, type, color, imgUrl, name, price }: Props) => {
+
+type PropsForContentCard = Props & {
+  counter: number
+  setCounter: (val: number) => void
+  addToBascket: (id: number, count: number) => void
+}
+const CardForFullScreen = ({
+  addToBascket,
+  id,
+  type,
+  color,
+  imgUrl,
+  name,
+  price,
+  counter,
+  setCounter,
+}: PropsForContentCard) => {
   return (
     <div className="flex max-w-[22.75rem] flex-col bg-secondary-400">
       {/* Картинка и сердечко */}
@@ -51,15 +69,21 @@ const CardForFullScreen = ({ id, type, color, imgUrl, name, price }: Props) => {
           <div className="flex h-[2.125rem] items-center justify-between gap-3 border-[1px] border-gray-300 px-4 py-[2px]">
             <Button
               buttonProps={{
+                disabled: counter === 1,
+                onClick: () => setCounter(counter - 1),
                 className:
                   'h-[2rem] w-[0.8rem] flex justify-center items-center',
               }}
             >
               <img className="max-w-[0.5rem]" src={Mines} alt="" />
             </Button>
-            <div className="text-[1rem] text-green-850">0</div>
+            <div className="w-[1rem] text-center text-[1rem] text-green-850">
+              {counter}
+            </div>
             <Button
               buttonProps={{
+                disabled: counter === 99,
+                onClick: () => setCounter(counter + 1),
                 className:
                   'h-[2rem] w-[0.8rem] flex justify-center items-center',
               }}
@@ -70,6 +94,7 @@ const CardForFullScreen = ({ id, type, color, imgUrl, name, price }: Props) => {
 
           <Button
             buttonProps={{
+              onClick: () => addToBascket(id, counter),
               className:
                 'bg-green-850 px-[1.5rem] py-[0.5rem] text-[1.125rem] text-white flex items-center whitespace-nowrap',
             }}
@@ -89,7 +114,10 @@ const CardForMediumScreen = ({
   imgUrl,
   name,
   price,
-}: Props) => {
+  counter,
+  setCounter,
+  addToBascket,
+}: PropsForContentCard) => {
   return (
     <div className="flex h-[45rem] max-w-[34rem] flex-col bg-secondary-400">
       {/* Картинка и сердечко */}
@@ -131,14 +159,18 @@ const CardForMediumScreen = ({
           <div className="flex h-[2.875rem] items-center justify-between gap-3 border-[1px] border-gray-300 px-2 py-[2px]">
             <Button
               buttonProps={{
+                disabled: counter === 1,
+                onClick: () => setCounter(counter - 1),
                 className: 'h-[2rem] w-[2rem] flex justify-center items-center',
               }}
             >
               <img className="min-w-[0.8rem]" src={Mines} alt="mines" />
             </Button>
-            <div className="text-[1.5rem] text-green-850">0</div>
+            <div className="w-[1rem] text-center text-[1.5rem] text-green-850">{counter}</div>
             <Button
               buttonProps={{
+                disabled: counter === 99,
+                onClick: () => setCounter(counter + 1),
                 className: 'h-[2rem] w-[2rem] flex justify-center items-center',
               }}
             >
@@ -148,6 +180,7 @@ const CardForMediumScreen = ({
 
           <Button
             buttonProps={{
+              onClick: () => addToBascket(id, counter),
               className:
                 'bg-green-850 px-[1.5rem] pb-[0.6rem] pt-[0.4rem] text-[1.5rem] text-white flex items-center flex',
             }}
@@ -167,7 +200,10 @@ const CardForSmallScreen = ({
   imgUrl,
   name,
   price,
-}: Props) => {
+  counter,
+  setCounter,
+  addToBascket,
+}: PropsForContentCard) => {
   return (
     <div className="mb-4 flex h-[35.3rem] max-w-[26.6rem] flex-col bg-secondary-400">
       {/* Картинка и сердечко */}
@@ -209,15 +245,19 @@ const CardForSmallScreen = ({
           <div className="flex h-[2.5rem] items-center justify-between gap-3 border-[1px] border-gray-300 px-2 py-[2px]">
             <Button
               buttonProps={{
+                disabled: counter === 1,
+                onClick: () => setCounter(counter - 1),
                 className:
                   'h-[1.5rem] w-[1.5rem] flex justify-center items-center',
               }}
             >
               <img className="min-w-[0.8rem]" src={Mines} alt="mines" />
             </Button>
-            <div className="text-[1.2rem] text-green-850">0</div>
+            <div className="w-[1rem] text-center text-[1.2rem] text-green-850">{counter}</div>
             <Button
               buttonProps={{
+                disabled: counter === 99,
+                onClick: () => setCounter(counter + 1),
                 className:
                   'h-[1.5rem] w-[1.5rem] flex justify-center items-center',
               }}
@@ -228,6 +268,7 @@ const CardForSmallScreen = ({
 
           <Button
             buttonProps={{
+              onClick: () => addToBascket(id, counter),
               className:
                 'bg-green-850 px-[1.5rem] pb-[0.6rem] pt-[0.4rem] text-[1.2rem] text-white flex items-center flex',
             }}
@@ -244,9 +285,16 @@ const ShopingCard = ({ id, type, color, imgUrl, name, price }: Props) => {
   const isAboveFullScreen = useMediaQuery('(min-width: 1300px)')
   const isAboveMediumScreen = useMediaQuery('(min-width: 768px)')
 
+  const [counter, setCounter] = useState<number>(1)
+  const addToBascket = useBasketStore((state) => state.incrItemCount)
+  const bas = useBasketStore(st => st.jewerlyItem)
+  console.log(bas)
   if (isAboveFullScreen)
     return (
       <CardForFullScreen
+        addToBascket={addToBascket}
+        counter={counter}
+        setCounter={setCounter}
         id={id}
         type={type}
         color={color}
@@ -258,6 +306,9 @@ const ShopingCard = ({ id, type, color, imgUrl, name, price }: Props) => {
   if (isAboveMediumScreen)
     return (
       <CardForMediumScreen
+        addToBascket={addToBascket}
+        counter={counter}
+        setCounter={setCounter}
         id={id}
         type={type}
         color={color}
@@ -268,6 +319,9 @@ const ShopingCard = ({ id, type, color, imgUrl, name, price }: Props) => {
     )
   return (
     <CardForSmallScreen
+      addToBascket={addToBascket}
+      counter={counter}
+      setCounter={setCounter}
       id={id}
       type={type}
       color={color}

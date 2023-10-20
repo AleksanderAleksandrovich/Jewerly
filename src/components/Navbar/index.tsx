@@ -8,6 +8,8 @@ import { SelectedPage } from '@/types/home'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import { ButtonLinkWithLine } from '../Buttons/ButtonLink'
 import Button from '../Buttons/Button'
+import { useBasketStore } from '@/store/buying'
+
 
 type Prop = {
   selectedPage: SelectedPage
@@ -64,6 +66,9 @@ const LoginPart = () => (
 
 const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
   const isAboveMediumScreen = useMediaQuery('(min-width: 1300px)')
+  // const jewerlyCountInBusket = useBasketStore(state => state.jewerlyCountInBusket)||0
+
+  
 
   return (
     <nav className="bg-noise-green bg- sticky top-0 z-30 flex h-[120px] items-center gap-8 px-28 pb-7 pt-16 sm:px-14 xl:gap-[3rem]">
@@ -101,10 +106,16 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
         <Button
           buttonProps={{
             className:
-              'flex h-10 w-10 items-center justify-center rounded-full border-[1px] border-primary-500 p-2.5 pb-3 ',
+              'relative flex h-10 w-10 items-center justify-center rounded-full border-[1px] border-primary-500 p-2.5 pb-3 ',
           }}
         >
           <img className="min-w-[1.125rem]" src={Basket} alt="basket" />
+
+          {/* {jewerlyCountInBusket> 0 && (
+            <div className="absolute -right-[0.7rem] -top-[0.6rem] flex h-[1.5rem] w-[1.5rem] items-center justify-center rounded-full bg-white text-[0.8rem]">
+              {jewerlyCountInBusket}
+            </div>
+          )} */}
         </Button>
 
         {isAboveMediumScreen && <LoginPart />}
