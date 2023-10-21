@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import Button from './Button'
 
 type Props = {
@@ -13,7 +14,7 @@ const ButtonPage = ({ page, className }: Props) => {
       }}
     >
       <span className="whitespace-nowrap text-[2rem] text-primary-500 sm:text-[2.5rem] xl:text-[1.5rem]">
-        {page}
+        <NavLink to='/catalog'>{page}</NavLink>
       </span>
     </Button>
   )

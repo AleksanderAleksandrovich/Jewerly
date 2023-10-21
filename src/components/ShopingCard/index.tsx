@@ -3,9 +3,11 @@ import Plus from '@/assets/icons/Плюс на карточка товара.svg
 import Mines from '@/assets/icons/Минус на карточке товара.svg'
 import { formatCurrency } from '@/utils/formatPrice'
 import Heart from '@/assets/icons/heartForCard.svg'
+import HeartFill from '@/assets/icons/Избранное fill.svg'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import { useState } from 'react'
 import { useBasketStore } from '@/store/buying'
+import { useFavoriteStore } from '@/store/favorites'
 
 type Props = {
   id: number
@@ -20,8 +22,12 @@ type PropsForContentCard = Props & {
   counter: number
   setCounter: (val: number) => void
   addToBascket: (id: number, count: number) => void
+  isFavorites: boolean
+  changeFavorite: (id: number, isFavorite: boolean) => void
 }
 const CardForFullScreen = ({
+  changeFavorite,
+  isFavorites,
   addToBascket,
   id,
   type,
@@ -39,11 +45,18 @@ const CardForFullScreen = ({
         <img className="w-full object-cover" src={imgUrl} alt={`${imgUrl}`} />
         <Button
           buttonProps={{
+            onClick: () => {
+              changeFavorite(id, !isFavorites)
+            },
             className:
               'absolute top-5 left-[calc(50%-0.65rem)] min-h-[1.3rem] min-w-[1.3rem]',
           }}
         >
-          <img src={Heart} alt="heart" />
+          {isFavorites ? (
+            <img src={HeartFill} alt="heartFill" />
+          ) : (
+            <img src={Heart} alt="heart" />
+          )}
         </Button>
       </div>
 
@@ -108,6 +121,8 @@ const CardForFullScreen = ({
 }
 
 const CardForMediumScreen = ({
+  changeFavorite,
+  isFavorites,
   id,
   type,
   color,
@@ -129,11 +144,18 @@ const CardForMediumScreen = ({
         />
         <Button
           buttonProps={{
+            onClick: () => {
+              changeFavorite(id, !isFavorites)
+            },
             className:
               'absolute top-5 left-[calc(50%-0.65rem)] min-h-[1.3rem] min-w-[1.3rem]',
           }}
         >
-          <img className="h-8" src={Heart} alt="heart" />
+          {isFavorites ? (
+            <img className="h-8" src={HeartFill} alt="heartFill" />
+          ) : (
+            <img className="h-8" src={Heart} alt="heart" />
+          )}
         </Button>
       </div>
 
@@ -166,7 +188,9 @@ const CardForMediumScreen = ({
             >
               <img className="min-w-[0.8rem]" src={Mines} alt="mines" />
             </Button>
-            <div className="w-[1rem] text-center text-[1.5rem] text-green-850">{counter}</div>
+            <div className="w-[1rem] text-center text-[1.5rem] text-green-850">
+              {counter}
+            </div>
             <Button
               buttonProps={{
                 disabled: counter === 99,
@@ -194,6 +218,8 @@ const CardForMediumScreen = ({
 }
 
 const CardForSmallScreen = ({
+  changeFavorite,
+  isFavorites,
   id,
   type,
   color,
@@ -215,11 +241,18 @@ const CardForSmallScreen = ({
         />
         <Button
           buttonProps={{
+            onClick: () => {
+              changeFavorite(id, !isFavorites)
+            },
             className:
               'absolute top-5 left-[calc(50%-0.65rem)] min-h-[1.3rem] min-w-[1.3rem]',
           }}
         >
-          <img className="h-6" src={Heart} alt="heart" />
+          {isFavorites ? (
+            <img className="h-6" src={HeartFill} alt="heartFill" />
+          ) : (
+            <img className="h-6" src={Heart} alt="heart" />
+          )}
         </Button>
       </div>
 
@@ -253,7 +286,9 @@ const CardForSmallScreen = ({
             >
               <img className="min-w-[0.8rem]" src={Mines} alt="mines" />
             </Button>
-            <div className="w-[1rem] text-center text-[1.2rem] text-green-850">{counter}</div>
+            <div className="w-[1rem] text-center text-[1.2rem] text-green-850">
+              {counter}
+            </div>
             <Button
               buttonProps={{
                 disabled: counter === 99,
@@ -286,12 +321,17 @@ const ShopingCard = ({ id, type, color, imgUrl, name, price }: Props) => {
   const isAboveMediumScreen = useMediaQuery('(min-width: 768px)')
 
   const [counter, setCounter] = useState<number>(1)
+  
   const addToBascket = useBasketStore((state) => state.incrItemCount)
-  const bas = useBasketStore(st => st.jewerlyItem)
-  console.log(bas)
+  const changeFavorite = useFavoriteStore((state) => state.changeFavorites)
+  const isFavoriteItems = useFavoriteStore((state) => state.jewerlyItemFavorites)
+
+  const isFavorite = isFavoriteItems.find(item => item.id===id)?.isfavorites || false
   if (isAboveFullScreen)
     return (
       <CardForFullScreen
+        changeFavorite={changeFavorite}
+        isFavorites={isFavorite}
         addToBascket={addToBascket}
         counter={counter}
         setCounter={setCounter}
@@ -306,6 +346,8 @@ const ShopingCard = ({ id, type, color, imgUrl, name, price }: Props) => {
   if (isAboveMediumScreen)
     return (
       <CardForMediumScreen
+        changeFavorite={changeFavorite}
+        isFavorites={isFavorite}
         addToBascket={addToBascket}
         counter={counter}
         setCounter={setCounter}
@@ -319,6 +361,8 @@ const ShopingCard = ({ id, type, color, imgUrl, name, price }: Props) => {
     )
   return (
     <CardForSmallScreen
+      changeFavorite={changeFavorite}
+      isFavorites={isFavorite}
       addToBascket={addToBascket}
       counter={counter}
       setCounter={setCounter}

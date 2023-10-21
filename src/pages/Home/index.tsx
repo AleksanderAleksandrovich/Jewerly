@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Jewerly from './Jewerly'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { SelectedPage } from '@/types/home'
 import Brilliant from './Brilliant'
 import News from './News'
@@ -12,18 +12,23 @@ function Home() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.Главная
   )
+  useEffect(() => {
+    window.onload = () => {
+      setSelectedPage(SelectedPage.Главная)
+    }
+  }, [])
 
   return (
     <>
       <Navbar setSelectedPage={setSelectedPage} selectedPage={selectedPage} />
-      <div className='mx-14 w-[calc(100%-7rem)] h-[1px] bg-primary-500'/>
+      <div className="mx-14 h-[1px] w-[calc(100%-7rem)] bg-primary-500" />
       <Jewerly setSelectedPage={setSelectedPage} />
       <Brilliant setSelectedPage={setSelectedPage} />
       <News setSelectedPage={setSelectedPage} />
       <Categories setSelectedPage={setSelectedPage} />
       <Present setSelectedPage={setSelectedPage} />
-      <Care setSelectedPage={setSelectedPage}/>
-      <Footer setSelectedPage={setSelectedPage} selectedPage={selectedPage}/>
+      <Care setSelectedPage={setSelectedPage} />
+      <Footer setSelectedPage={setSelectedPage} selectedPage={selectedPage} />
     </>
   )
 }

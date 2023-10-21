@@ -167,7 +167,7 @@ const JewerlyContent = () => {
 const Jewerly = ({ setSelectedPage }: Prop) => {
   return (
     <>
-      <Section id={SelectedPage.Главная} className={'pt-0 sm:pt-0'}>
+      <Section id={SelectedPage.Главная} className={'pt-0 sm:pt-0 '}>
         <motion.div
           className="flex flex-col sm:flex-row"
           onViewportEnter={() => setSelectedPage(SelectedPage.Главная)}
