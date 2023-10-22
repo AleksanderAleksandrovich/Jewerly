@@ -26,7 +26,7 @@ const BrilliantMobile = () => (
       </div>
       <div className="relative mb-8 before:absolute before:-bottom-[8rem] before:right-[calc(50%-10.5rem)] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
         <img
-          className="mx-auto max-h-[18rem]"
+          className="mx-auto max-h-[18rem] "
           src={BigBrilliant}
           alt="bigBrilliant"
         />
@@ -50,13 +50,13 @@ const BrilliantMedium = () => (
         hidden: { y: -50 },
         visible: { y: 0 },
       }}
-      className="mb-[2rem] text-center font-bergamasco text-[6.875rem] leading-[7rem]"
+      className="mb-[2rem] text-center font-bergamasco text-[5.8rem] md:text-[6.875rem] leading-[7rem]"
     >
       Бриллиант идеален для выдающихся украшений
     </motion.h2>
     <div className="mt-6 flex items-center">
-      <div className="relative w-4/6 before:absolute before:-bottom-[8rem] before:right-[18rem] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
-        <img className="max-h-[25rem] " src={BigBrilliant} alt="bigBrilliant" />
+      <div className="relative w-[60%] before:absolute before:-bottom-[8rem] before:right-[calc(50%-9rem)] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
+        <img className="max-h-[21rem] md:max-h-[25rem] " src={BigBrilliant} alt="bigBrilliant" />
       </div>
       <motion.div
         initial="hidden"
@@ -67,24 +67,24 @@ const BrilliantMedium = () => (
           hidden: { opacity: 0, y: 50 },
           visible: { opacity: 1, y: 0 },
         }}
-        className="flex w-2/6 flex-col"
+        className="flex w-[40%] flex-col"
       >
-        <TextDescription spanProps={{ className: 'text-right' }}>
+        <TextDescription spanProps={{ className: 'text-right sm:text-[1.2rem] md:text-[1.5rem]' }}>
           Вес: 0.25-2 карата
         </TextDescription>
-        <TextDescription spanProps={{ className: 'text-right' }}>
+        <TextDescription spanProps={{ className: 'text-right sm:text-[1.2rem] md:text-[1.5rem]' }}>
           Цвет: G-H (почти бесцветный)
         </TextDescription>
-        <TextDescription spanProps={{ className: 'text-right' }}>
+        <TextDescription spanProps={{ className: 'text-right sm:text-[1.2rem] md:text-[1.5rem]' }}>
           Чистота: VS1-VS2
         </TextDescription>
-        <TextDescription spanProps={{ className: 'text-right' }}>
+        <TextDescription spanProps={{ className: 'text-right sm:text-[1.2rem] md:text-[1.5rem]' }}>
           Огранка: Отличная
         </TextDescription>
-        <TextDescription spanProps={{ className: 'text-right' }}>
+        <TextDescription spanProps={{ className: 'text-right sm:text-[1.2rem] md:text-[1.5rem]' }}>
           Блеск: Яркий и многогранный
         </TextDescription>
-        <TextDescription spanProps={{ className: 'text-right' }}>
+        <TextDescription spanProps={{ className: 'text-right sm:text-[1.2rem] md:text-[1.5rem]' }}>
           Размер: 6.5 мм. в диаметре
         </TextDescription>
       </motion.div>
@@ -116,19 +116,19 @@ const BrilliantFullScreen = () => (
           hidden: { opacity: 0, x: -50 },
           visible: { opacity: 1, x: 0 },
         }}
-        className="ml-auto w-1/3 flex-col"
+        className="ml-auto xl:w-[30%] 2xl:w-1/3 flex-col"
       >
-        <TextDescription spanProps={{ className: ' text-[2rem]' }}>
+        <TextDescription spanProps={{ className: 'xl:text-[1.4rem] 2xl:text-[2rem]' }}>
           Вес: 0.25-2 карата
         </TextDescription>
-        <TextDescription spanProps={{ className: ' text-[2rem]' }}>
+        <TextDescription spanProps={{ className: ' xl:text-[1.4rem] 2xl:text-[2rem]' }}>
           Цвет: G-H (почти бесцветный)
         </TextDescription>
-        <TextDescription spanProps={{ className: ' text-[2rem]' }}>
+        <TextDescription spanProps={{ className: ' xl:text-[1.4rem] 2xl:text-[2rem]' }}>
           Чистота: VS1-VS2
         </TextDescription>
       </motion.div>
-      <div className="relative mb-8 w-1/3 before:absolute before:-bottom-[8rem] before:right-[calc(50%-10.5rem)] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
+      <div className="relative mb-8 xl:w-[40%] 2xl:w-1/3 before:absolute before:-bottom-[8rem] before:right-[calc(50%-10rem)] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
         <img
           className="mx-auto max-h-[25rem]"
           src={BigBrilliant}
@@ -144,15 +144,15 @@ const BrilliantFullScreen = () => (
           hidden: { opacity: 0, x: 50 },
           visible: { opacity: 1, x: 0 },
         }}
-        className="flex w-1/3 flex-col"
+        className="flex xl:w-[30%] 2xl:w-1/3  flex-col"
       >
-        <TextDescription spanProps={{ className: 'text-right text-[2rem]' }}>
+        <TextDescription spanProps={{ className: 'text-right xl:text-[1.4rem] 2xl:text-[2rem]' }}>
           Огранка: Отличная
         </TextDescription>
-        <TextDescription spanProps={{ className: 'text-right text-[2rem]' }}>
+        <TextDescription spanProps={{ className: 'text-right xl:text-[1.4rem] 2xl:text-[2rem]' }}>
           Блеск: Яркий и многогранный
         </TextDescription>
-        <TextDescription spanProps={{ className: 'text-right text-[2rem]' }}>
+        <TextDescription spanProps={{ className: 'text-right xl:text-[1.4rem] 2xl:text-[2rem]' }}>
           Размер: 6.5 мм. в диаметре
         </TextDescription>
       </motion.div>

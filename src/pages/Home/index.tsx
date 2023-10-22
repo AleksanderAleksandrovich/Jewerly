@@ -23,12 +23,12 @@ function Home() {
       <Navbar setSelectedPage={setSelectedPage} selectedPage={selectedPage} />
       <div className="mx-14 h-[1px] w-[calc(100%-7rem)] bg-primary-500" />
       <Jewerly setSelectedPage={setSelectedPage} />
-      {/* <Brilliant setSelectedPage={setSelectedPage} />
+      <Brilliant setSelectedPage={setSelectedPage} />
       <News setSelectedPage={setSelectedPage} />
-      <Categories setSelectedPage={setSelectedPage} />
+      {/* <Categories setSelectedPage={setSelectedPage} />
       <Present setSelectedPage={setSelectedPage} />
-      <Care setSelectedPage={setSelectedPage} /> */}
-      <Footer />
+      <Care setSelectedPage={setSelectedPage} />
+      <Footer /> */}
     </>
   )
 }

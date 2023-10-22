@@ -39,7 +39,7 @@ const CardForFullScreen = ({
   setCounter,
 }: PropsForContentCard) => {
   return (
-    <div className="flex max-w-[22.75rem] flex-col bg-secondary-400">
+    <div className="flex max-w-[90%] flex-col bg-secondary-400">
       {/* Картинка и сердечко */}
       <div className="relative min-h-[22.5rem] ">
         <img className="w-full object-cover" src={imgUrl} alt={`${imgUrl}`} />
@@ -78,8 +78,8 @@ const CardForFullScreen = ({
         </span>
 
         {/* Блок кнопок */}
-        <div className="mt-[2rem] flex justify-between">
-          <div className="flex h-[2.125rem] items-center justify-between gap-3 border-[1px] border-gray-300 px-4 py-[2px]">
+        <div className="mt-[2rem] flex">
+          <div className="flex xl:h-[2rem] 2xl:h-[2.125rem] items-center justify-between gap-3 border-[1px] border-gray-300 px-4 py-[2px]">
             <Button
               buttonProps={{
                 disabled: counter === 1,
@@ -109,7 +109,7 @@ const CardForFullScreen = ({
             buttonProps={{
               onClick: () => addToBascket(id, counter),
               className:
-                'bg-green-850 px-[1.5rem] py-[0.5rem] text-[1.125rem] text-white flex items-center whitespace-nowrap',
+                'bg-green-850 px-[1.5rem] py-[0.5rem] text-[1.125rem] mr-0 ml-auto text-white flex items-center whitespace-nowrap',
             }}
           >
             в корзину
@@ -134,7 +134,7 @@ const CardForMediumScreen = ({
   addToBascket,
 }: PropsForContentCard) => {
   return (
-    <div className="flex h-[45rem] max-w-[34rem] flex-col bg-secondary-400">
+    <div className="flex h-[38rem] md:h-[45rem] max-w-[30rem] md:max-w-[34rem] flex-col bg-secondary-400">
       {/* Картинка и сердечко */}
       <div className="relative h-[29rem]">
         <img
@@ -161,7 +161,7 @@ const CardForMediumScreen = ({
 
       {/* Описание */}
       <div className="p-[1.43rem] pt-0">
-        <h4 className="mb-[0.5rem] text-[2rem] text-green-850">
+        <h4 className="mb-[0.5rem] text-[1.7rem] md:text-[2rem] text-green-850">
           {type} <span>"{name}"</span>
         </h4>
 
@@ -177,7 +177,7 @@ const CardForMediumScreen = ({
         </span>
 
         {/* Блок кнопок */}
-        <div className="mt-[3.5rem] flex justify-between">
+        <div className="mt-[3.5rem] flex">
           <div className="flex h-[2.875rem] items-center justify-between gap-3 border-[1px] border-gray-300 px-2 py-[2px]">
             <Button
               buttonProps={{
@@ -206,7 +206,7 @@ const CardForMediumScreen = ({
             buttonProps={{
               onClick: () => addToBascket(id, counter),
               className:
-                'bg-green-850 px-[1.5rem] pb-[0.6rem] pt-[0.4rem] text-[1.5rem] text-white flex items-center flex',
+                'bg-green-850 px-[1.5rem] pb-[0.6rem] pt-[0.4rem] mr-0 ml-auto text-[1rem] md:text-[1.5rem] text-white whitespace-nowrap flex items-center flex',
             }}
           >
             в корзину

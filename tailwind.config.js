@@ -14,7 +14,7 @@ export default {
         blic1: "url('./assets/bg/blik1.png')",
         blic2: "url('./assets/bg/blik2.png')",
         blicForBril: "url('./assets/bg/blikForBrill.png')",
-        StarsWithLine: "url('./assets/photo/Звездочки с палочкой.png')"
+        
       },
       fontFamily: {
         geo: ['Geometria', 'sans-serif'],
