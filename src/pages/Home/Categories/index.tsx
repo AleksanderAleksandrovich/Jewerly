@@ -36,12 +36,8 @@ const CategoriesMobileScreen = () => (
 )
 const CategoriesMediumScreen = () => (
   <>
-    <h2 className="text-center font-bergamasco text-[6.875rem]">Найдите</h2>
-    <h2 className="-mt-[2.5rem] text-center font-bergamasco text-[6.875rem]">
-      для себя идеальное
-    </h2>
-    <h2 className="-mt-[2.5rem] pb-[4rem] text-center font-bergamasco text-[6.875rem]">
-      украшение
+    <h2 className="text-center font-bergamasco text-[6.875rem] leading-[7rem] mb-[2rem]">
+      Найдите для себя идеальное украшение
     </h2>
     <div className="mb-[7.1rem] h-[1px] w-full bg-primary-500" />
     <div className="flex flex-col">
@@ -80,22 +76,9 @@ const CategoriesFullScreen = () => (
         hidden: { opacity: 0, y: -50 },
         visible: { opacity: 1, y: 0 },
       }}
-      className="text-center font-bergamasco text-[8rem]"
+      className="pb-[4rem] text-center font-bergamasco text-[8rem] leading-[7rem]"
     >
-      Найдите для себя
-    </motion.h2>
-    <motion.h2
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 1.2 }}
-      variants={{
-        hidden: { opacity: 0, y: -50 },
-        visible: { opacity: 1, y: 0 },
-      }}
-      className="-mt-[2.5rem] pb-[4rem] text-center font-bergamasco text-[8rem]"
-    >
-      идеальное украшение
+      Найдите для себя идеальное украшение
     </motion.h2>
     <div className="mb-[2.5rem] h-[1px] w-full bg-primary-500" />
     <div className="flex flex-col">

@@ -25,10 +25,10 @@ function Home() {
       <Jewerly setSelectedPage={setSelectedPage} />
       <Brilliant setSelectedPage={setSelectedPage} />
       <News setSelectedPage={setSelectedPage} />
-      {/* <Categories setSelectedPage={setSelectedPage} />
+      <Categories setSelectedPage={setSelectedPage} />
       <Present setSelectedPage={setSelectedPage} />
       <Care setSelectedPage={setSelectedPage} />
-      <Footer /> */}
+      <Footer />
     </>
   )
 }
