@@ -1,4 +1,3 @@
-import { SelectedPage } from '@/types/home'
 import ButtonPage from '../Buttons/ButtonPage'
 import BrlliantWithLines from '../BrilliantWithLines'
 import X from '@/assets/icons/Х.svg'
@@ -6,10 +5,6 @@ import Facebook from '@/assets/icons/Фейсбук.svg'
 import Inst from '@/assets/icons/Инстаграм.svg'
 import Brilliant from '@/assets/icons/БрилиантNavbar.svg'
 import useMediaQuery from '@/hooks/useMediaQuery'
-type Props = {
-  selectedPage: SelectedPage
-  setSelectedPage: (val: SelectedPage) => void
-}
 
 const FooterMobile = () => (
   <>
@@ -41,7 +36,7 @@ const FooterMobile = () => (
     <div className="mb-8 h-[1px] w-full bg-primary-500" />
     <div className="mb-8 flex flex-col">
       <img className="mx-auto h-[3.6rem]" src={Brilliant} alt="" />
-      <h3 className="font-perpetua text-center text-[4rem] text-white">
+      <h3 className="text-center font-perpetua text-[4rem] text-white">
         CharmVogue
       </h3>
     </div>
@@ -84,7 +79,7 @@ const FooterMediumScreen = () => (
     <div className="mb-[3.25rem] h-[1px] w-full bg-primary-500" />
     <div className="mb-[3.25rem] flex flex-col">
       <img className="mx-auto h-[4.8rem]" src={Brilliant} alt="" />
-      <h3 className="font-perpetua text-center text-[6rem] text-white">
+      <h3 className="text-center font-perpetua text-[6rem] text-white">
         CharmVogue
       </h3>
     </div>
@@ -95,10 +90,10 @@ const FooterFullScreen = () => (
     <BrlliantWithLines />
     <div className="mb-[5.5rem] mt-[2rem] flex justify-between ">
       <div className="flex flex-col">
-        <h3 className="text-start text-[1.5rem] mb-4">
+        <h3 className="mb-4 text-start text-[1.5rem]">
           ИП Хмара Татьяна Сергеевна
         </h3>
-        <h3 className="text-start text-[1.5rem] mb-4">ИНН 3689426798</h3>
+        <h3 className="mb-4 text-start text-[1.5rem]">ИНН 3689426798</h3>
         <h3 className="text-start text-[1.5rem]">+7 (971) 607-23-94</h3>
       </div>
       <div className="flex flex-col">
@@ -125,7 +120,7 @@ const FooterFullScreen = () => (
     <div className="mb-[3.25rem] h-[1px] w-full bg-primary-500" />
     <div className="mb-[3.25rem] flex flex-col">
       <img className="mx-auto h-[4.8rem]" src={Brilliant} alt="" />
-      <h3 className="font-perpetua text-center text-[6rem] text-white">
+      <h3 className="text-center font-perpetua text-[6rem] text-white">
         CharmVogue
       </h3>
     </div>
@@ -139,7 +134,7 @@ const FooterContent = () => {
   return <FooterMobile />
 }
 
-const Footer = ({ selectedPage, setSelectedPage }: Props) => {
+const Footer = () => {
   return (
     <footer className="mx-24 sm:mx-14">
       <FooterContent />

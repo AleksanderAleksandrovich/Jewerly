@@ -9,7 +9,6 @@ import useMediaQuery from '@/hooks/useMediaQuery'
 import { ButtonLinkWithLine } from '../Buttons/ButtonLink'
 import Button from '../Buttons/Button'
 import { useBasketStore } from '@/store/buying'
-import { useEffect, useRef, useState } from 'react'
 
 type Prop = {
   selectedPage: SelectedPage
@@ -65,13 +64,13 @@ const LoginPart = () => (
 )
 
 const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
-  const isAboveMediumScreen = useMediaQuery('(min-width: 1300px)')
+  const isAboveMediumScreen = useMediaQuery('(min-width: 1500px)')
   const jewerlyItem = useBasketStore((state) => state.jewerlyItem)
 
   const countJeverly = jewerlyItem.reduce((acc, item) => acc + item?.count, 0)
 
   return (
-    <nav className="bg-noise-green bg- sticky top-0 z-30 flex h-[120px] items-center gap-8 px-28 pb-7 pt-16 sm:px-14 xl:gap-[3rem]">
+    <nav className="bg-noise-green bg- sticky top-0 z-30 flex h-[120px] items-center gap-3 px-28 pb-7 pt-16 sm:px-14 xl:gap-[3rem]">
       {/* left side */}
       <div className="relative w-1/4">
         <ButtonCatalog
@@ -80,7 +79,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
         />
       </div>
       {/* center side */}
-      <div className="flex w-1/2 justify-center gap-3 xl:ml-10 2xl:gap-10">
+      <div className="flex w-1/2 justify-center 2xl:ml-10 gap-10">
         {isAboveMediumScreen && (
           <PartButtonsLinkLeft
             selectedPage={selectedPage}
@@ -98,7 +97,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
         )}
       </div>
       {/* right side navbar*/}
-      <div className="flex w-1/4 items-center justify-end gap-[1.5rem] ">
+      <div className="flex w-1/4 items-center justify-end gap-[1rem] ">
         <InputSearch />
         <Button buttonProps={{ className: 'min-h-[1.3rem] min-w-[1.3rem]' }}>
           <img src={Heart} alt="heart" />

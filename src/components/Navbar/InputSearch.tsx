@@ -15,9 +15,9 @@ const SearchFullScreen = () => (
       className="h-5 w-20 bg-transparent font-geoItal text-base tracking-tight text-primary-500 focus:outline-none"
       placeholder="Поиск"
     />
-    <button className="min-h-[1.1rem] min-w-[1.1rem]">
+    <Button buttonProps={{ className: 'min-h-[1.1rem] min-w-[1.1rem]' }}>
       <img src={Search} alt="search" />
-    </button>
+    </Button>
   </div>
 )
 const SearchSmallScreen = ({ isOpenSearch, setIsOpenSearch }: Props) => (
@@ -51,7 +51,7 @@ const SearchOpenForSmallScreen = () => (
 const InputSearch = () => {
   const isAboveSmallScreen = useMediaQuery('(min-width: 1060px)')
   const [isOpenSearch, setIsOpenSearch] = useState<boolean>(false)
-  
+
   if (isAboveSmallScreen) return <SearchFullScreen />
   return (
     <SearchSmallScreen

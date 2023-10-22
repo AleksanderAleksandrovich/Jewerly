@@ -39,7 +39,7 @@ function ContentCatalog({
 }
 
 function ContentMenu({ selectedPage, setSelectedPage }: Props) {
-  const isAboveMediumScreen = useMediaQuery('(min-width: 1300px)')
+  const isAboveMediumScreen = useMediaQuery('(min-width: 1500px)')
   const [isCatalogOpen, setIsCatalogOpen] = useState<boolean>(false)
   if (isAboveMediumScreen)
     return (
