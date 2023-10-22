@@ -5,14 +5,9 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 type Prop = {
   page: string
   selectedPage: SelectedPage
-  setSelectedPage: (val: SelectedPage) => void
 }
 
-export const ButtonLinkWithLine = ({
-  page,
-  selectedPage,
-  setSelectedPage,
-}: Prop) => {
+export const ButtonLinkWithLine = ({ page, selectedPage }: Prop) => {
   const lowerCasePage = page.toLowerCase().replace(/ /g, '') as SelectedPage
   const styleCurrentPage = `${
     lowerCasePage === selectedPage
@@ -22,9 +17,9 @@ export const ButtonLinkWithLine = ({
   return (
     <Button buttonProps={{ className: 'flex justify-center items-center' }}>
       <AnchorLink
+        offset={() => -1}
         className={`${styleCurrentPage} relative whitespace-nowrap text-[1.25rem] tracking-tighter transition duration-500 hover:text-secondary-500`}
         href={`#${lowerCasePage}`}
-        onClick={() => setSelectedPage(lowerCasePage)}
       >
         {page}
       </AnchorLink>
@@ -32,11 +27,7 @@ export const ButtonLinkWithLine = ({
   )
 }
 
-export const ButtonLinkWithDot = ({
-  page,
-  selectedPage,
-  setSelectedPage,
-}: Prop) => {
+export const ButtonLinkWithDot = ({ page, selectedPage }: Prop) => {
   const lowerCasePage = page.toLowerCase().replace(/ /g, '') as SelectedPage
   const styleCurrentPage = `${
     lowerCasePage === selectedPage
@@ -46,9 +37,9 @@ export const ButtonLinkWithDot = ({
   return (
     <Button buttonProps={{ className: 'flex justify-start items-center' }}>
       <AnchorLink
+        offset={() => -1}
         className={`${styleCurrentPage} relative whitespace-nowrap text-[1.25rem] tracking-tighter  sm:text-[1.5rem] `}
         href={`#${lowerCasePage}`}
-        onClick={() => setSelectedPage(lowerCasePage)}
       >
         {page}
       </AnchorLink>

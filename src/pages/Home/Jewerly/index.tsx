@@ -25,14 +25,14 @@ const FullScreenJeverly = () => {
             hidden: { y: -50 },
             visible: { y: 0 },
           }}
-          className="mx-auto sm:mt-[43rem] sm:max-h-[12rem] xl:mt-[35rem] xl:max-h-full"
+          className="mx-auto sm:mt-[43rem] sm:max-h-[9rem] md:max-h-[12rem] xl:mt-[35rem] xl:max-h-full"
           src={Ring}
           alt="ring"
         />
       </div>
-      <div className="w-[71.5%] ">
+      <div className="w-[70%] ">
         {/* text */}
-        <div className="mt-28 flex flex-col sm:-ml-[14rem] xl:-ml-[16.5rem]">
+        <div className="mt-28 flex flex-col sm:-ml-[12rem] md:-ml-[14rem] xl:-ml-[18rem]">
           <motion.h1
             initial="hidden"
             whileInView="visible"
@@ -55,7 +55,7 @@ const FullScreenJeverly = () => {
               hidden: { y: 80 },
               visible: { y: 0 },
             }}
-            className="text-right font-bergamasco text-white sm:-mt-[5rem] sm:mr-[4rem] sm:text-[6.87rem] xl:-mt-8 xl:mr-[17rem] xl:text-9xl"
+            className="text-center font-bergamasco text-white sm:-mt-[5rem] sm:ml-0 sm:text-[6.87rem] md:ml-[16rem] xl:-mt-8 xl:ml-[15rem] xl:text-9xl"
           >
             украшения
           </motion.h1>
@@ -68,10 +68,14 @@ const FullScreenJeverly = () => {
               hidden: { opacity: 0, x: 80 },
               visible: { opacity: 1, x: 0 },
             }}
-            className="ml-auto sm:-mt-8 sm:mr-[5rem] xl:-mt-2 xl:mr-[17rem]"
+            className=" sm:-mt-8 sm:ml-auto sm:mr-[8.75rem] xl:-mt-2  xl:ml-[45rem] 2xl:ml-[55rem] "
           >
-            <h2 className="sm:text-[2rem] xl:text-4xl">Ваш путь к сиянию</h2>
-            <h2 className="sm:text-[2rem] xl:text-4xl">и элегантности</h2>
+            <h2 className="whitespace-nowrap sm:text-[2rem] xl:text-4xl">
+              Ваш путь к сиянию
+            </h2>
+            <h2 className="whitespace-nowrap sm:text-[2rem] xl:text-4xl">
+              и элегантности
+            </h2>
           </motion.div>
         </div>
 
@@ -94,13 +98,13 @@ const FullScreenJeverly = () => {
             <div className="flex h-full flex-col">
               <div className="relative">
                 <img
-                  className="mx-auto sm:max-h-[18.75rem] xl:max-h-full"
+                  className="mx-auto sm:max-h-[14rem] md:max-h-[18.75rem] xl:max-h-full"
                   src={Catalog}
                   alt="catalog"
                 />
                 <div
                   className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 transform whitespace-nowrap text-white before:absolute before:left-1/2 
-            before:top-full before:h-[1px] before:-translate-x-1/2 before:-translate-y-1/2 before:transform before:bg-white sm:text-[1rem] before:sm:w-[7rem] xl:text-[1.5rem] before:xl:w-[10rem]"
+            before:top-full before:h-[1px] before:-translate-x-1/2 before:-translate-y-1/2 before:transform before:bg-white sm:text-[0.7rem] md:text-[1rem] before:sm:w-[7rem] xl:text-[1.5rem] before:xl:w-[10rem]"
                 >
                   ПЕРЕЙТИ В КАТАЛОГ
                 </div>
@@ -169,7 +173,7 @@ const Jewerly = ({ setSelectedPage }: Prop) => {
     <>
       <Section id={SelectedPage.Главная} className={'pt-0 sm:pt-0 '}>
         <motion.div
-          className="flex flex-col sm:flex-row"
+          className="flex flex-col sm:flex-row sm:justify-between"
           onViewportEnter={() => setSelectedPage(SelectedPage.Главная)}
         >
           <JewerlyContent />
