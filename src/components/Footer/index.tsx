@@ -46,8 +46,8 @@ const FooterMobile = () => (
 const FooterMediumScreen = () => (
   <>
     <BrlliantWithLines />
-    <div className="mb-[3rem] mt-[2rem] flex justify-between ">
-      <div className="flex flex-col">
+    <div className="mb-[3rem] mt-[2rem] flex justify-between flex-wrap">
+      <div className="flex flex-col mb-[2rem]">
         <h3 className="text-start text-[3rem]">Каталог</h3>
         <ButtonPage page="Сережки" />
         <ButtonPage page="Кольца" />
@@ -63,7 +63,7 @@ const FooterMediumScreen = () => (
       </div>
     </div>
     <div className="flex ">
-      <div className="mb-[3rem] mr-[12rem] flex flex-col">
+      <div className="mb-[3rem] mr-[8rem] flex flex-col">
         <h3 className="text-start text-[2.25rem]">
           ИП Хмара Татьяна Сергеевна
         </h3>
@@ -79,7 +79,7 @@ const FooterMediumScreen = () => (
     <div className="mb-[3.25rem] h-[1px] w-full bg-primary-500" />
     <div className="mb-[3.25rem] flex flex-col">
       <img className="mx-auto h-[4.8rem]" src={Brilliant} alt="" />
-      <h3 className="text-center font-perpetua text-[6rem] text-white">
+      <h3 className="text-center font-perpetua sm:text-[5rem] md:text-[6rem] text-white">
         CharmVogue
       </h3>
     </div>
