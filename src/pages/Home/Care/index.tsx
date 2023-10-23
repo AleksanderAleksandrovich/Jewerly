@@ -32,8 +32,8 @@ const CareFullScreen = () => {
         >
           Сохраните блеск
         </motion.h2>
-        <img className="h-[7.125rem]" src={Brilliant} alt="brilliant" />
-        <img src={Star} alt="star" />
+        <img className="xl:h-[5rem] 2xl:h-[7.125rem]" src={Brilliant} alt="brilliant" />
+        <img className='2xl:block hidden' src={Star} alt="star" />
       </div>
       <div className="mb-[5rem] h-[1px] w-full bg-primary-500" />
       <motion.div
@@ -73,8 +73,8 @@ const CareMediumScreen = () => {
   return (
     <>
       <div className="flex items-center justify-between">
-        <h2 className="font-bergamasco text-[6.87rem] ">Сохраните блеск</h2>
-        <img className="h-[7.125rem]" src={Brilliant} alt="brilliant" />
+        <h2 className="font-bergamasco text-[5rem] md:text-[6.87rem] ">Сохраните блеск</h2>
+        <img className="h-[4rem] md:h-[7.125rem]" src={Brilliant} alt="brilliant" />
       </div>
       <div className="mb-[5rem] h-[1px] w-full bg-primary-500" />
       <div className="flex flex-col">

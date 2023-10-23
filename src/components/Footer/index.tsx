@@ -10,7 +10,7 @@ const FooterMobile = () => (
   <>
     <BrlliantWithLines />
     <div className="mb-[3rem] flex flex-col">
-      <h3 className="mt-[2rem] text-start text-[2.25rem]">Каталог</h3>
+      <h3 className="mt-[2rem] text-start text-[2.25rem]  mb-[0.5rem]">Каталог</h3>
       <ButtonPage page="Сережки" />
       <ButtonPage page="Кольца" />
       <ButtonPage page="Браслеты" />
@@ -19,7 +19,7 @@ const FooterMobile = () => (
       <ButtonPage page="Товары для свадьбы" />
     </div>
     <div className="mb-[3rem] flex flex-col">
-      <h3 className="mt-[2rem] text-start text-[2.25rem]">Информация</h3>
+      <h3 className="mt-[2rem] text-start text-[2.25rem]  mb-[0.5rem]">Информация</h3>
       <ButtonPage page="Контакты" />
       <ButtonPage page="Оплата и доставка" />
     </div>
@@ -48,7 +48,7 @@ const FooterMediumScreen = () => (
     <BrlliantWithLines />
     <div className="mb-[3rem] mt-[2rem] flex justify-between flex-wrap">
       <div className="flex flex-col mb-[2rem]">
-        <h3 className="text-start text-[3rem]">Каталог</h3>
+        <h3 className="text-start text-[3rem]  mb-[0.5rem]">Каталог</h3>
         <ButtonPage page="Сережки" />
         <ButtonPage page="Кольца" />
         <ButtonPage page="Браслеты" />
@@ -57,7 +57,7 @@ const FooterMediumScreen = () => (
         <ButtonPage page="Товары для свадьбы" />
       </div>
       <div className="mr-[5rem] flex flex-col">
-        <h3 className="text-start text-[3rem]">Информация</h3>
+        <h3 className="text-start text-[3rem]  mb-[0.5rem]">Информация</h3>
         <ButtonPage page="Контакты" />
         <ButtonPage page="Оплата и доставка" />
       </div>
@@ -97,7 +97,7 @@ const FooterFullScreen = () => (
         <h3 className="text-start text-[1.5rem]">+7 (971) 607-23-94</h3>
       </div>
       <div className="flex flex-col">
-        <h3 className="text-start text-[2rem]">Каталог</h3>
+        <h3 className="text-start text-[2rem] mb-[0.5rem]">Каталог</h3>
         <ButtonPage page="Сережки" />
         <ButtonPage page="Кольца" />
         <ButtonPage page="Браслеты" />
@@ -106,7 +106,7 @@ const FooterFullScreen = () => (
         <ButtonPage page="Товары для свадьбы" />
       </div>
       <div className="flex flex-col">
-        <h3 className="text-start text-[2rem]">Информация</h3>
+        <h3 className="text-start text-[2rem] mb-[0.5rem]">Информация</h3>
         <ButtonPage page="Контакты" />
         <ButtonPage page="Оплата и доставка" />
       </div>

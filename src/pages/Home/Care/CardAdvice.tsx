@@ -35,9 +35,9 @@ const CardAdviceFull = ({ description, img, number }: Props) => {
       <img className="mx-auto mb-[2rem] h-[27.5rem]" src={img} alt={`${img}`} />
       <div className="flex items-center justify-between">
         <div className="w-[30%] font-bergamasco text-[8rem]">
-          <span>{number}</span>
+          <span className='xl:text-[5rem] 2xl:text-[8rem]'>{number}</span>
         </div>
-        <div className="w-[65%] text-[1.8rem] leading-[2.5rem]">
+        <div className="w-[65%] text-[1.8rem] leading-[2.5rem] ml-[3rem]">
           <span className="tracking-[-5%] ">{description}</span>
         </div>
       </div>
