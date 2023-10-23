@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 import { SelectedPage } from '@/types/home'
 import BrlliantWithLines from '@/components/BrilliantWithLines'
 import Section from '@/components/Section'
+import RombWithArrow from '@/assets/icons/Ромб со стреочкой.png'
 type Prop = {
   setSelectedPage: (val: SelectedPage) => void
 }
@@ -108,6 +109,7 @@ const FullScreenJeverly = () => {
                 >
                   ПЕРЕЙТИ В КАТАЛОГ
                 </div>
+                <img className='absolute -bottom-4 right-[calc(50%-1.25rem)] h-[2.5rem] 2xl:h-[3rem] 2xl:right-[calc(50%-1.5rem)] 2xl:-bottom-5' src={RombWithArrow} alt="" />
               </div>
               <div className="mx-auto w-[1px] flex-1 bg-primary-500"></div>
             </div>
@@ -144,6 +146,7 @@ const MobileScreenJeverly = () => {
           >
             ПЕРЕЙТИ В КАТАЛОГ
           </div>
+          <img className='absolute -bottom-6 right-[calc(50%-1.75rem)] h-[3.5rem]' src={RombWithArrow} alt="" />
         </div>
       </Button>
       <div className="mx-auto h-[4.65rem] w-[1px] bg-primary-500"></div>
