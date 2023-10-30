@@ -15,6 +15,71 @@ const container = {
   visible: { transition: { staggerChildren: 0.9 } },
 }
 
+const CareMobileScreen = () => {
+  return (
+    <>
+      <div className="flex items-center justify-between">
+        <h2 className="font-bergamasco text-[3rem] ">Сохраните блеск</h2>
+        <img src={Brilliant} alt="brilliant" />
+      </div>
+      <CardAdvice
+        number="01"
+        description="Храните в мягких сумочках или футлярах, чтобы избежать царапин."
+        img={Advice1}
+      />
+      <CardAdvice
+        number="02"
+        description="Избегайте контакта с химикатами, парфюмами и косметикой."
+        img={Advice2}
+      />
+      <CardAdvice
+        number="03"
+        description="Регулярно чистите мягкой щеткой, водой и моющим средством."
+        img={Advice3}
+      />
+    </>
+  )
+}
+
+const CareMediumScreen = () => {
+  return (
+    <>
+      <div className="flex items-center justify-between">
+        <h2 className="font-bergamasco text-[5rem] md:text-[6.87rem] ">
+          Сохраните блеск
+        </h2>
+        <img
+          className="h-[4rem] md:h-[7.125rem]"
+          src={Brilliant}
+          alt="brilliant"
+        />
+      </div>
+      <div className="mb-[5rem] h-[1px] w-full bg-primary-500" />
+      <div className="flex flex-col">
+        <CardAdvice
+          number="01"
+          description="Храните в мягких сумочках или футлярах, чтобы избежать царапин."
+          img={Advice1}
+        />
+      </div>
+      <div className="-mt-[10rem] flex flex-col">
+        <CardAdvice
+          number="02"
+          description="Избегайте контакта с химикатами, парфюмами и косметикой."
+          img={Advice2}
+        />
+      </div>
+      <div className="-mt-[10rem] flex flex-col">
+        <CardAdvice
+          number="03"
+          description="Регулярно чистите мягкой щеткой, водой и моющим средством."
+          img={Advice3}
+        />
+      </div>
+    </>
+  )
+}
+
 const CareFullScreen = () => {
   return (
     <>
@@ -32,8 +97,12 @@ const CareFullScreen = () => {
         >
           Сохраните блеск
         </motion.h2>
-        <img className="xl:h-[5rem] 2xl:h-[7.125rem]" src={Brilliant} alt="brilliant" />
-        <img className='2xl:block hidden' src={Star} alt="star" />
+        <img
+          className="xl:h-[5rem] 2xl:h-[7.125rem]"
+          src={Brilliant}
+          alt="brilliant"
+        />
+        <img className="hidden 2xl:block" src={Star} alt="star" />
       </div>
       <div className="mb-[5rem] h-[1px] w-full bg-primary-500" />
       <motion.div
@@ -65,65 +134,6 @@ const CareFullScreen = () => {
           />
         </div>
       </motion.div>
-    </>
-  )
-}
-
-const CareMediumScreen = () => {
-  return (
-    <>
-      <div className="flex items-center justify-between">
-        <h2 className="font-bergamasco text-[5rem] md:text-[6.87rem] ">Сохраните блеск</h2>
-        <img className="h-[4rem] md:h-[7.125rem]" src={Brilliant} alt="brilliant" />
-      </div>
-      <div className="mb-[5rem] h-[1px] w-full bg-primary-500" />
-      <div className="flex flex-col">
-        <CardAdvice
-          number="01"
-          description="Храните в мягких сумочках или футлярах, чтобы избежать царапин."
-          img={Advice1}
-        />
-      </div>
-      <div className="-mt-[10rem] flex flex-col">
-        <CardAdvice
-          number="02"
-          description="Избегайте контакта с химикатами, парфюмами и косметикой."
-          img={Advice2}
-        />
-      </div>
-      <div className="-mt-[10rem] flex flex-col">
-        <CardAdvice
-          number="03"
-          description="Регулярно чистите мягкой щеткой, водой и моющим средством."
-          img={Advice3}
-        />
-      </div>
-    </>
-  )
-}
-
-const CareMobileScreen = () => {
-  return (
-    <>
-      <div className="flex items-center justify-between">
-        <h2 className="font-bergamasco text-[3rem] ">Сохраните блеск</h2>
-        <img src={Brilliant} alt="brilliant" />
-      </div>
-      <CardAdvice
-        number="01"
-        description="Храните в мягких сумочках или футлярах, чтобы избежать царапин."
-        img={Advice1}
-      />
-      <CardAdvice
-        number="02"
-        description="Избегайте контакта с химикатами, парфюмами и косметикой."
-        img={Advice2}
-      />
-      <CardAdvice
-        number="03"
-        description="Регулярно чистите мягкой щеткой, водой и моющим средством."
-        img={Advice3}
-      />
     </>
   )
 }

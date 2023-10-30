@@ -1,4 +1,4 @@
-import ButtonPage from '../Buttons/ButtonPage'
+import {ButtonPage} from '../Buttons/ButtonPage'
 import BrlliantWithLines from '../BrilliantWithLines'
 import X from '@/assets/icons/Х.svg'
 import Facebook from '@/assets/icons/Фейсбук.svg'

@@ -3,19 +3,19 @@ import Button from './Button'
 
 type Props = {
   page: string
-  img: string
+  imgLeft: string
   imgRight: string
   onClick: () => void
 }
 
-const ButtonBurgerCatalog = ({ page, img, onClick, imgRight }: Props) => {
+const ButtonBurgerCatalog = ({ page, imgLeft, onClick, imgRight }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const Icon = (
     <div className="h-[1.6rem] w-[1.6rem]">
       <img
         className="min-h-[1.6rem] min-w-[1.6rem]"
-        src={img}
-        alt={`img-${img}`}
+        src={imgLeft}
+        alt={`img-${imgLeft}`}
       />
     </div>
   )

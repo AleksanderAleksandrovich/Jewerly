@@ -7,7 +7,7 @@ import Section from '@/components/Section'
 type Props = {
   setSelectedPage: (val: SelectedPage) => void
 }
-const BrilliantMobile = () => (
+const BrilliantMobileScreen = () => (
   <>
     <h2 className="mb-[2rem] text-center font-bergamasco text-[3rem] leading-tight">
       Бриллиант идеален для выдающихся украшений
@@ -39,7 +39,7 @@ const BrilliantMobile = () => (
     </div>
   </>
 )
-const BrilliantMedium = () => (
+const BrilliantMediumScreen = () => (
   <>
     <motion.h2
       initial="hidden"
@@ -163,8 +163,8 @@ const BrilliantContent = () => {
   const isAboveFullScreen = useMediaQuery('(min-width: 1300px)')
   const isMediumScreen = useMediaQuery('(min-width: 768px)')
   if (isAboveFullScreen) return <BrilliantFullScreen />
-  if (isMediumScreen) return <BrilliantMedium />
-  return <BrilliantMobile />
+  if (isMediumScreen) return <BrilliantMediumScreen />
+  return <BrilliantMobileScreen />
 }
 const Brilliant = ({ setSelectedPage }: Props) => {
   return (

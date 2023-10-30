@@ -7,7 +7,7 @@ import bracelet from '@/assets/photo/Каталог браслеты.png'
 import ring from '@/assets/photo/Каталог кольца.png'
 import pendants from '@/assets/photo/Каталог кулоны.png'
 import earrings from '@/assets/photo/Каталог серьги.png'
-import { ButtonPageWithArrow } from '@/components/Buttons/ButtonPageWithArrow'
+import { ButtonPageWithArrow } from '@/components/Buttons/ButtonPage'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import Section from '@/components/Section'
 

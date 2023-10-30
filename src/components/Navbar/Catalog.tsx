@@ -1,4 +1,4 @@
-import ButtonPageWithImg from '../Buttons/ButtonPageWithImg'
+import { ButtonPageWithImg } from '../Buttons/ButtonPage'
 import Braslate from '@/assets/icons/Браслеты.svg'
 import ForHim from '@/assets/icons/Для него.svg'
 import Ring from '@/assets/icons/Кольца.svg'

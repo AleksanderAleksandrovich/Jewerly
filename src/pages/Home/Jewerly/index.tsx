@@ -12,6 +12,57 @@ type Prop = {
   setSelectedPage: (val: SelectedPage) => void
 }
 
+const MobileScreenJeverly = () => {
+  return (
+    <>
+      <h1 className="mt-28 font-bergamasco text-[4rem] text-white">
+        Ювелирные
+      </h1>
+      <h1 className="-mt-10 text-right font-bergamasco text-[4rem] text-white">
+        украшения
+      </h1>
+      <div className="-mt-5 ml-auto mr-0">
+        <h2 className="text-[1.5rem]">Ваш путь к сиянию</h2>
+        <h2 className="text-[1.5rem]">и элегантности</h2>
+      </div>
+
+      <Button buttonProps={{ className: 'relative mt-[2rem]' }}>
+        <div>
+          <img
+            className="mx-auto max-h-[16.5rem]"
+            src={Catalog}
+            alt="catalog"
+          />
+          <div
+            className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 transform whitespace-nowrap text-[0.9rem] text-white before:absolute 
+            before:left-1/2 before:top-full before:h-[1px] before:w-[5rem] before:-translate-x-1/2 before:-translate-y-1/2 before:transform before:bg-white"
+          >
+            ПЕРЕЙТИ В КАТАЛОГ
+          </div>
+          <img
+            className="absolute -bottom-6 right-[calc(50%-1.75rem)] h-[3.5rem]"
+            src={RombWithArrow}
+            alt=""
+          />
+        </div>
+      </Button>
+      <div className="mx-auto h-[4.65rem] w-[1px] bg-primary-500"></div>
+      <div
+        className=" relative ml-[1.7rem] before:absolute before:-right-[3rem] before:-top-[3.5rem] before:z-[-1] before:h-[30rem] before:w-[35rem] before:bg-blic1 before:bg-cover after:absolute after:-bottom-32 after:-left-32  after:z-[-1] after:h-[25rem] after:w-[25rem] 
+       after:bg-blic2 after:bg-cover"
+      >
+        <img
+          className="mx-auto max-h-[32rem]"
+          src={PhotoFirstScreen}
+          alt="photo"
+        />
+      </div>
+      <div className="mx-auto mb-[3rem] mt-[2.4rem]">
+        <img className="max-h-[6.37rem]" src={Ring} alt="ring" />
+      </div>
+    </>
+  )
+}
 const FullScreenJeverly = () => {
   return (
     <>
@@ -105,11 +156,15 @@ const FullScreenJeverly = () => {
                 />
                 <div
                   className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 transform whitespace-nowrap text-white before:absolute before:left-1/2 
-            before:top-full before:h-[1px] before:-translate-x-1/2 before:-translate-y-1/2 before:transform before:bg-white sm:text-[0.7rem] md:text-[1rem] before:sm:w-[7rem] xl:text-[1.5rem] before:xl:w-[10rem]"
+            before:top-full before:h-[1px] before:-translate-x-1/2 before:-translate-y-1/2 before:transform before:bg-white sm:text-[0.7rem] before:sm:w-[7rem] md:text-[1rem] xl:text-[1.5rem] before:xl:w-[10rem]"
                 >
                   ПЕРЕЙТИ В КАТАЛОГ
                 </div>
-                <img className='absolute -bottom-4 right-[calc(50%-1.25rem)] h-[2.5rem] 2xl:h-[3rem] 2xl:right-[calc(50%-1.5rem)] 2xl:-bottom-5' src={RombWithArrow} alt="" />
+                <img
+                  className="absolute -bottom-4 right-[calc(50%-1.25rem)] h-[2.5rem] 2xl:-bottom-5 2xl:right-[calc(50%-1.5rem)] 2xl:h-[3rem]"
+                  src={RombWithArrow}
+                  alt=""
+                />
               </div>
               <div className="mx-auto w-[1px] flex-1 bg-primary-500"></div>
             </div>
@@ -119,53 +174,7 @@ const FullScreenJeverly = () => {
     </>
   )
 }
-const MobileScreenJeverly = () => {
-  return (
-    <>
-      <h1 className="mt-28 font-bergamasco text-[4rem] text-white">
-        Ювелирные
-      </h1>
-      <h1 className="-mt-10 text-right font-bergamasco text-[4rem] text-white">
-        украшения
-      </h1>
-      <div className="-mt-5 ml-auto mr-0">
-        <h2 className="text-[1.5rem]">Ваш путь к сиянию</h2>
-        <h2 className="text-[1.5rem]">и элегантности</h2>
-      </div>
 
-      <Button buttonProps={{ className: 'relative mt-[2rem]' }}>
-        <div>
-          <img
-            className="mx-auto max-h-[16.5rem]"
-            src={Catalog}
-            alt="catalog"
-          />
-          <div
-            className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 transform whitespace-nowrap text-[0.9rem] text-white before:absolute 
-            before:left-1/2 before:top-full before:h-[1px] before:w-[5rem] before:-translate-x-1/2 before:-translate-y-1/2 before:transform before:bg-white"
-          >
-            ПЕРЕЙТИ В КАТАЛОГ
-          </div>
-          <img className='absolute -bottom-6 right-[calc(50%-1.75rem)] h-[3.5rem]' src={RombWithArrow} alt="" />
-        </div>
-      </Button>
-      <div className="mx-auto h-[4.65rem] w-[1px] bg-primary-500"></div>
-      <div
-        className=" relative ml-[1.7rem] before:absolute before:-right-[3rem] before:-top-[3.5rem] before:z-[-1] before:h-[30rem] before:w-[35rem] before:bg-blic1 before:bg-cover after:absolute after:-bottom-32 after:-left-32  after:z-[-1] after:h-[25rem] after:w-[25rem] 
-       after:bg-blic2 after:bg-cover"
-      >
-        <img
-          className="mx-auto max-h-[32rem]"
-          src={PhotoFirstScreen}
-          alt="photo"
-        />
-      </div>
-      <div className="mx-auto mb-[3rem] mt-[2.4rem]">
-        <img className="max-h-[6.37rem]" src={Ring} alt="ring" />
-      </div>
-    </>
-  )
-}
 const JewerlyContent = () => {
   const isAboveFullScreen = useMediaQuery('(min-width: 768px)')
   if (isAboveFullScreen) return <FullScreenJeverly />

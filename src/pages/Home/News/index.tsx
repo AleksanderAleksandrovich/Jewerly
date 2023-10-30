@@ -4,7 +4,7 @@ import ItemsStore from '@/db/db.json'
 import ShopingCard from '@/components/ShopingCard'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import Star from '@/assets/icons/Зирочка.svg'
-import { ButtonPageWithArrow } from '@/components/Buttons/ButtonPageWithArrow'
+import { ButtonPageWithArrow } from '@/components/Buttons/ButtonPage'
 import Section from '@/components/Section'
 import StarsWithLine from  "@/assets/photo/Звездочки с палочкой.png"
 type Props = {

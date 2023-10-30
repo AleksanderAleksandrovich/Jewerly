@@ -165,7 +165,7 @@ const CardForMediumScreen = ({
           {type} <span>"{name}"</span>
         </h4>
 
-        {/* Кружочек чвет металла */}
+        {/* Кружочек цвет металла */}
         <div
           style={{ backgroundColor: color }}
           className={`mb-[0.5rem] h-5 w-5 rounded-full`}
