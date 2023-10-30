@@ -9,29 +9,6 @@ type Props = {
   setIsOpenSearch: (val: boolean) => void
 }
 
-const SearchFullScreen = () => (
-  <div className="flex h-9 items-center justify-between gap-3 rounded-full border-[1px] border-primary-500 bg-transparent px-4 py-2 ">
-    <input
-      className="h-5 w-20 bg-transparent font-geoItal text-base tracking-tight text-primary-500 focus:outline-none"
-      placeholder="Поиск"
-    />
-    <Button buttonProps={{ className: 'min-h-[1.1rem] min-w-[1.1rem]' }}>
-      <img src={Search} alt="search" />
-    </Button>
-  </div>
-)
-const SearchSmallScreen = ({ isOpenSearch, setIsOpenSearch }: Props) => (
-  <div className="flex items-center sm:relative">
-    <button onClick={() => setIsOpenSearch(!isOpenSearch)}>
-      <img
-        className="min-h-[1.4rem] min-w-[1.4rem]"
-        src={Search}
-        alt="search"
-      />
-    </button>
-    {isOpenSearch && <SearchOpenForSmallScreen />}
-  </div>
-)
 const SearchOpenForSmallScreen = () => (
   <div
     className="absolute -bottom-[2.6rem] left-[7rem] flex h-[2.55rem] w-[30rem] items-center justify-between rounded-full bg-secondary-400 px-6 py-5 
@@ -44,6 +21,31 @@ const SearchOpenForSmallScreen = () => (
     />
     <Button>
       <img src={ArrowSearch} alt="arowSearch" />
+    </Button>
+  </div>
+)
+
+const SearchSmallScreen = ({ isOpenSearch, setIsOpenSearch }: Props) => (
+  <div className="flex items-center sm:relative">
+    <button onClick={() => setIsOpenSearch(!isOpenSearch)}>
+      <img
+        className="min-h-[1.4rem] min-w-[1.4rem]"
+        src={Search}
+        alt="search"
+      />
+    </button>
+    {isOpenSearch && <SearchOpenForSmallScreen />}
+  </div>
+)
+
+const SearchFullScreen = () => (
+  <div className="flex h-9 items-center justify-between gap-3 rounded-full border-[1px] border-primary-500 bg-transparent px-4 py-2 ">
+    <input
+      className="h-5 w-20 bg-transparent font-geoItal text-base tracking-tight text-primary-500 focus:outline-none"
+      placeholder="Поиск"
+    />
+    <Button buttonProps={{ className: 'min-h-[1.1rem] min-w-[1.1rem]' }}>
+      <img src={Search} alt="search" />
     </Button>
   </div>
 )

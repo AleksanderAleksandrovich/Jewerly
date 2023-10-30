@@ -12,7 +12,7 @@ export default function Button({
   children = null,
   iconLeft,
   buttonProps,
-  iconRight
+  iconRight,
 }: ButtonProps) {
   return (
     <button {...buttonProps}>

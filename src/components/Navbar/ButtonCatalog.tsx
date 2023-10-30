@@ -7,12 +7,13 @@ import Catalog from './Catalog'
 import ButtonBurgerCatalog from '../Buttons/ButtonBurgerCatalog'
 import Button from '../Buttons/Button'
 import useMediaQuery from '@/hooks/useMediaQuery'
-import {ButtonPageWithImg} from '../Buttons/ButtonPage'
+import { ButtonPageWithImg } from '../Buttons/ButtonPage'
 import Contact from '@/assets/icons/Контакты.svg'
 import PersonLogin from '@/assets/icons/Person.svg'
 import Arow from '@/assets/icons/ArowCatalogButton.svg'
 import Cross from '@/assets/icons/Cross.svg'
 import { motion } from 'framer-motion'
+
 type Props = {
   selectedPage: SelectedPage
   setSelectedPage: (val: SelectedPage) => void
@@ -25,13 +26,15 @@ function ContentCatalog({
   if (isCatalogOpen) return <Catalog />
   return (
     <>
-       <ButtonPageWithImg className="py-4" page="Войти в аккаунт" img={PersonLogin} />
-      <div className="h-[1px] bg-primary-500" />
-      <PartButtonLink
-        selectedPage={selectedPage}
+      <ButtonPageWithImg
+        className="py-4"
+        page="Войти в аккаунт"
+        img={PersonLogin}
       />
       <div className="h-[1px] bg-primary-500" />
-       <ButtonPageWithImg className="pt-4" page="Контакты" img={Contact} />
+      <PartButtonLink selectedPage={selectedPage} />
+      <div className="h-[1px] bg-primary-500" />
+      <ButtonPageWithImg className="pt-4" page="Контакты" img={Contact} />
     </>
   )
 }
@@ -44,7 +47,7 @@ function ContentMenu({ selectedPage, setSelectedPage }: Props) {
       <>
         <Catalog />
         <div className="h-[1px] bg-primary-500" />
-         <ButtonPageWithImg className="pt-4" page="Контакты" img={Contact} />
+        <ButtonPageWithImg className="pt-4" page="Контакты" img={Contact} />
       </>
     )
   return (
@@ -54,6 +57,7 @@ function ContentMenu({ selectedPage, setSelectedPage }: Props) {
         page="Каталог"
         imgLeft={BurgerCatalog}
         onClick={() => setIsCatalogOpen(!isCatalogOpen)}
+        isCatalogOpen={isCatalogOpen}
       />
 
       <ContentCatalog

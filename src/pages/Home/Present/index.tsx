@@ -32,7 +32,7 @@ const PresentMobileScreen = () => (
           iconRight={<img className="ml-[1rem]" src={Arrow} alt="arrow" />}
           buttonProps={{
             className:
-              'flex items-center justify-center text-secondary-400 bg-green-850 mb-0 mt-auto h-[2rem] text-[1.25rem] whitespace-nowrap',
+              'flex items-center px-[0.5rem] justify-center text-secondary-400 bg-green-850 mb-0 mt-auto h-[2rem] text-[1.25rem] whitespace-nowrap',
           }}
         >
           Подарить украшение
@@ -45,7 +45,7 @@ const PresentMobileScreen = () => (
 const PresentMediumScreen = () => (
   <>
     <div className="mb-[1.5rem] h-[1px] w-full bg-primary-500" />
-    <h2 className="mb-[5.65rem] text-center font-bergamasco text-[5rem] md:text-[6.875rem] leading-[7rem]">
+    <h2 className="mb-[5.65rem] text-center font-bergamasco text-[5rem] leading-[7rem] md:text-[6.875rem]">
       Сделайте подарок особенным с нашими украшениями
     </h2>
     <div className="mx-auto flex gap-[8.7rem]">
@@ -63,7 +63,7 @@ const PresentMediumScreen = () => (
           iconRight={<img className="ml-[1rem]" src={Arrow} alt="arrow" />}
           buttonProps={{
             className:
-              'flex items-center justify-center text-secondary-400 bg-green-850 mb-0 mt-auto h-[2.5rem] text-[1.25rem] whitespace-nowrap',
+              'flex items-center justify-center px-[0.5rem] text-secondary-400 bg-green-850 mb-0 mt-auto h-[2.5rem] text-[1.25rem] whitespace-nowrap',
           }}
         >
           Подарить украшение
@@ -103,7 +103,7 @@ const PresentFullScreen = () => (
           iconRight={<img className="ml-[1rem]" src={Arrow} alt="arrow" />}
           buttonProps={{
             className:
-              'flex items-center justify-center text-secondary-400 bg-green-850 mb-0 mt-auto h-[3rem] text-[1.5rem] whitespace-nowrap',
+              'flex items-center justify-center px-[1rem] text-secondary-400 bg-green-850 mb-0 mt-auto h-[3rem] text-[1.5rem] whitespace-nowrap',
           }}
         >
           Подарить украшение

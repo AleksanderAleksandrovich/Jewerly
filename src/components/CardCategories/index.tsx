@@ -8,7 +8,7 @@ type Props = {
 const CardMobileScreen = ({ img, text }: Props) => (
   <div className="container">
     <div className="image-container">
-      <img src={img} alt="Your Image" className="image" />
+      <img src={img} alt={img} className="image" />
       <div className="overlay">
         <div className="text">{text}</div>
         <ButtonCardCategoties />
@@ -19,7 +19,7 @@ const CardMobileScreen = ({ img, text }: Props) => (
 const CardMediumScreen = ({ img, text }: Props) => (
   <div className="container_med">
     <div className="image-container">
-      <img src={img} alt="Your Image" className="image" />
+      <img src={img} alt={img} className="image" />
       <div className="overlay">
         <div className="text_med">{text}</div>
         <ButtonCardCategoties />
@@ -30,7 +30,7 @@ const CardMediumScreen = ({ img, text }: Props) => (
 const CardFullScreen = ({ img, text }: Props) => (
   <div className="container_full">
     <div className="image-container_full">
-      <img src={img} alt="Your Image" className="image" />
+      <img src={img} alt={img} className="image" />
       <div className="overlay_full">
         <div className="text_full">{text}</div>
         <ButtonCardCategoties />
@@ -45,7 +45,7 @@ const CardCategories = ({ text, img }: Props) => {
   if (isAboveFullScreen) {
     return <CardFullScreen img={img} text={text} />
   }
-  if (isAboveMediumScreen ) {
+  if (isAboveMediumScreen) {
     return <CardMediumScreen img={img} text={text} />
   }
 

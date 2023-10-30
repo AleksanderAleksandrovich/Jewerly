@@ -11,6 +11,7 @@ import Button from '../Buttons/Button'
 import { useBasketStore } from '@/store/buying'
 import { useState } from 'react'
 import BrilOrange from '@/assets/icons/Brilliant.svg'
+
 type Prop = {
   selectedPage: SelectedPage
   setSelectedPage: (val: SelectedPage) => void
@@ -94,10 +95,9 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
           {countJeverly === 0 && isHoverBasket && (
             <div className="absolute -bottom-[9.2rem] -left-[6.4rem] flex h-[8.75rem] w-14 flex-col items-center">
               <div
-                className="ml-[7rem] mr-auto 
-  h-0 w-0
-  border-b-[1rem] border-l-[0.5rem]
-  border-r-[0.5rem] border-b-secondary-400 border-l-transparent border-r-transparent"
+                className="ml-[7rem] mr-auto h-0 w-0 border-b-[1rem] 
+                  border-l-[0.5rem] border-r-[0.5rem] border-b-secondary-400 
+                  border-l-transparent border-r-transparent"
               />
               <div className="flex w-[15.6rem] flex-col items-center bg-secondary-400 p-[1rem]">
                 <img src={BrilOrange} alt="" />

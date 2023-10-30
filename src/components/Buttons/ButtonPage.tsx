@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom'
 import Button from './Button'
-
 import Arrow from '@/assets/icons/Стрелочка на некоторых кнопках.svg'
 
 type PropsButtonPage = {
@@ -8,14 +7,15 @@ type PropsButtonPage = {
   className?: string
 }
 
-type PropsPageWithImg = PropsButtonPage & {
+type PropsButtonPageWithImg = PropsButtonPage & {
   img: string
 }
 
-type PropPageWithArrow = {
+type PropButtonPageWithArrow = {
   children: React.ReactNode
   style: string
 }
+
 export const ButtonPage = ({ page, className }: PropsButtonPage) => {
   return (
     <Button
@@ -34,7 +34,7 @@ export const ButtonPageWithImg = ({
   page,
   img,
   className,
-}: PropsPageWithImg) => {
+}: PropsButtonPageWithImg) => {
   const Icon = (
     <div className="h-[1.6rem] w-[1.6rem]">
       <img
@@ -58,7 +58,10 @@ export const ButtonPageWithImg = ({
   )
 }
 
-export const ButtonPageWithArrow = ({ children, style }: PropPageWithArrow) => {
+export const ButtonPageWithArrow = ({
+  children,
+  style,
+}: PropButtonPageWithArrow) => {
   return (
     <Button
       iconRight={<img src={Arrow} alt="arrow" />}

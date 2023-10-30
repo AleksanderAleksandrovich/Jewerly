@@ -1,4 +1,4 @@
-import {ButtonPage} from '../Buttons/ButtonPage'
+import { ButtonPage } from '../Buttons/ButtonPage'
 import BrlliantWithLines from '../BrilliantWithLines'
 import X from '@/assets/icons/Х.svg'
 import Facebook from '@/assets/icons/Фейсбук.svg'
@@ -9,8 +9,11 @@ import useMediaQuery from '@/hooks/useMediaQuery'
 const FooterMobile = () => (
   <>
     <BrlliantWithLines />
+
     <div className="mb-[3rem] flex flex-col">
-      <h3 className="mt-[2rem] text-start text-[2.25rem]  mb-[0.5rem]">Каталог</h3>
+      <h3 className="mb-[0.5rem] mt-[2rem] text-start  text-[2.25rem]">
+        Каталог
+      </h3>
       <ButtonPage page="Сережки" />
       <ButtonPage page="Кольца" />
       <ButtonPage page="Браслеты" />
@@ -18,22 +21,29 @@ const FooterMobile = () => (
       <ButtonPage page="Мужские товары" />
       <ButtonPage page="Товары для свадьбы" />
     </div>
+
     <div className="mb-[3rem] flex flex-col">
-      <h3 className="mt-[2rem] text-start text-[2.25rem]  mb-[0.5rem]">Информация</h3>
+      <h3 className="mb-[0.5rem] mt-[2rem] text-start  text-[2.25rem]">
+        Информация
+      </h3>
       <ButtonPage page="Контакты" />
       <ButtonPage page="Оплата и доставка" />
     </div>
+
     <div className="mb-[3rem] flex flex-col">
       <h3 className="text-start text-[2.25rem]">ИП Хмара Татьяна Сергеевна</h3>
       <h3 className="text-start text-[2.25rem]">ИНН 3689426798</h3>
       <h3 className="text-start text-[2.25rem]">+7 (971) 607-23-94</h3>
     </div>
+
     <div className="mb-[2rem] flex">
       <img className="mr-6 h-[2.5rem]" src={X} alt="" />
       <img className="mr-6 h-[2.5rem]" src={Facebook} alt="" />
       <img className="mr-6 h-[2.5rem]" src={Inst} alt="" />
     </div>
+
     <div className="mb-8 h-[1px] w-full bg-primary-500" />
+
     <div className="mb-8 flex flex-col">
       <img className="mx-auto h-[3.6rem]" src={Brilliant} alt="" />
       <h3 className="text-center font-perpetua text-[4rem] text-white">
@@ -46,9 +56,9 @@ const FooterMobile = () => (
 const FooterMediumScreen = () => (
   <>
     <BrlliantWithLines />
-    <div className="mb-[3rem] mt-[2rem] flex justify-between flex-wrap">
-      <div className="flex flex-col mb-[2rem]">
-        <h3 className="text-start text-[3rem]  mb-[0.5rem]">Каталог</h3>
+    <div className="mb-[3rem] mt-[2rem] flex flex-wrap justify-between">
+      <div className="mb-[2rem] flex flex-col">
+        <h3 className="mb-[0.5rem] text-start  text-[3rem]">Каталог</h3>
         <ButtonPage page="Сережки" />
         <ButtonPage page="Кольца" />
         <ButtonPage page="Браслеты" />
@@ -57,11 +67,12 @@ const FooterMediumScreen = () => (
         <ButtonPage page="Товары для свадьбы" />
       </div>
       <div className="mr-[5rem] flex flex-col">
-        <h3 className="text-start text-[3rem]  mb-[0.5rem]">Информация</h3>
+        <h3 className="mb-[0.5rem] text-start  text-[3rem]">Информация</h3>
         <ButtonPage page="Контакты" />
         <ButtonPage page="Оплата и доставка" />
       </div>
     </div>
+
     <div className="flex ">
       <div className="mb-[3rem] mr-[8rem] flex flex-col">
         <h3 className="text-start text-[2.25rem]">
@@ -76,10 +87,12 @@ const FooterMediumScreen = () => (
         <img className="mr-6 h-[2.5rem]" src={Inst} alt="" />
       </div>
     </div>
+
     <div className="mb-[3.25rem] h-[1px] w-full bg-primary-500" />
+
     <div className="mb-[3.25rem] flex flex-col">
       <img className="mx-auto h-[4.8rem]" src={Brilliant} alt="" />
-      <h3 className="text-center font-perpetua sm:text-[5rem] md:text-[6rem] text-white">
+      <h3 className="text-center font-perpetua text-white sm:text-[5rem] md:text-[6rem]">
         CharmVogue
       </h3>
     </div>
@@ -97,7 +110,7 @@ const FooterFullScreen = () => (
         <h3 className="text-start text-[1.5rem]">+7 (971) 607-23-94</h3>
       </div>
       <div className="flex flex-col">
-        <h3 className="text-start text-[2rem] mb-[0.5rem]">Каталог</h3>
+        <h3 className="mb-[0.5rem] text-start text-[2rem]">Каталог</h3>
         <ButtonPage page="Сережки" />
         <ButtonPage page="Кольца" />
         <ButtonPage page="Браслеты" />
@@ -106,7 +119,7 @@ const FooterFullScreen = () => (
         <ButtonPage page="Товары для свадьбы" />
       </div>
       <div className="flex flex-col">
-        <h3 className="text-start text-[2rem] mb-[0.5rem]">Информация</h3>
+        <h3 className="mb-[0.5rem] text-start text-[2rem]">Информация</h3>
         <ButtonPage page="Контакты" />
         <ButtonPage page="Оплата и доставка" />
       </div>
@@ -117,7 +130,9 @@ const FooterFullScreen = () => (
         <img className="h-[1.75rem]" src={Inst} alt="" />
       </div>
     </div>
+
     <div className="mb-[3.25rem] h-[1px] w-full bg-primary-500" />
+
     <div className="mb-[3.25rem] flex flex-col">
       <img className="mx-auto h-[4.8rem]" src={Brilliant} alt="" />
       <h3 className="text-center font-perpetua text-[6rem] text-white">
