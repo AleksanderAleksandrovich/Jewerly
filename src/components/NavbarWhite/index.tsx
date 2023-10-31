@@ -9,6 +9,7 @@ import { useBasketStore } from '@/store/buying'
 import { useState } from 'react'
 import BrilOrange from '@/assets/icons/Brilliant.svg'
 import ButtonCatalog from './ButtonCatalog'
+import { NavLink } from 'react-router-dom'
 
 const LoginPart = () => (
   <div className="flex items-center gap-4">
@@ -47,7 +48,9 @@ const Navbar = () => {
       {/* center side */}
       <div className="flex w-[20%] justify-center gap-10 2xl:ml-10">
         <div className="min-w-[2.6rem]">
-          <img src={Brilliant} alt="brilliant" />
+          <NavLink to="/">
+            <img src={Brilliant} alt="brilliant" />
+          </NavLink>
         </div>
       </div>
       {/* right side navbar*/}
