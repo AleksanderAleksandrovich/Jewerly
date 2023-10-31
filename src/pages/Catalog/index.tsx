@@ -1,13 +1,13 @@
-import { useFavoriteStore } from '@/store/Favorites'
-import React from 'react'
-
+import NavbarWhite from '@/components/NavbarWhite'
 type Props = {}
 
 const Catalog = () => {
-  const fav = useFavoriteStore(st=>st.jewerlyItemFavorites)
-  console.log(fav)
   return (
-    <div>Catalog</div>
+    <>
+      <NavbarWhite />
+      <div className="mx-14 h-[1px] w-[calc(100%-7rem)] bg-primary-500" />
+      <div className='h-[1000px]'></div>
+    </>
   )
 }
 

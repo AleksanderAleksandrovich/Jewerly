@@ -1,37 +1,15 @@
-import Brilliant from '@/assets/icons/БрилиантNavbar.svg'
-import ButtonCatalog from './ButtonCatalog'
+import Brilliant from '@/assets/icons/Бриллиант темный.svg'
 import InputSearch from './InputSearch'
-import Heart from '@/assets/icons/Избранное.svg'
-import Basket from '@/assets/icons/Корзина.svg'
-import Exite from '@/assets/icons/Выход.svg'
-import { SelectedPage } from '@/types/home'
+import Heart from '@/assets/icons/Избранное темное.svg'
+import Basket from '@/assets/icons/Магазин темный.svg'
+import Exite from '@/assets/icons/Выход темный.svg'
 import useMediaQuery from '@/hooks/useMediaQuery'
-import { ButtonLinkWithLine } from '../Buttons/ButtonLink'
 import Button from '../Buttons/Button'
 import { useBasketStore } from '@/store/buying'
 import { useState } from 'react'
 import BrilOrange from '@/assets/icons/Brilliant.svg'
+import ButtonCatalog from './ButtonCatalog'
 
-type Prop = {
-  selectedPage: SelectedPage
-  setSelectedPage: (val: SelectedPage) => void
-}
-
-const PartButtonsLinkLeft = ({ selectedPage }: Pick<Prop, 'selectedPage'>) => (
-  <div className="flex justify-between gap-2 2xl:gap-4">
-    <ButtonLinkWithLine selectedPage={selectedPage} page="Главная" />
-    <ButtonLinkWithLine selectedPage={selectedPage} page="Бриллиант" />
-    <ButtonLinkWithLine selectedPage={selectedPage} page="Новинки" />
-  </div>
-)
-
-const PartButtonsLinkRight = ({ selectedPage }: Pick<Prop, 'selectedPage'>) => (
-  <div className="flex items-center justify-between gap-3">
-    <ButtonLinkWithLine selectedPage={selectedPage} page="Категории" />
-    <ButtonLinkWithLine selectedPage={selectedPage} page="Заказ в подарок" />
-    <ButtonLinkWithLine selectedPage={selectedPage} page="Уход" />
-  </div>
-)
 const LoginPart = () => (
   <div className="flex items-center gap-4">
     <Button buttonProps={{ className: 'text-[1.25rem]' }}>Войти</Button>
@@ -41,36 +19,39 @@ const LoginPart = () => (
   </div>
 )
 
-const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
-  const isAboveMediumScreen = useMediaQuery('(min-width: 1500px)')
+const Navbar = () => {
+  const isAboveMediumScreen = useMediaQuery('(min-width: 1300px)')
   const jewerlyItem = useBasketStore((state) => state.jewerlyItem)
 
   const countJeverly = jewerlyItem.reduce((acc, item) => acc + item?.count, 0)
 
   const [isHoverBasket, setIsHoverBasket] = useState<boolean>(false)
   return (
-    <nav className="bg-noise-green sticky top-0 z-30 flex h-[120px] items-center gap-3 px-28 pb-7 pt-16 sm:px-14 xl:gap-[3rem]">
+    <nav className="bg-noise-white sticky top-0 z-30 flex h-[120px] items-center gap-3 px-28 pb-7 pt-16 sm:px-14 xl:gap-[3rem]">
       {/* left side */}
-      <div className="relative w-1/4">
-        <ButtonCatalog
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
+      <div className="relative flex w-[40%] items-center">
+        <ButtonCatalog />
+        {isAboveMediumScreen && (
+          <>
+            <Button buttonProps={{ className: 'text-[1.25rem] mx-[1rem]' }}>
+              Контакты
+            </Button>
+            <Button
+              buttonProps={{ className: 'text-[1.25rem] whitespace-nowrap' }}
+            >
+              Оплата и доставка
+            </Button>
+          </>
+        )}
       </div>
       {/* center side */}
-      <div className="flex w-1/2 justify-center gap-10 2xl:ml-10">
-        {isAboveMediumScreen && (
-          <PartButtonsLinkLeft selectedPage={selectedPage} />
-        )}
+      <div className="flex w-[20%] justify-center gap-10 2xl:ml-10">
         <div className="min-w-[2.6rem]">
           <img src={Brilliant} alt="brilliant" />
         </div>
-        {isAboveMediumScreen && (
-          <PartButtonsLinkRight selectedPage={selectedPage} />
-        )}
       </div>
       {/* right side navbar*/}
-      <div className="flex w-1/4 items-center justify-end gap-[1rem] ">
+      <div className="flex w-[40%] items-center justify-end gap-[1rem] ">
         <InputSearch />
         <Button buttonProps={{ className: 'min-h-[1.3rem] min-w-[1.3rem]' }}>
           <img src={Heart} alt="heart" />
@@ -81,13 +62,13 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
             onMouseEnter: () => setIsHoverBasket(true),
             onMouseLeave: () => setIsHoverBasket(false),
             className:
-              'relative flex h-10 w-10 items-center justify-center rounded-full border-[1px] border-primary-500 p-2.5 pb-3 ',
+              'relative flex h-10 w-10 items-center justify-center rounded-full border-[1px] border-green-850 p-2.5 pb-3 ',
           }}
         >
           <img className="min-w-[1.125rem]" src={Basket} alt="basket" />
 
           {countJeverly > 0 && (
-            <div className="absolute -right-[0.6rem] -top-[0.4rem] flex h-[1.6rem] w-[1.6rem] items-center justify-center rounded-full bg-white text-[0.6rem]">
+            <div className="absolute -right-[0.6rem] -top-[0.4rem] flex h-[1.6rem] w-[1.6rem] items-center justify-center rounded-full bg-green-850 text-[0.6rem] text-white">
               {countJeverly > 99 ? '99+' : countJeverly}
             </div>
           )}
