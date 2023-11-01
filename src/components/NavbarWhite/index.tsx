@@ -25,7 +25,7 @@ const Navbar = () => {
   const jewerlyItem = useBasketStore((state) => state.jewerlyItem)
 
   const countJeverly = jewerlyItem.reduce((acc, item) => acc + item?.count, 0)
-
+  const smallText = countJeverly > 9 ? 'text-[0.7rem]' : 'text-[1rem]'
   const [isHoverBasket, setIsHoverBasket] = useState<boolean>(false)
   return (
     <nav className="bg-noise-white sticky top-0 z-30 -mx-[1.6875rem]">
@@ -72,7 +72,9 @@ const Navbar = () => {
             <img className="min-w-[1.125rem]" src={Basket} alt="basket" />
 
             {countJeverly > 0 && (
-              <div className="absolute -right-[0.6rem] -top-[0.4rem] flex h-[1.6rem] w-[1.6rem] items-center justify-center rounded-full bg-green-850 text-[0.6rem] text-white">
+              <div
+                className={`${smallText} absolute -right-[0.6rem] -top-[0.4rem] flex h-[1.6rem] w-[1.6rem] items-center justify-center rounded-full bg-green-850 text-[0.6rem] text-white`}
+              >
                 {countJeverly > 99 ? '99+' : countJeverly}
               </div>
             )}

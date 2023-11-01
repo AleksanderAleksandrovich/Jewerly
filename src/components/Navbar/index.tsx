@@ -47,6 +47,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
 
   const countJeverly = jewerlyItem.reduce((acc, item) => acc + item?.count, 0)
 
+  const smallText = countJeverly > 9 ? 'text-[0.7rem]' : 'text-[1rem]'
   const [isHoverBasket, setIsHoverBasket] = useState<boolean>(false)
   return (
     <nav className="bg-noise-green sticky top-0 z-30 flex h-[120px] items-center gap-3 px-28 pb-7 pt-16 sm:px-14 xl:gap-[3rem]">
@@ -87,7 +88,9 @@ const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
           <img className="min-w-[1.125rem]" src={Basket} alt="basket" />
 
           {countJeverly > 0 && (
-            <div className="absolute -right-[0.6rem] -top-[0.4rem] flex h-[1.6rem] w-[1.6rem] items-center justify-center rounded-full bg-white text-[0.6rem]">
+            <div
+              className={` ${smallText} absolute -right-[0.6rem] -top-[0.4rem] flex h-[1.6rem] w-[1.6rem] items-center justify-center rounded-full bg-white`}
+            >
               {countJeverly > 99 ? '99+' : countJeverly}
             </div>
           )}
