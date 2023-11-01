@@ -7,7 +7,7 @@ import News from './News'
 import Categories from './Categories'
 import Present from './Present'
 import Care from './Care'
-import Footer from '@/components/Footer'
+
 function Home() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.Главная
@@ -28,7 +28,6 @@ function Home() {
       <Categories setSelectedPage={setSelectedPage} />
       <Present setSelectedPage={setSelectedPage} />
       <Care setSelectedPage={setSelectedPage} />
-      <Footer />
     </>
   )
 }

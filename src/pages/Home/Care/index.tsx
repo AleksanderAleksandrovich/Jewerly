@@ -150,7 +150,7 @@ const Care = ({ setSelectedPage }: Props) => {
   return (
     <Section id={SelectedPage.Уход}>
       <motion.div
-        className="mx-auto mb-12 flex flex-col"
+        className="mx-auto flex flex-col pb-12"
         onViewportEnter={() => setSelectedPage(SelectedPage.Уход)}
       >
         <CareContent />

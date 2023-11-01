@@ -5,7 +5,7 @@ import Button from '@/components/Buttons/Button'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import { motion } from 'framer-motion'
 import { SelectedPage } from '@/types/home'
-import BrlliantWithLines from '@/components/BrilliantWithLines'
+import { BrlliantWithLines } from '@/components/BrilliantWithLines'
 import Section from '@/components/Section'
 import RombWithArrow from '@/assets/icons/Ромб со стреочкой.png'
 type Prop = {

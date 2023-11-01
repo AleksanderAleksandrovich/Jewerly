@@ -1,5 +1,5 @@
 import { ButtonPage } from '../Buttons/ButtonPage'
-import BrlliantWithLines from '../BrilliantWithLines'
+import { BrlliantWithLines } from '../BrilliantWithLines'
 import X from '@/assets/icons/Х.svg'
 import Facebook from '@/assets/icons/Фейсбук.svg'
 import Inst from '@/assets/icons/Инстаграм.svg'
@@ -11,7 +11,7 @@ const FooterMobile = () => (
     <BrlliantWithLines />
 
     <div className="mb-[3rem] flex flex-col">
-      <h3 className="mb-[0.5rem] mt-[2rem] text-start  text-[2.25rem]">
+      <h3 className="mb-[0.5rem] mt-[2rem] text-start text-[2.25rem] text-primary-500">
         Каталог
       </h3>
       <ButtonPage page="Сережки" />
@@ -23,7 +23,7 @@ const FooterMobile = () => (
     </div>
 
     <div className="mb-[3rem] flex flex-col">
-      <h3 className="mb-[0.5rem] mt-[2rem] text-start  text-[2.25rem]">
+      <h3 className="mb-[0.5rem] mt-[2rem] text-start  text-[2.25rem] text-primary-500">
         Информация
       </h3>
       <ButtonPage page="Контакты" />
@@ -31,9 +31,15 @@ const FooterMobile = () => (
     </div>
 
     <div className="mb-[3rem] flex flex-col">
-      <h3 className="text-start text-[2.25rem]">ИП Хмара Татьяна Сергеевна</h3>
-      <h3 className="text-start text-[2.25rem]">ИНН 3689426798</h3>
-      <h3 className="text-start text-[2.25rem]">+7 (971) 607-23-94</h3>
+      <h3 className="text-start text-[2.25rem] text-primary-500">
+        ИП Хмара Татьяна Сергеевна
+      </h3>
+      <h3 className="text-start text-[2.25rem]  text-primary-500">
+        ИНН 3689426798
+      </h3>
+      <h3 className="text-start text-[2.25rem]  text-primary-500">
+        +7 (971) 607-23-94
+      </h3>
     </div>
 
     <div className="mb-[2rem] flex">
@@ -44,7 +50,7 @@ const FooterMobile = () => (
 
     <div className="mb-8 h-[1px] w-full bg-primary-500" />
 
-    <div className="mb-8 flex flex-col">
+    <div className="flex flex-col pb-8">
       <img className="mx-auto h-[3.6rem]" src={Brilliant} alt="" />
       <h3 className="text-center font-perpetua text-[4rem] text-white">
         CharmVogue
@@ -58,7 +64,9 @@ const FooterMediumScreen = () => (
     <BrlliantWithLines />
     <div className="mb-[3rem] mt-[2rem] flex flex-wrap justify-between">
       <div className="mb-[2rem] flex flex-col">
-        <h3 className="mb-[0.5rem] text-start  text-[3rem]">Каталог</h3>
+        <h3 className="mb-[0.5rem] text-start text-[3rem] text-primary-500">
+          Каталог
+        </h3>
         <ButtonPage page="Сережки" />
         <ButtonPage page="Кольца" />
         <ButtonPage page="Браслеты" />
@@ -67,7 +75,9 @@ const FooterMediumScreen = () => (
         <ButtonPage page="Товары для свадьбы" />
       </div>
       <div className="mr-[5rem] flex flex-col">
-        <h3 className="mb-[0.5rem] text-start  text-[3rem]">Информация</h3>
+        <h3 className="mb-[0.5rem] text-start text-[3rem] text-primary-500">
+          Информация
+        </h3>
         <ButtonPage page="Контакты" />
         <ButtonPage page="Оплата и доставка" />
       </div>
@@ -75,11 +85,15 @@ const FooterMediumScreen = () => (
 
     <div className="flex ">
       <div className="mb-[3rem] mr-[8rem] flex flex-col">
-        <h3 className="text-start text-[2.25rem]">
+        <h3 className="text-start text-[2.25rem] text-primary-500">
           ИП Хмара Татьяна Сергеевна
         </h3>
-        <h3 className="text-start text-[2.25rem]">ИНН 3689426798</h3>
-        <h3 className="text-start text-[2.25rem]">+7 (971) 607-23-94</h3>
+        <h3 className="text-start text-[2.25rem] text-primary-500">
+          ИНН 3689426798
+        </h3>
+        <h3 className="text-start text-[2.25rem] text-primary-500">
+          +7 (971) 607-23-94
+        </h3>
       </div>
       <div className="mb-[2rem] flex">
         <img className="mr-6 h-[2.5rem]" src={X} alt="" />
@@ -90,7 +104,7 @@ const FooterMediumScreen = () => (
 
     <div className="mb-[3.25rem] h-[1px] w-full bg-primary-500" />
 
-    <div className="mb-[3.25rem] flex flex-col">
+    <div className="flex flex-col pb-[3.25rem]">
       <img className="mx-auto h-[4.8rem]" src={Brilliant} alt="" />
       <h3 className="text-center font-perpetua text-white sm:text-[5rem] md:text-[6rem]">
         CharmVogue
@@ -103,14 +117,20 @@ const FooterFullScreen = () => (
     <BrlliantWithLines />
     <div className="mb-[5.5rem] mt-[2rem] flex justify-between ">
       <div className="flex flex-col">
-        <h3 className="mb-4 text-start text-[1.5rem]">
+        <h3 className="mb-4 text-start text-[1.5rem] text-primary-500">
           ИП Хмара Татьяна Сергеевна
         </h3>
-        <h3 className="mb-4 text-start text-[1.5rem]">ИНН 3689426798</h3>
-        <h3 className="text-start text-[1.5rem]">+7 (971) 607-23-94</h3>
+        <h3 className="mb-4 text-start text-[1.5rem] text-primary-500">
+          ИНН 3689426798
+        </h3>
+        <h3 className="text-start text-[1.5rem] text-primary-500">
+          +7 (971) 607-23-94
+        </h3>
       </div>
       <div className="flex flex-col">
-        <h3 className="mb-[0.5rem] text-start text-[2rem]">Каталог</h3>
+        <h3 className="mb-[0.5rem] text-start text-[2rem] text-primary-500">
+          Каталог
+        </h3>
         <ButtonPage page="Сережки" />
         <ButtonPage page="Кольца" />
         <ButtonPage page="Браслеты" />
@@ -119,7 +139,9 @@ const FooterFullScreen = () => (
         <ButtonPage page="Товары для свадьбы" />
       </div>
       <div className="flex flex-col">
-        <h3 className="mb-[0.5rem] text-start text-[2rem]">Информация</h3>
+        <h3 className="mb-[0.5rem] text-start text-[2rem] text-primary-500">
+          Информация
+        </h3>
         <ButtonPage page="Контакты" />
         <ButtonPage page="Оплата и доставка" />
       </div>
@@ -133,7 +155,7 @@ const FooterFullScreen = () => (
 
     <div className="mb-[3.25rem] h-[1px] w-full bg-primary-500" />
 
-    <div className="mb-[3.25rem] flex flex-col">
+    <div className="flex flex-col pb-[3.25rem]">
       <img className="mx-auto h-[4.8rem]" src={Brilliant} alt="" />
       <h3 className="text-center font-perpetua text-[6rem] text-white">
         CharmVogue
