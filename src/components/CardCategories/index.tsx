@@ -1,4 +1,4 @@
-import './index.css'
+import './styleCard.css'
 import ButtonCardCategoties from './buttonCardCategoties'
 import useMediaQuery from '@/hooks/useMediaQuery'
 type Props = {

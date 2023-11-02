@@ -48,7 +48,7 @@ function ContentMenu({ selectedPage, setSelectedPage }: Props) {
       <>
         <Catalog />
         <div className="h-[1px] bg-primary-500" />
-        <ButtonPageWithImg className="pt-4" page="Контакты" img={Contact} link='S'/>
+        <ButtonPageWithImg className="pt-4" page="Контакты" img={Contact} link=''/>
       </>
     )
   return (
