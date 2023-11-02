@@ -10,13 +10,29 @@ import Brilliant from '@/assets/icons/Brilliant.svg'
 const Catalog = () => {
   return (
     <div className="flex flex-col gap-2 py-4 pt-6">
-      <ButtonPageWithImg page="Новинки" img={Brilliant} />
-      <ButtonPageWithImg page="Кулоны и медальоны" img={Pendants} />
-      <ButtonPageWithImg page="Кольца" img={Ring} />
-      <ButtonPageWithImg page="Серьги" img={Earrings} />
-      <ButtonPageWithImg page="Браслеты" img={Braslate} />
-      <ButtonPageWithImg page="Для свадьбы" img={ForWedding} />
-      <ButtonPageWithImg page="Для него" img={ForHim} />
+      <ButtonPageWithImg page="Новинки" img={Brilliant} link="/catalog/news" />
+      <ButtonPageWithImg
+        page="Кулоны и медальоны"
+        img={Pendants}
+        link="/catalog/pendants"
+      />
+      <ButtonPageWithImg page="Кольца" img={Ring} link="/catalog/rings" />
+      <ButtonPageWithImg
+        page="Серьги"
+        img={Earrings}
+        link="/catalog/earrings"
+      />
+      <ButtonPageWithImg
+        page="Браслеты"
+        img={Braslate}
+        link="/catalog/bracelets"
+      />
+      <ButtonPageWithImg
+        page="Для свадьбы"
+        img={ForWedding}
+        link="/catalog/forWedding"
+      />
+      <ButtonPageWithImg page="Для него" img={ForHim} link="/catalog/forHim" />
     </div>
   )
 }

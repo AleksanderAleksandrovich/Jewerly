@@ -8,6 +8,7 @@ import { SelectedPage } from '@/types/home'
 import { BrlliantWithLines } from '@/components/BrilliantWithLines'
 import Section from '@/components/Section'
 import RombWithArrow from '@/assets/icons/Ромб со стреочкой.png'
+import { NavLink } from 'react-router-dom'
 type Prop = {
   setSelectedPage: (val: SelectedPage) => void
 }
@@ -27,24 +28,26 @@ const MobileScreenJeverly = () => {
       </div>
 
       <Button buttonProps={{ className: 'relative mt-[2rem]' }}>
-        <div>
-          <img
-            className="mx-auto max-h-[16.5rem]"
-            src={Catalog}
-            alt="catalog"
-          />
-          <div
-            className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 transform whitespace-nowrap text-[0.9rem] text-white before:absolute 
+        <NavLink to="/catalog">
+          <div>
+            <img
+              className="mx-auto max-h-[16.5rem]"
+              src={Catalog}
+              alt="catalog"
+            />
+            <div
+              className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 transform whitespace-nowrap text-[0.9rem] text-white before:absolute 
             before:left-1/2 before:top-full before:h-[1px] before:w-[5rem] before:-translate-x-1/2 before:-translate-y-1/2 before:transform before:bg-white"
-          >
-            ПЕРЕЙТИ В КАТАЛОГ
+            >
+              ПЕРЕЙТИ В КАТАЛОГ
+            </div>
+            <img
+              className="absolute -bottom-6 right-[calc(50%-1.75rem)] h-[3.5rem]"
+              src={RombWithArrow}
+              alt=""
+            />
           </div>
-          <img
-            className="absolute -bottom-6 right-[calc(50%-1.75rem)] h-[3.5rem]"
-            src={RombWithArrow}
-            alt=""
-          />
-        </div>
+        </NavLink>
       </Button>
       <div className="mx-auto h-[4.65rem] w-[1px] bg-primary-500"></div>
       <div
@@ -147,27 +150,29 @@ const FullScreenJeverly = () => {
             </div>
           </div>
           <Button buttonProps={{ className: 'sm:mt-8 xl:mt-16 w-1/3' }}>
-            <div className="flex h-full flex-col">
-              <div className="relative">
-                <img
-                  className="mx-auto sm:max-h-[14rem] md:max-h-[18.75rem] xl:max-h-full"
-                  src={Catalog}
-                  alt="catalog"
-                />
-                <div
-                  className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 transform whitespace-nowrap text-white before:absolute before:left-1/2 
+            <NavLink to="/catalog">
+              <div className="flex h-full flex-col">
+                <div className="relative">
+                  <img
+                    className="mx-auto sm:max-h-[14rem] md:max-h-[18.75rem] xl:max-h-full"
+                    src={Catalog}
+                    alt="catalog"
+                  />
+                  <div
+                    className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 transform whitespace-nowrap text-white before:absolute before:left-1/2 
             before:top-full before:h-[1px] before:-translate-x-1/2 before:-translate-y-1/2 before:transform before:bg-white sm:text-[0.7rem] before:sm:w-[7rem] md:text-[1rem] xl:text-[1.5rem] before:xl:w-[10rem]"
-                >
-                  ПЕРЕЙТИ В КАТАЛОГ
+                  >
+                    ПЕРЕЙТИ В КАТАЛОГ
+                  </div>
+                  <img
+                    className="absolute -bottom-4 right-[calc(50%-1.25rem)] h-[2.5rem] 2xl:-bottom-5 2xl:right-[calc(50%-1.5rem)] 2xl:h-[3rem]"
+                    src={RombWithArrow}
+                    alt=""
+                  />
                 </div>
-                <img
-                  className="absolute -bottom-4 right-[calc(50%-1.25rem)] h-[2.5rem] 2xl:-bottom-5 2xl:right-[calc(50%-1.5rem)] 2xl:h-[3rem]"
-                  src={RombWithArrow}
-                  alt=""
-                />
+                <div className="mx-auto w-[1px] flex-1 bg-primary-500"></div>
               </div>
-              <div className="mx-auto w-[1px] flex-1 bg-primary-500"></div>
-            </div>
+            </NavLink>
           </Button>
         </div>
       </div>

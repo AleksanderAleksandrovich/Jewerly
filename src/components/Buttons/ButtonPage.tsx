@@ -15,6 +15,7 @@ type PropsButtonPageWithImg = PropsButtonPage & {
 type PropButtonPageWithArrow = {
   children: React.ReactNode
   style: string
+  link: string
 }
 
 export const ButtonPage = ({ page, className, link }: PropsButtonPage) => {
@@ -35,6 +36,7 @@ export const ButtonPageWithImg = ({
   page,
   img,
   className,
+  link,
 }: PropsButtonPageWithImg) => {
   const Icon = (
     <div className="h-[1.6rem] w-[1.6rem]">
@@ -53,7 +55,7 @@ export const ButtonPageWithImg = ({
       iconLeft={Icon}
     >
       <div className="whitespace-nowrap text-[1.25rem] tracking-tight transition duration-500 hover:text-primary-500 sm:text-[1.5rem]">
-        {page}
+        <NavLink to={link}>{page}</NavLink>
       </div>
     </Button>
   )
@@ -62,6 +64,7 @@ export const ButtonPageWithImg = ({
 export const ButtonPageWithArrow = ({
   children,
   style,
+  link,
 }: PropButtonPageWithArrow) => {
   return (
     <Button
@@ -70,7 +73,7 @@ export const ButtonPageWithArrow = ({
         className: `${style} flex text-white border-b-[1px] border-white  items-center justify-betwine whitespace-nowrap py-2  tracking-tight gap-[1.5rem]`,
       }}
     >
-      {children}
+      <NavLink to={link}>{children}</NavLink>
     </Button>
   )
 }

@@ -36,12 +36,12 @@ const Navbar = () => {
           {isAboveMediumScreen && (
             <>
               <Button buttonProps={{ className: 'text-[1.25rem] mx-[1rem]' }}>
-                Контакты
+                <NavLink to="">Контакты</NavLink>
               </Button>
               <Button
                 buttonProps={{ className: 'text-[1.25rem] whitespace-nowrap' }}
               >
-                Оплата и доставка
+                <NavLink to="">Оплата и доставка</NavLink>
               </Button>
             </>
           )}

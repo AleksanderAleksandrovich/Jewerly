@@ -30,11 +30,12 @@ function ContentCatalog({
         className="py-4"
         page="Войти в аккаунт"
         img={PersonLogin}
+        link=''
       />
       <div className="h-[1px] bg-primary-500" />
       <PartButtonLink selectedPage={selectedPage} />
       <div className="h-[1px] bg-primary-500" />
-      <ButtonPageWithImg className="pt-4" page="Контакты" img={Contact} />
+      <ButtonPageWithImg className="pt-4" page="Контакты" img={Contact} link=''/>
     </>
   )
 }
@@ -47,7 +48,7 @@ function ContentMenu({ selectedPage, setSelectedPage }: Props) {
       <>
         <Catalog />
         <div className="h-[1px] bg-primary-500" />
-        <ButtonPageWithImg className="pt-4" page="Контакты" img={Contact} />
+        <ButtonPageWithImg className="pt-4" page="Контакты" img={Contact} link='S'/>
       </>
     )
   return (

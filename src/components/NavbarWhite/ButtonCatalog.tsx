@@ -11,9 +11,9 @@ import PersonLogin from '@/assets/icons/Person.svg'
 import Arow from '@/assets/icons/ArowCatalogButton.svg'
 import Cross from '@/assets/icons/Крест_черный_как_красный_только_черный.svg'
 import { motion } from 'framer-motion'
-import Delivery from '@/assets/icons/Доставка твоей мамаши.svg'
+import { NavLink } from 'react-router-dom'
 
-type Props = {}
+
 
 function ContentCatalog({ isCatalogOpen }: { isCatalogOpen: boolean }) {
   if (isCatalogOpen) return <Catalog />
@@ -23,19 +23,21 @@ function ContentCatalog({ isCatalogOpen }: { isCatalogOpen: boolean }) {
         className="py-4"
         page="Войти в аккаунт"
         img={PersonLogin}
+        link="/"
       />
       <div className="h-[1px] bg-primary-500" />
       <Button buttonProps={{ className: 'text-[1.5rem] text-start py-[1rem]' }}>
-        Оплата и доставка
+        <NavLink to="">Оплата и доставка</NavLink>
       </Button>
       <Button buttonProps={{ className: 'text-[1.5rem] text-start pb-[1rem]' }}>
-        Контакты
+        <NavLink to="">Контакты</NavLink>
       </Button>
       <div className="h-[1px] bg-primary-500" />
       <ButtonPageWithImg
         className="pt-4"
         page="+7 (971) 607-23-94"
         img={Contact}
+        link="/"
       />
     </>
   )
@@ -53,6 +55,7 @@ function ContentMenu() {
           className="pt-4"
           page="+7 (971) 607-23-94"
           img={Contact}
+          link=""
         />
       </>
     )

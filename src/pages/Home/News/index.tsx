@@ -19,7 +19,7 @@ const NewsModileScreen = () => (
       ))}
     </div>
     <div className="flex justify-end">
-      <ButtonPageWithArrow style="w-[14.8rem] text-[1.5rem]">
+      <ButtonPageWithArrow link='catalog/news' style="w-[14.8rem] text-[1.5rem]">
         СМОТРЕТЬ ВСЕ
       </ButtonPageWithArrow>
     </div>
@@ -56,7 +56,7 @@ const NewsMediumScreen = () => {
         </tbody>
       </table>
       <div className="flex justify-end">
-        <ButtonPageWithArrow style="w-[15.2rem] md:w-[17.2rem] text-[1.7rem] md:text-[2rem] ">
+        <ButtonPageWithArrow  link='catalog/news'style="w-[15.2rem] md:w-[17.2rem] text-[1.7rem] md:text-[2rem] ">
           СМОТРЕТЬ ВСЕ
         </ButtonPageWithArrow>
       </div>
@@ -110,7 +110,7 @@ const NewsFullScreen = () => (
       </tbody>
     </table>
     <div className="flex justify-end">
-      <ButtonPageWithArrow style="w-[17.2rem]  text-[2rem]">
+      <ButtonPageWithArrow link='catalog/news' style="w-[17.2rem]  text-[2rem]">
         СМОТРЕТЬ ВСЕ
       </ButtonPageWithArrow>
     </div>

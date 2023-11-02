@@ -20,15 +20,15 @@ const CategoriesMobileScreen = () => (
       Найдите для себя идеальное украшение
     </h2>
     <div className="mx-auto flex flex-col">
-      <CardCategories text="Для свадьбы" img={forWedding} />
-      <CardCategories text="Серьги" img={earrings} />
-      <CardCategories text="Браслеты" img={bracelet} />
-      <CardCategories text="Для него" img={forHim} />
-      <CardCategories text="Кольца" img={ring} />
-      <CardCategories text="Кулоны и медальоны" img={pendants} />
+      <CardCategories text="Для свадьбы" img={forWedding} link='catalog/forWedding'/>
+      <CardCategories text="Серьги" img={earrings} link='catalog/earrings'/>
+      <CardCategories text="Браслеты" img={bracelet} link='catalog/bracelets'/>
+      <CardCategories text="Для него" img={forHim} link='catalog/forHim'/>
+      <CardCategories text="Кольца" img={ring} link='catalog/rings'/>
+      <CardCategories text="Кулоны и медальоны" img={pendants} link='catalog/pendants'/>
     </div>
     <div className="flex justify-end">
-      <ButtonPageWithArrow style="w-[14.8rem] text-[1.5rem] mt-[1.625rem] gap-[1.1rem]">
+      <ButtonPageWithArrow link='catalog' style="w-[14.8rem] text-[1.5rem] mt-[1.625rem] gap-[1.1rem]">
         ВСЕ УКРАШЕНИЯ
       </ButtonPageWithArrow>
     </div>
@@ -42,23 +42,23 @@ const CategoriesMediumScreen = () => (
     <div className="mb-[7.1rem] h-[1px] w-full bg-primary-500" />
     <div className="flex flex-col">
       <div className="flex">
-        <CardCategories text="Для свадьбы" img={forWedding} />
-        <CardCategories text="Серьги" img={earrings} />
+        <CardCategories text="Для свадьбы" img={forWedding} link='catalog/forWedding'/>
+        <CardCategories text="Серьги" img={earrings} link='catalog/earrings'/>
         <div className="flex-grow border-[1px] border-primary-500" />
       </div>
       <div className="flex">
-        <CardCategories text="Браслеты" img={bracelet} />
+        <CardCategories text="Браслеты" img={bracelet} link='catalog/bracelets'/>
         <div className="flex-grow border-[1px] border-primary-500" />
-        <CardCategories text="Для него" img={forHim} />
+        <CardCategories text="Для него" img={forHim} link='catalog/forHim'/>
       </div>
       <div className="flex">
-        <CardCategories text="Кольца" img={ring} />
-        <CardCategories text="Кулоны и медальоны" img={pendants} />
+        <CardCategories text="Кольца" img={ring} link='catalog/rings'/>
+        <CardCategories text="Кулоны и медальоны" img={pendants} link='catalog/pendants'/>
         <div className="flex-grow border-[1px] border-primary-500" />
       </div>
     </div>
     <div className="flex justify-end">
-      <ButtonPageWithArrow style="w-[14.8rem] text-[1.5rem] mt-[1.625rem] gap-[1.1rem]">
+      <ButtonPageWithArrow link='catalog' style="w-[14.8rem] text-[1.5rem] mt-[1.625rem] gap-[1.1rem]">
         ВСЕ УКРАШЕНИЯ
       </ButtonPageWithArrow>
     </div>
@@ -83,20 +83,20 @@ const CategoriesFullScreen = () => (
     <div className="mb-[2.5rem] h-[1px] w-full bg-primary-500" />
     <div className="flex flex-col">
       <div className="flex">
-        <CardCategories text="Для свадьбы" img={forWedding} />
+        <CardCategories text="Для свадьбы" img={forWedding} link='catalog/forWedding'/>
         <div className="flex-grow border-[1px] border-primary-500" />
-        <CardCategories text="Серьги" img={earrings} />
-        <CardCategories text="Браслеты" img={bracelet} />
+        <CardCategories text="Серьги" img={earrings} link='catalog/earrings'/>
+        <CardCategories text="Браслеты" img={bracelet} link='catalog/bracelets'/>
       </div>
       <div className="flex">
-        <CardCategories text="Кулоны и медальоны" img={pendants} />
-        <CardCategories text="Для него" img={forHim} />
+        <CardCategories text="Кулоны и медальоны" img={pendants} link='catalog/pendants'/>
+        <CardCategories text="Для него" img={forHim} link='catalog/forHim'/>
         <div className="flex-grow border-[1px] border-primary-500" />
-        <CardCategories text="Кольца" img={ring} />
+        <CardCategories text="Кольца" img={ring} link='catalog/rings'/>
       </div>
     </div>
     <div className="flex justify-end">
-      <ButtonPageWithArrow style="w-[14.8rem] text-[1.5rem] mt-[1.625rem] gap-[1.1rem]">
+      <ButtonPageWithArrow link='catalog' style="w-[14.8rem] text-[1.5rem] mt-[1.625rem] gap-[1.1rem]">
         ВСЕ УКРАШЕНИЯ
       </ButtonPageWithArrow>
     </div>
