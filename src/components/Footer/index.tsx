@@ -14,20 +14,21 @@ const FooterMobile = () => (
       <h3 className="mb-[0.5rem] mt-[2rem] text-start text-[2.25rem] text-primary-500">
         Каталог
       </h3>
-      <ButtonPage page="Сережки" />
-      <ButtonPage page="Кольца" />
-      <ButtonPage page="Браслеты" />
-      <ButtonPage page="Кулоны и медальоны" />
-      <ButtonPage page="Мужские товары" />
-      <ButtonPage page="Товары для свадьбы" />
+      <ButtonPage page="Сережки" link="/catalog/earrings" />
+      <ButtonPage page="Кольца" link="/catalog/rings" />
+      <ButtonPage page="Браслеты" link="/catalog/bracelets" />
+      <ButtonPage page="Кулоны и медальоны" link="/catalog/pendants" />
+      <ButtonPage page="Мужские товары" link="/catalog/forHim" />
+      <ButtonPage page="Товары для свадьбы" link="/catalog/forWedding" />
     </div>
 
     <div className="mb-[3rem] flex flex-col">
       <h3 className="mb-[0.5rem] mt-[2rem] text-start  text-[2.25rem] text-primary-500">
         Информация
       </h3>
-      <ButtonPage page="Контакты" />
-      <ButtonPage page="Оплата и доставка" />
+      {/* заглушка  */}
+      <ButtonPage page="Контакты" link="/catalog/contacts" />
+      <ButtonPage page="Оплата и доставка" link="/catalog/delivery" />
     </div>
 
     <div className="mb-[3rem] flex flex-col">
@@ -67,19 +68,21 @@ const FooterMediumScreen = () => (
         <h3 className="mb-[0.5rem] text-start text-[3rem] text-primary-500">
           Каталог
         </h3>
-        <ButtonPage page="Сережки" />
-        <ButtonPage page="Кольца" />
-        <ButtonPage page="Браслеты" />
-        <ButtonPage page="Кулоны и медальоны" />
-        <ButtonPage page="Мужские товары" />
-        <ButtonPage page="Товары для свадьбы" />
+
+        <ButtonPage page="Сережки" link="/catalog/earrings" />
+        <ButtonPage page="Кольца" link="/catalog/rings" />
+        <ButtonPage page="Браслеты" link="/catalog/bracelets" />
+        <ButtonPage page="Кулоны и медальоны" link="/catalog/pendants" />
+        <ButtonPage page="Мужские товары" link="/catalog/forHim" />
+        <ButtonPage page="Товары для свадьбы" link="/catalog/forWedding" />
       </div>
       <div className="mr-[5rem] flex flex-col">
         <h3 className="mb-[0.5rem] text-start text-[3rem] text-primary-500">
           Информация
         </h3>
-        <ButtonPage page="Контакты" />
-        <ButtonPage page="Оплата и доставка" />
+        {/* заглушка  */}
+        <ButtonPage page="Контакты" link="/catalog/contacts" />
+        <ButtonPage page="Оплата и доставка" link="/catalog/delivery" />
       </div>
     </div>
 
@@ -131,19 +134,20 @@ const FooterFullScreen = () => (
         <h3 className="mb-[0.5rem] text-start text-[2rem] text-primary-500">
           Каталог
         </h3>
-        <ButtonPage page="Сережки" />
-        <ButtonPage page="Кольца" />
-        <ButtonPage page="Браслеты" />
-        <ButtonPage page="Кулоны и медальоны" />
-        <ButtonPage page="Мужские товары" />
-        <ButtonPage page="Товары для свадьбы" />
+        <ButtonPage page="Сережки" link="/catalog/earrings" />
+        <ButtonPage page="Кольца" link="/catalog/rings" />
+        <ButtonPage page="Браслеты" link="/catalog/bracelets" />
+        <ButtonPage page="Кулоны и медальоны" link="/catalog/pendants" />
+        <ButtonPage page="Мужские товары" link="/catalog/forHim" />
+        <ButtonPage page="Товары для свадьбы" link="/catalog/forWedding" />
       </div>
       <div className="flex flex-col">
         <h3 className="mb-[0.5rem] text-start text-[2rem] text-primary-500">
           Информация
         </h3>
-        <ButtonPage page="Контакты" />
-        <ButtonPage page="Оплата и доставка" />
+        {/* заглушка  */}
+        <ButtonPage page="Контакты" link="/catalog/contacts" />
+        <ButtonPage page="Оплата и доставка" link="/catalog/delivery" />
       </div>
 
       <div className="flex">

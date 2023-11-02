@@ -5,6 +5,7 @@ import Arrow from '@/assets/icons/Стрелочка на некоторых к�
 type PropsButtonPage = {
   page: string
   className?: string
+  link: string
 }
 
 type PropsButtonPageWithImg = PropsButtonPage & {
@@ -16,7 +17,7 @@ type PropButtonPageWithArrow = {
   style: string
 }
 
-export const ButtonPage = ({ page, className }: PropsButtonPage) => {
+export const ButtonPage = ({ page, className, link }: PropsButtonPage) => {
   return (
     <Button
       buttonProps={{
@@ -24,7 +25,7 @@ export const ButtonPage = ({ page, className }: PropsButtonPage) => {
       }}
     >
       <span className="whitespace-nowrap text-[2rem] text-primary-500 sm:text-[2.5rem] xl:text-[1.5rem]">
-        <NavLink to="/catalog">{page}</NavLink>
+        <NavLink to={link}>{page}</NavLink>
       </span>
     </Button>
   )
