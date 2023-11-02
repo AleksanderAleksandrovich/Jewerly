@@ -16,7 +16,7 @@ type Prop = {
 const MobileScreenJeverly = () => {
   return (
     <>
-      <h1 className="mt-28 font-bergamasco text-[4rem] text-white">
+      <h1 className="z-10 mt-28 font-bergamasco text-[4rem] text-white">
         Ювелирные
       </h1>
       <h1 className="-mt-10 text-right font-bergamasco text-[4rem] text-white">
@@ -70,7 +70,7 @@ const FullScreenJeverly = () => {
   return (
     <>
       <div className="relative w-[28.5%]">
-        <div className="absolute left-1/2 top-0 z-[-1] h-full w-[1px] bg-primary-500"></div>
+        <div className="absolute left-1/2 top-0 h-full w-[1px] bg-primary-500"></div>
         <motion.img
           initial="hidden"
           whileInView="visible"
@@ -80,7 +80,7 @@ const FullScreenJeverly = () => {
             hidden: { y: -50 },
             visible: { y: 0 },
           }}
-          className="mx-auto sm:mt-[43rem] sm:max-h-[9rem] md:max-h-[12rem] xl:mt-[35rem] xl:max-h-full"
+          className="relative z-20 mx-auto sm:mt-[43rem] sm:max-h-[9rem] md:max-h-[12rem] xl:mt-[35rem] xl:max-h-full"
           src={Ring}
           alt="ring"
         />
@@ -97,7 +97,7 @@ const FullScreenJeverly = () => {
               hidden: { y: -80 },
               visible: { y: 0 },
             }}
-            className="font-bergamasco text-white sm:text-[6.87rem] xl:text-9xl"
+            className="z-10 font-bergamasco text-white sm:text-[6.87rem] xl:text-9xl"
           >
             Ювелирные
           </motion.h1>
@@ -138,12 +138,12 @@ const FullScreenJeverly = () => {
         <div className="flex sm:mt-4 xl:-mt-6 ">
           <div className="relative mb-24 w-2/3 ">
             <div
-              className="before:absolute before:z-[-1] before:h-[45rem] before:w-[45rem] before:bg-blic1 before:bg-cover
-              after:absolute after:-bottom-32 after:-left-32 after:z-[-1] after:h-[25rem] after:w-[25rem] after:bg-blic2 after:bg-cover 
+              className="before:absolute before:h-[45rem] before:w-[45rem] before:bg-blic1 before:bg-cover
+              after:absolute after:-bottom-32 after:-left-32 after:h-[25rem] after:w-[25rem] after:bg-blic2 after:bg-cover 
       before:sm:-right-[8rem] before:sm:-top-[8.5rem] before:xl:-right-[5rem] before:xl:-top-[10rem]"
             >
               <img
-                className="mx-auto max-h-[47rem]"
+                className="mx-auto max-h-[47rem] relative z-10"
                 src={PhotoFirstScreen}
                 alt="photo"
               />

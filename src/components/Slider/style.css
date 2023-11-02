@@ -24,15 +24,13 @@
   align-items: center;
   opacity: 1;
   transition: opacity 0.5s;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
   border-top: 1px solid white;
   border-bottom: 1px solid white;
 }
 
 .text_slider_full {
-  margin-top: 4rem;
   color: white;
-  font-size: 6.9rem;
   letter-spacing: -0.025em;
   white-space: nowrap;
 }

@@ -24,9 +24,9 @@ const BrilliantMobileScreen = () => (
           Чистота: VS1-VS2
         </TextDescription>
       </div>
-      <div className="relative mb-8 before:absolute before:-bottom-[8rem] before:right-[calc(50%-10.5rem)] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
+      <div className="relative mb-8 before:absolute before:-bottom-[8rem] before:right-[calc(50%-10.5rem)] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
         <img
-          className="mx-auto max-h-[18rem] "
+          className="mx-auto max-h-[18rem] relative z-10"
           src={BigBrilliant}
           alt="bigBrilliant"
         />
@@ -55,8 +55,8 @@ const BrilliantMediumScreen = () => (
       Бриллиант идеален для выдающихся украшений
     </motion.h2>
     <div className="mt-6 flex items-center">
-      <div className="relative w-[60%] before:absolute before:-bottom-[8rem] before:right-[calc(50%-9rem)] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
-        <img className="max-h-[21rem] md:max-h-[25rem] " src={BigBrilliant} alt="bigBrilliant" />
+      <div className="relative w-[60%] before:absolute before:-bottom-[8rem] before:right-[calc(50%-9rem)] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
+        <img className="max-h-[21rem] md:max-h-[25rem] relative z-10" src={BigBrilliant} alt="bigBrilliant" />
       </div>
       <motion.div
         initial="hidden"
@@ -128,9 +128,9 @@ const BrilliantFullScreen = () => (
           Чистота: VS1-VS2
         </TextDescription>
       </motion.div>
-      <div className="relative mb-8 xl:w-[40%] 2xl:w-1/3 before:absolute before:-bottom-[8rem] before:right-[calc(50%-10rem)] before:z-[-1] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
+      <div className="relative mb-8 xl:w-[40%] 2xl:w-1/3 before:absolute before:-bottom-[8rem] before:right-[calc(50%-10rem)] before:h-[20rem] before:w-[21rem] before:bg-blicForBril before:bg-cover">
         <img
-          className="mx-auto max-h-[25rem]"
+          className="mx-auto max-h-[25rem] relative z-10"
           src={BigBrilliant}
           alt="bigBrilliant"
         />
