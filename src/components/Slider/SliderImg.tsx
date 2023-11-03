@@ -11,7 +11,7 @@ const SliderImg = ({ text, img }: Props) => {
       <div className="image-container_slider_full">
         <img src={img} alt={img} className="image_slider" />
         <div className="overlay_slider_full">
-          <div className="text_slider_full mt-[1rem] text-center font-bergamasco text-[4rem] xl:mt-[4rem] xl:text-[6.9rem]">
+          <div className="text_slider_full flex items-center justify-center font-bergamasco text-[3rem] md:text-[6rem] xl:text-[6.9rem]">
             {text}
           </div>
         </div>
