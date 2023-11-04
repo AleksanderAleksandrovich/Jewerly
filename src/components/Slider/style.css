@@ -3,6 +3,7 @@
   min-width: 100%;
 }
 
+
 .image-container_slider_full {
   position: relative;
 }
@@ -11,7 +12,9 @@
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
 }
+
 
 .overlay_slider_full {
   position: absolute;
