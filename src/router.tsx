@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { Navigate, createBrowserRouter } from 'react-router-dom'
 import AppLayout from '@/components/layouts/AppLayout'
 import Home from './pages/Home'
 import Catalog from './pages/Catalog'
@@ -12,6 +12,7 @@ import Pendants from './pages/Catalog/Pendants'
 import News from './pages/Catalog/News'
 
 export const router = createBrowserRouter([
+  { element: <Navigate to="" />, path: '*' },
   {
     element: <AppLayout />,
     children: [
@@ -29,31 +30,31 @@ export const router = createBrowserRouter([
         path: '/catalog',
         children: [
           {
-            element: <Rings/>,
+            element: <Rings />,
             path: 'rings',
           },
           {
-            element: <Earrings/>,
+            element: <Earrings />,
             path: 'earrings',
           },
           {
-            element: <Bracelets/>,
+            element: <Bracelets />,
             path: 'bracelets',
           },
           {
-            element: <ForHim/>,
+            element: <ForHim />,
             path: 'forHim',
           },
           {
-            element: <ForWedding/>,
+            element: <ForWedding />,
             path: 'forWedding',
           },
           {
-            element: <Pendants/>,
+            element: <Pendants />,
             path: 'pendants',
           },
           {
-            element: <News/>,
+            element: <News />,
             path: 'news',
           },
         ],
