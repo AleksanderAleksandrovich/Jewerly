@@ -1,7 +1,7 @@
 import { BreadCrumbs } from '@/components/BreadCrambs'
 import Slider from '@/components/Slider'
 import { Outlet } from 'react-router-dom'
-type Props = {}
+
 
 const Catalog = () => {
   return (
