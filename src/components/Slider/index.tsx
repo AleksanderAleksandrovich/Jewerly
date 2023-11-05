@@ -42,7 +42,7 @@ const Slider = () => {
     const el = imgs[indexImg]
 
     nav(el.url)
-  }, [indexImg, nav])
+  }, [indexImg])
 
   useEffect(() => {
     const foundIndex = imgs.findIndex((el) => el.url === location.pathname)
@@ -85,6 +85,7 @@ const Slider = () => {
       <div className="flex flex-wrap justify-center pt-4">
         {imgs.map((el, index) => (
           <Button
+            key={el.text}
             buttonProps={{
               onClick: () => {
                 setIndexImg(index)

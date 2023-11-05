@@ -22,7 +22,7 @@ const LoginPart = () => (
 
 const Navbar = () => {
   const isAboveMediumScreen = useMediaQuery('(min-width: 1300px)')
-  const jewerlyItem = useBasketStore((state) => state.jewerlyItem)
+  const jewerlyItem = useBasketStore((state) => state.jewerlyItems)
 
   const countJeverly = jewerlyItem.reduce((acc, item) => acc + item?.count, 0)
   const smallText = countJeverly > 9 ? 'text-[0.7rem]' : 'text-[1rem]'

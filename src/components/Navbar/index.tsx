@@ -43,7 +43,7 @@ const LoginPart = () => (
 
 const Navbar = ({ selectedPage, setSelectedPage }: Prop) => {
   const isAboveMediumScreen = useMediaQuery('(min-width: 1500px)')
-  const jewerlyItem = useBasketStore((state) => state.jewerlyItem)
+  const jewerlyItem = useBasketStore((state) => state.jewerlyItems)
 
   const countJeverly = jewerlyItem.reduce((acc, item) => acc + item?.count, 0)
 

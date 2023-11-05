@@ -10,27 +10,30 @@ type StoreBuying = {
   // decrItemCount: (id: number) => void
   incrItemCount: (id: number, count: number) => void
   // removeItemFromCard: (id: number) => void
-  jewerlyItem: JewerlyItem[]
+  jewerlyItems: JewerlyItem[]
   //jewerlyCountInBusket: number
 }
 export const useBasketStore = create<StoreBuying>((set, get) => ({
-  jewerlyItem: [],
+  jewerlyItems: [],
   // decrItemCount,
   // getItemCount,
-  incrItemCount: (id, count) =>
-    set((state) => {
-      if (state.jewerlyItem.find((i) => i.id === id) == null) {
-        return { jewerlyItem: [...state.jewerlyItem, { id: id, count: count }] }
-      } else {
-        return {
-          jewerlyItem: state.jewerlyItem.map((i) => {
-            if (i.id === id) {
-              return { ...i, count: i.count + count }
-            } else return { ...i }
-          }),
-        }
-      }
-    }),
+  incrItemCount: (id, count) => {
+    const { jewerlyItems } = get()
+
+    const searchedItemIndex: number = jewerlyItems.findIndex(
+      (item) => item.id === id
+    )
+
+    if (searchedItemIndex === -1) {
+      const newItem: JewerlyItem = { id, count }
+      set({ jewerlyItems: [...jewerlyItems, newItem] })
+      return
+    }
+
+    jewerlyItems[searchedItemIndex].count += count
+
+    set({ jewerlyItems: [...jewerlyItems] })
+  },
 
   // jewerlyCountInBusket: get().jewerlyItem
   //   ? get().jewerlyItem.reduce((acc, item) => acc + item?.count, 0)
